@@ -6,6 +6,7 @@
 %
 \usepackage{multirow}
 \usepackage{graphicx}
+\usepackage{textcomp}
 % Used for displaying a sample figure. If possible, figure files should
 % be included in EPS format.
 %
@@ -15,14 +16,14 @@
 
 \begin{document}
 %
-\title{Framework for Assurance of Emergent Behaviour for use in Autonomous Robotic Swarms\thanks{Supported by organization x.}}
+\title{AERoS: Framework for the Assurance of Emergent Behaviour for use in Autonomous Robotic Swarms\thanks{Supported by organization x.}}
 %
 %\titlerunning{Abbreviated paper title}
 % If the paper title is too long for the running head, you can set
 % an abbreviated paper title here
 %
-\author{Dhaminda Abeywickrama \inst{1}\orcidID{0000-1111-2222-3333} \and
-James Wilson\inst{1}\orcidID{0000-0002-0758-6732} \and
+\author{Dhaminda B. Abeywickrama\inst{\dag}\inst{1}\orcidID{0000-0002-4423-0284} \and
+James Wilson\inst{\dag}\inst{1}\orcidID{0000-0002-0758-6732} \and
 Third Author\inst{1}\orcidID{2222--3333-4444-5555} \and
 4th Author\inst{1}\orcidID{2222--3333-4444-5555} \and
 5th Author\inst{1}\orcidID{2222--3333-4444-5555} \and
@@ -59,8 +60,101 @@ The main contribution of this paper is a novel framework for assurance of emerge
 \subsection{Background}\label{background}
 
 
-\subsubsection{Specification Challenges and Standards}
 
+
+\subsubsection{Robotic Swarms}
+%\noindent Autonomous
+%\\ \noindent Large Number of agents (10+)
+%\\ \noindent Relatively incapable individuals
+%\\ \noindent Restrained Homogeneity
+%\\ \noindent Minimal communication capabilities (Decentralised)
+
+\subsubsection{Case Study: Cloakroom}\label{ex:cloakroom}
+
+%\vspace{2mm}
+%\noindent\textbf{\textit{\newline[Author Guidelines: Please use the cloakroom case study to illustrate the framework in Section III. If the examples in cloakroom case study are not sufficient, other swarm use cases listed below can be considered.]}}
+% The case study describes a public cloakroom where swarm of robots assist customers looking to deposit their jackets at an event \cite{Jones2020}. 
+% It describes cases where customers are depositing jackets, handing a jacket to a robot for storing, and retrieval of jackets back to the customer. 
+A company that organizes bespoke events with 50 to 10000 attendees is looking to automate their cloakroom by deploying a swarm of robots to assist attendees (customers) to deposit, store and deliver their belongings (e.g. jackets) \cite{Jones2020}. % cloakroom paper 
+%Mindful of the safety, operational and regulatory requirements of the healthcare sector
+The system must prioritize public safety, and the company decides to use this standard on transparency as a draft specification for their engineers to more transparently communicate the decision-making processes of their automated cloakroom. %swarm system. 
+
+% \paragraph*{Other Swarm Use Cases}
+% \emph{\\Fault detection, diagnosis and recovery – Monitoring fires in a natural environment}. Fault detection model shall be trained to high level of accuracy. Thresholds for fault tolerance shall be set appropriately such that misclassification of a fault is a rare event. An agent experiencing minor faults shall not be immediately removed, should the fault not impact the task at hand. \\
+% \emph{\noindent Social swarm – Brainstorming at an event}. Humans follow robots which cluster based on input. Minimise blocking paths of other humans and agents. Maintain situational awareness of humans and agents in the environment. Before the task, provide a clear explanation of the steps of the activity. Clear guidance during the task. Provide information about how the swarm/robot works.
+
+% \noindent See research paper ``Mutual shaping in swarm robotics: User studies in fire and rescue, storage organisation, and bridge inspection" \cite{Carrillo-Zapata2020}.
+
+\subsection{Related Work}\label{relatedwork}
+%\subsubsection{Specification Challenges and Standards} 
+%\subsection{Standards for Autonomous Systems}
+%Dhaminda B. Abeywickrama: Needs to be trimmed and edited. 
+Autonomous systems are systems that involve software applications, machines and people, which are capable of taking actions with no or little human supervision~\cite{Murukannaiah2020}. 
+The functionality of an autonomous system (i.e. what it is meant to do, what it does, and what it could do) evolves or changes over time. 
+One of the main issues of adopting current standards and regulations with autonomous systems is the lack of consideration to the notions of \textit{uncertainty} and \textit{autonomy} \cite{Fisher2021}. 
+Most conventional processes for defining system requirements assume that these are fixed and can be defined in a complete and precise manner before the system goes into operation \cite{Abeywickrama2022}. 
+Also, in existing standards and regulations, the notion of autonomy is not their most characterizing feature where they are neither driven nor strongly influenced by it \cite{Fisher2021}. 
+Most existing standards are either implicitly or explicitly based on the V\&V model, which moves from requirements through design onto implementation and testing before deployment~\cite{Jia2021}. 
+However, this model is unlikely to be suitable for systems with the ability to adapt their functionality in operation; e.g.\ through interaction with other agents and the environment (e.g. as is the case with swarms); or through experience-driven adaptation as is the case with machine learning \cite{Abeywickrama2022}. 
+Autonomous systems with evolving functionality follow a different, much more iterative life-cycle. 
+Thus, there is a need for new standards and assurance processes that extend beyond design time and allow continuous certification at runtime~\cite{Rushby2008}. 
+In this context, lately, there have been several standards and guidance introduced by several industry committees and research groups. 
+Now we provide an overview of several key efforts with any trustworthiness properties or ontologies supported by them.
+%Now we provide an overview of several key efforts (see Table\ref{table:1} for any trustworthiness properties or ontologies supported).
+
+%\begin{table}[t!]
+%	\centering
+%	\begin{tabular}{||p{2 cm} |p{7cm}||} 
+	%		\hline
+	%		\textbf{Approach} & \textbf{Trustworthiness Properties/Ontology} \\ [0.5ex] 
+	%		\hline\hline
+	%		IEEE P7001 & Transparency, accountability   \\ \hline
+	%		EASA Concept Paper & \\ \hline
+	%		DEEL White Paper & Auditability, data quality, explainability,maintainability, resilience, robustness, specifiability, and verifiability  \\ \hline
+	%		AVSI Report & Robustness, safety  \\ \hline
+	%		AMLAS & Performance, robustness (safety)  \\  \hline
+	%		LNE Certification &  \\ \hline
+	%		UL 4600 Standard & Safety \\ [1ex] 
+	%		
+	%		\hline
+	%	\end{tabular}
+%	\caption{Standards and trustworthiness properties supported.}
+%	\label{table:1}
+%\end{table}
+
+In 2016, the British Standards Institution introduced the \textit{BS 8611} standard that provides a guide to the ethical design and application of robots and robotic systems \cite{BS8611}. 
+Then, IEEE through its initiative Global Initiative on Ethics of Autonomous and Intelligent Systems initiated the development of a series of standards to address autonomy, ethical issues, transparency, data privacy and trustworthiness (IEEE P70XX, for e.g. IEEE P7001, P7007, P7010). 
+% IEEE P7001
+\textit{IEEE P7001} standard describes measurable, testable levels of transparency for autonomous systems so that they can be objectively assessed and levels of compliance determined\cite{IEEE-P7001}. 
+This standard outlines five stakeholder groups, and for each group it explains the structure of the normative definitions of levels of transparency. 
+\textit{IEEE P7001} can be applied to assess the transparency of an existing system using a process of System Transparency Assessment, or to specify transparency requirements for a system prior to its implementation using a System Transparency Specification.
+Meanwhile, the goal of \textit{IEEE P7007} standard is to assist in the ethically-driven methodologies for the design of robots and automation systems \cite{IEEE-P7007}.
+For this, it provides a set of ontologies with different abstraction levels of concepts, definitions, axioms and use cases. 
+IEEE P7001 mentions about a transparency concern, which is a property representing an explanation topic (e.g. fairness, safety, legality, reliability, accountability, responsibility, predictability, comprehensibility, justifiability, viability, coordination) describing the reason for explanations of agent behaviours. 
+\textit{IEEE P7010} standard is used to measure the impact of AI or autonomous and intelligent systems on humans \cite{IEEE-P7010}. 
+%transparency concern: A property (TLO:Property) subcategory representing an Explanation topic and theme that underlies the reason that motivates requests for explanations of Agent behaviors. Responses to requests for Agent Explanations need to address the Transparency Concerns of the Audience involved with the Explanation.
+
+There are several standards and guidance related to machine learning in aeronautics, automotive, railway and industrial domains, e.g. AMLAS, EASA concept paper, DEEL white paper, AVSI report, LNE certification and UL 4600 standard \cite{Kaakai2022}.
+
+%#4 and 7
+\textit{Assurance of Machine Learning for use in Autonomous Systems (AMLAS)} provides guidance on how to systematically integrate safety assurance into the development of the machine learning components based on offline supervised learning \cite{Hawkins2021}. 
+%AMLAS provides an explicit and structured safety case that the system is safe to operate in its intended context of use. 
+AMLAS contains six stages, and the assurance activities are performed in parallel to the development of machine learning component. 
+The process is iterative by design and feedback is used to update previous stages. 
+In AMLAS, the safety requirements are always based on performance and robustness of the machine learning model. 
+In a related work to AMLAS \cite{Ashmore2021}, the authors identify several phases in a machine learning life cycle (data management, model learning, verification and deployment) with their associated data. From an assurance view point, they consider several key properties the models generated by learning should exhibit: performance, robustness, reusability and interpretability.% (see Table\ref{table:1}).
+
+%#1 and 2:
+The \textit{concept paper} by the \textit{European Union Aviation Safety Agency (EASA)} provides its first usable guidance for level 1 (human assistance) safety-related machine learning applications \cite{EASA2021}. 
+%It provides means of compliance for the certification of safety-critical systems which rely on machine learning-based algorithms for their operation. 
+This guidance provides a roadmap to create a framework for AI trustworthiness (\cite{EASA2021}, pg. 8). The framework describes three techniques for analysing trustworthiness (safety, security and ethics-based), which are linked with the ethical guidelines developed by the EU commission (accountability, robustness, safety, oversight, privacy and data governance, non-discrimination and fairness, transparency, and societal and environmental well being). 
+
+The \textit{DEpendable and Explainable Learning (DEEL) white paper} aims to identify challenges in the certification of systems using machine learning and to define a set of high-level properties for that purpose, such as auditability, data quality, explainability, maintainability, resilience, robustness, specifiability and verifiability (\cite{Mamalet2021}, pg. 22–23). 
+
+The \textit{Aerospace Vehicle System Institute (AVSI) report} on machine learning summarises their findings on safety and certification aspects of emerging machine learning technologies that are applied to safety-critical aerospace systems \cite{AFE2020}. This report provides several recommendations with respect to robustness, safety assurance, runtime assurance and interpretability when using machine learning in safety-critical applications. 
+
+The \textit{UL 4600 standard} guides a user through the development of safety cases for fully automated vehicles (i.e. vehicles with no driver or supervisor) \cite{UL4600}. It is more of a standard of care and not a procedure for certification of fully automated vehicles. The \textit{Laboratoire National de Métrologie et d'Essais (LNE) certification} \cite{LNE2021} is a quality assurance standard for machine learning processes. The aim is to provide guidance for an applicant when obtaining certifications for their design, development, evaluation and maintenance in operational conditions. 
+%The technical objectives of the DEEL whitepaper [7] areto identify challenges in the certification of systemsusing ML and to define a sufficient set of HLPs:Auditability, data quality, explainability,maintainability, resilience, robustness, specifiability,and verifiability. Overall, the article provides anoverview of ML certification objectives and challengesbut does not provide a clear path to ensure meansof compliance.
 
 %\newline With respect to swarms, the overall behaviours of a swarm are not explicitly engineered in the system, but they are an emergent consequence of the interaction of individual agents with each other and the environment.
 %This emergent functionality poses a challenge for specification. 
@@ -90,38 +184,12 @@ The main contribution of this paper is a novel framework for assurance of emerge
 %These are: household robots, medical robots and personal care robots.
 %The individual robots of the cloakroom better fit into the ``mobile servant robots” category, which is a type of personal care robot under service robots.
 %A mobile servant robot is a personal care robot capable of travelling to perform serving tasks in interaction with humans, e.g. handling objects or exchanging information [ISO 13482:2014, 3.14].
-
-\subsubsection{Robotic Swarms}
-%\noindent Autonomous
-%\\ \noindent Large Number of agents (10+)
-%\\ \noindent Relatively incapable individuals
-%\\ \noindent Restrained Homogeneity
-%\\ \noindent Minimal communication capabilities (Decentralised)
-
-\subsubsection{Case Study: Cloakroom}\label{ex:cloakroom}
-
-%\vspace{2mm}
-%\noindent\textbf{\textit{\newline[Author Guidelines: Please use the cloakroom case study to illustrate the framework in Section III. If the examples in cloakroom case study are not sufficient, other swarm use cases listed below can be considered.]}}
-% The case study describes a public cloakroom where swarm of robots assist customers looking to deposit their jackets at an event \cite{Jones2020}. 
-% It describes cases where customers are depositing jackets, handing a jacket to a robot for storing, and retrieval of jackets back to the customer. 
-A company that organizes bespoke events with 50 to 10000 attendees is looking to automate their cloakroom by deploying a swarm of robots to assist attendees (customers) to deposit, store and deliver their belongings (e.g. jackets) \cite{Jones2020}. % cloakroom paper 
-%Mindful of the safety, operational and regulatory requirements of the healthcare sector
-The system must prioritize public safety, and the company decides to use this standard on transparency as a draft specification for their engineers to more transparently communicate the decision-making processes of their automated cloakroom. %swarm system. 
-
-% \paragraph*{Other Swarm Use Cases}
-% \emph{\\Fault detection, diagnosis and recovery – Monitoring fires in a natural environment}. Fault detection model shall be trained to high level of accuracy. Thresholds for fault tolerance shall be set appropriately such that misclassification of a fault is a rare event. An agent experiencing minor faults shall not be immediately removed, should the fault not impact the task at hand. \\
-% \emph{\noindent Social swarm – Brainstorming at an event}. Humans follow robots which cluster based on input. Minimise blocking paths of other humans and agents. Maintain situational awareness of humans and agents in the environment. Before the task, provide a clear explanation of the steps of the activity. Clear guidance during the task. Provide information about how the swarm/robot works.
-
-% \noindent See research paper ``Mutual shaping in swarm robotics: User studies in fire and rescue, storage organisation, and bridge inspection" \cite{Carrillo-Zapata2020}.
-
-\subsection{Related Work}\label{relatedwork}
-
 %\subsubsection{Assurance of Machine Learning in Autonomous Systems (AMLAS)}
 %\cite{Hawkins2021}
-\textit{Assurance of Machine Learning for use in Autonomous Systems (AMLAS):} AMLAS provides guidance on how to systematically integrate safety assurance into the development of machine learning components based on offline supervised learning \cite{AMLAS2021}. 
-AMLAS provides an explicit and structured safety case that the system is safe to operate in its intended context of use. 
-AMLAS contains six stages, and the assurance activities are performed in parallel to the development of machine learning component. 
-The process is iterative by design and feedback is used to update previous stages. 
+%\textit{Assurance of Machine Learning for use in Autonomous Systems (AMLAS):} AMLAS provides guidance on how to systematically integrate safety assurance into the development of machine learning components based on offline supervised learning \cite{AMLAS2021}. 
+%AMLAS provides an explicit and structured safety case that the system is safe to operate in its intended context of use. 
+%AMLAS contains six stages, and the assurance activities are performed in parallel to the development of machine learning component. 
+%The process is iterative by design and feedback is used to update previous stages. 
 % \subsubsection{Societal Acceptability of Autonomous Systems (SOCA)}
 % \cite{Porter2022,McDermid2021}
 
@@ -1007,6 +1075,6 @@ The work presented in this paper has been supported by the UK Engineering and Ph
 %
 
 \bibliographystyle{splncs04}
-\bibliography{AssuranceFWK-Swarms-Bibliography}
+\bibliography{AERoS-Bib}%{AssuranceFWK-Swarms-Bibliography}
 %
 \end{document}
