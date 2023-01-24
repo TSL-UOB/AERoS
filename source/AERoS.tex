@@ -34,7 +34,7 @@
 	6th Author\inst{1}\orcidID{2222--3333-4444-5555} \and
 	7th Author\inst{1}\orcidID{2222--3333-4444-5555} \and
 	8th Author\inst{1}\orcidID{2222--3333-4444-5555} \and
-	9th Author\inst{1}\orcidID{2222--3333-4444-5555}\thanks{D. B. Abeywickrama and J. Wilson contributed equally.}}
+	9th Author\inst{1}\orcidID{2222--3333-4444-5555}\thanks{\dag D. B. Abeywickrama and J. Wilson contributed equally.}}
 %
 \authorrunning{D. B. Abeywickrama and J. Wilson et al.}
 % First names are abbreviated in the running head.
@@ -115,13 +115,14 @@ However, although these industry standards focus on ensuring assurance of robots
 %AS with evolving functionality follow a different, much more iterative life-cycle. 
 %Thus, there is a need for new standards and assurance processes that extend beyond design time and allow continuous certification at runtime~\cite{rushby:2008}.
 
-The main contribution of this paper is a process or guidance for the assurance of emergent behaviour for use in autonomous robotic swarms (AERoS), following the AMLAS guidance~\cite{Hawkins2021} proposed for machine learning components. 
+The main contribution of this paper is a process or guidance for the assurance of emergent behaviour for use in autonomous robotic swarms (AERoS), following the AMLAS guidance~\cite{Hawkins2021} proposed for machine learning-based systems. 
 AERoS covers six emergent behaviour (EB) lifecycle stages: safety assurance scoping, safety requirements elicitation, data management, model EB, model verification, and model deployment. 
-We illustrate our process using examples from a public cloakroom case study. 
+We illustrate the AERoS process using examples from a public cloakroom case study. 
 %where swarm of robots assist customers looking to deposit their jackets at a public event. 
 Let us consider a company that organizes bespoke events with 50 to 10000 attendees~\cite{Jia2021}. 
 The company automates their cloakroom by deploying a swarm of robots to assist attendees (customers) to deposit, store, and deliver their belongings (e.g. jackets) \cite{Jones2020}. 
 As the swarm operates in a public setting, the system must prioritize public safety.
+
 The rest of the paper is organised as follows. 
 In Section~\ref{relatedwork}, we provide key related works to our study. Section~\ref{framework} discusses the six stages of the AERoS process. Finally, Section~\ref{discussion-conclusions} provides a brief discussion and concludes the paper. 
 %
@@ -195,10 +196,10 @@ There are several standards and guidance related to machine learning in aeronaut
 %AMLAS provides an explicit and structured safety case that the system is safe to operate in its intended context of use. 
 AMLAS contains six stages, and the assurance activities are performed in parallel to the development of machine learning component. 
 The process is iterative by design and feedback is used to update previous stages. 
-In AMLAS, the safety requirements are always based on performance and robustness of the machine learning model. 
+In AMLAS, the safety requirements are based on performance and robustness of the machine learning model. 
 However, none of the aforementioned standards and guidance target swarm systems. 
 AMLAS targets safety assurance of a machine learning model for a single system, and not for a collective as considered in our study. 
-Furthermore, as mentioned in Section 1, ISO standards like ISO 13482 and ISO 10218-1 target individual robots, and do not consider safety or any other non-functional properties at the swarm-level.
+Furthermore, as mentioned in Section 1, ISO standards like ISO 13482 and ISO 10218-1 target individual robots, and they do not consider safety or any other non-functional properties at the swarm-level.
 %The original AMLAS application in Stage 4 focused on the creation, testing and instantiation of a machine learning model for a single system with no emergent behaviours to consider for a collective. 
 
 
@@ -384,14 +385,14 @@ In activity 2, we use the artefacts generated from Stage 1 to instantiate the EB
 	\centering
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[width=0.99\textwidth]{figures/AMLAS-STAGE-1-V3.png}
+		\includegraphics[width=0.99\textwidth]{figures/AMLAS-STAGE-1-V4.png}
 		\vspace{-2ex}
 		\caption{Stage 1: AERoS emergent behaviour assurance scoping process.}
 		\label{amlas-a-stage1}
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
 	\centering
-	\includegraphics[width=0.99\textwidth]{figures/stage1-argumentpattern-v2.png}
+	\includegraphics[width=0.99\textwidth]{figures/stage1-argumentpattern-v3.png}
 	\vspace{-2ex}
 	\caption{EB Safety assurance scoping argument pattern.}
 	\label{stage1-ap}
@@ -460,14 +461,14 @@ Once we have defined these three inputs, they are fed to the individual agents t
 	\centering
 	\begin{minipage}{.55\textwidth}
 		\centering
-		\includegraphics[width=0.99\textwidth]{figures/stage1-systema.png}
+		\includegraphics[width=0.99\textwidth]{figures/stage1-systema-v2.png}
 		\vspace{-2ex}
 		\caption{System description.}
 		\label{system-description}
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
 	\centering
-	\includegraphics[width=0.99\textwidth]{figures/stage1-failureevents-v2.png}
+	\includegraphics[width=0.99\textwidth]{figures/stage1-failureevents-v3.png}
 	\vspace{-2ex}
 	\caption{Failure conditions in a swarm adapted from DO-178C and AMLAS.}
 	\label{failure-events}
@@ -532,14 +533,14 @@ In activity 5, the artefacts generated are used to instantiate the EB safety req
 \vspace{-4ex}
 \begin{figure}
 	\centering
-	\begin{minipage}{.57\textwidth}
+	\begin{minipage}{.55\textwidth}
 		\centering
-		\includegraphics[trim={0mm -6mm 0mm -6mm},clip,width=\textwidth]{figures/amlas-a-stage2-v2.png}
+		\includegraphics[trim={0mm -6mm 0mm -6mm},clip,width=\textwidth]{figures/amlas-a-stage2-v3.png}
 		\vspace{-2ex}
 		\caption{Stage 2: AERoS emergent behaviour safety requirements assurance.}% process.}
 	\label{amlas-a-stage2}
 \end{minipage}%
-\begin{minipage}{.5\textwidth}
+\begin{minipage}{.45\textwidth}
 	\centering
 	\includegraphics[trim={30mm 25mm 45mm 30mm},clip,width=0.9\textwidth]{figures/3Dsim.png}
 	\vspace{-2ex}
@@ -899,7 +900,7 @@ When designing emergent behaviours data plays a vital role, though one that diff
 \vspace{-4ex}
 \begin{figure*}
 	\centering
-	\includegraphics[width=0.85\textwidth]{figures/AMLAS-STAGE-3-V3.png}
+	\includegraphics[width=0.8\textwidth]{figures/AMLAS-STAGE-3-V4.png}
 	\vspace{-2ex}
 	\caption{AERoS data management process.}
 	\label{amlas-a-stage3}
@@ -1122,22 +1123,45 @@ In our adaptation of AMLAS for the robot swarm,  we step away from the machine l
 
 \begin{figure}[!h]
 	\centering
-	\begin{minipage}{.55\textwidth}
+	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[scale=0.42]{figures/AMLAS-STAGE-4-V3.png}%amlas-a-stage4.png
+		\includegraphics[width=0.99\textwidth]{figures/AMLAS-STAGE-4-V4.png}%amlas-a-stage4.png
 		\vspace{-2ex}
 		\caption{AERoS model learning process.}
 		\label{amlas-a-stage4}
 	\end{minipage}%
-	\begin{minipage}{.55\textwidth}
+	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[scale=0.42]{figures/AMLAS-STAGE-5-V3.png}%amlas-a-stage5.png
+		\includegraphics[width=0.99\textwidth]{figures/AMLAS-STAGE-5-V4.png}%amlas-a-stage5.png
 		\vspace{-2ex}
-		\caption{AERoS verification assurance process.}
+		\caption{AERoS verification process.}
 		\label{amlas-a-stage5}
 	\end{minipage}
 	\vspace{-4ex}
 \end{figure}
+
+
+%\vspace{-4ex}
+%\begin{figure}
+%	\centering
+%	\begin{minipage}{.5\textwidth}
+%		\centering
+%		\includegraphics[width=0.99\textwidth]{figures/AMLAS-STAGE-1-V4.png}
+%		\vspace{-2ex}
+%		\caption{Stage 1: AERoS emergent behaviour assurance scoping process.}
+%		\label{amlas-a-stage1}
+%	\end{minipage}%
+%	\begin{minipage}{.5\textwidth}
+%		\centering
+%		\includegraphics[width=0.99\textwidth]{figures/stage1-argumentpattern-v3.png}
+%		\vspace{-2ex}
+%		\caption{EB Safety assurance scoping argument pattern.}
+%		\label{stage1-ap}
+%	\end{minipage}
+%	\vspace{-4ex}
+%\end{figure}
+
+
 %\begin{figure}[!h]
 %	\centering
 %	\begin{minipage}{.5\textwidth}
@@ -1279,7 +1303,7 @@ In this activity, we use the inputs to this stage to educate the implementation 
 %\vspace{-4ex}
 \begin{figure}[!t]
 	\centering
-	\includegraphics[width=0.65\textwidth]{figures/AMLAS-STAGE-6-V3.png}%amlas-a-stage6.png		
+	\includegraphics[width=0.65\textwidth]{figures/AMLAS-STAGE-6-V4.png}%amlas-a-stage6.png		
 	\vspace{-2ex}
 	\caption{AERoS model deployment assurance process.}
 	\label{amlas-a-stage6}
