@@ -52,7 +52,7 @@
 	The overall behaviours of a swarm are not explicitly engineered in the system, but they are an emergent consequence of the interaction of individual agents with each other and the environment.
 	This emergent functionality poses a challenge to ensure their \emph{assurance} such as safety. 
 	%However, although there are industry standards that focus on ensuring assurance of robots at the individual-level, they do not cover safety or any other extra-functional property at the \emph{swarm}-level that may arise through emergent behaviour. 
-	The main contribution of this paper is a process for the assurance of the emergent behaviour for use in autonomous robotic swarms, following the AMLAS guidance for machine learning-based systems. 
+	The main contribution of this paper is a process for the assurance of the emergent behaviour for use in autonomous robotic swarms called AERoS, following the AMLAS guidance for machine learning-based systems. 
 	We explore our proposed guidance using illustrative examples taken from a public cloakroom case study. 
 	
 	
@@ -456,24 +456,24 @@ Once we have defined these three inputs, they are fed to the individual agents t
 	% 	\label{system-description}
 	% \end{figure}
 
-\vspace{-6ex}
+\vspace{-5ex}
 \begin{figure}
 	\centering
-	\begin{minipage}{.55\textwidth}
+	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=0.99\textwidth]{figures/stage1-systema-v2.png}
 		\vspace{-2ex}
 		\caption{System description.}
 		\label{system-description}
 	\end{minipage}%
-	\begin{minipage}{.5\textwidth}
+	\begin{minipage}{.45\textwidth}
 	\centering
 	\includegraphics[width=0.99\textwidth]{figures/stage1-failureevents-v3.png}
 	\vspace{-2ex}
 	\caption{Failure conditions in a swarm adapted from DO-178C and AMLAS.}
 	\label{failure-events}
 \end{minipage}
-\vspace{-4ex}
+\vspace{-5ex}
 \end{figure}
 %\vspace{-4ex}
 %\setlength{\abovecaptionskip}{-2ex}
@@ -900,14 +900,14 @@ When designing emergent behaviours data plays a vital role, though one that diff
 \vspace{-4ex}
 \begin{figure*}
 	\centering
-	\includegraphics[width=0.8\textwidth]{figures/AMLAS-STAGE-3-V4.png}
+	\includegraphics[width=0.75\textwidth]{figures/AMLAS-STAGE-3-V4.png}
 	\vspace{-2ex}
 	\caption{AERoS data management process.}
 	\label{amlas-a-stage3}
 	\vspace{-4ex}
 \end{figure*}
 
-\vspace{-2ex}
+\vspace{-4ex}
 \subsubsection*{Activity 6. Define Data Requirements}
 
 % AMLAS - This activity requires as input the ML safety requirements ([H]) as described in Stage 2 and, from these requirements, data requirements ([L]) shall be generated. Of particular interest in the development of data requirements are those safety requirements which pertain to the description of the system environment.
@@ -1303,7 +1303,7 @@ In this activity, we use the inputs to this stage to educate the implementation 
 %\vspace{-4ex}
 \begin{figure}[!t]
 	\centering
-	\includegraphics[width=0.65\textwidth]{figures/AMLAS-STAGE-6-V4.png}%amlas-a-stage6.png		
+	\includegraphics[width=0.60\textwidth]{figures/AMLAS-STAGE-6-V4.png}%amlas-a-stage6.png		
 	\vspace{-2ex}
 	\caption{AERoS model deployment assurance process.}
 	\label{amlas-a-stage6}
