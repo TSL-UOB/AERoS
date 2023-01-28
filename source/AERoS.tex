@@ -28,7 +28,7 @@
 %
 \author{Dhaminda B. Abeywickrama\inst{\dag}\inst{1}\orcidID{0000-0002-4423-0284} \and
 	James Wilson\inst{\dag}\inst{1}\orcidID{0000-0002-0758-6732} \and
-	Third Author\inst{1}\orcidID{2222--3333-4444-5555} \and
+	Suet Lee\inst{1}\orcidID{2222--3333-4444-5555} \and
 	4th Author\inst{1}\orcidID{2222--3333-4444-5555} \and
 	5th Author\inst{1}\orcidID{2222--3333-4444-5555} \and
 	6th Author\inst{1}\orcidID{2222--3333-4444-5555} \and
@@ -49,11 +49,11 @@
 	%The functionality of a swarm is emergent, and evolves based on the capabilities of the robots and the numbers of robots used. 
 	%The overall behaviours of a swarm are not explicitly engineered in the system, as they might be in a collection of robots that are all centrally controlled, but they are an emergent consequence of the interaction of individual agents with each other and the environment.
 	
-	The overall behaviours of a swarm are not explicitly engineered in the system, but they are an emergent consequence of the interaction of individual agents with each other and their environment.
+	The overall behaviours of a swarm are not explicitly engineered in the system, but they are an emergent consequence of the interaction of individual agents with each other and their environment. 
 	This emergent functionality poses a challenge to ensure their \emph{assurance}, such as safety. 
 	%However, although there are industry standards that focus on ensuring assurance of robots at the individual-level, they do not cover safety or any other extra-functional property at the \emph{swarm}-level that may arise through emergent behaviour. 
 	The main contribution of this paper is a process for the assurance of the emergent behaviour for use in autonomous robotic swarms called \emph{AERoS}, following the AMLAS guidance for machine learning-based systems. 
-	We explore our proposed guidance using illustrative examples taken from a public cloakroom case study. 
+	We explore our proposed guidance using illustrative examples taken from a public cloakroom case study.
 	
 	
 	
@@ -108,20 +108,19 @@ A key limitation of existing standards and regulations of AS is that they do not
 They are either implicitly or explicitly based on the V\&V model, which moves from requirements through design onto implementation and testing before deployment~\cite{Jia2021}. 
 However, this model is unlikely to be suitable for systems with the ability to adapt their functionality in operation; e.g.\ through interaction with other agents and the environment, as is the case with swarms. 
 ISO standards have been developed for the service robotics sector (non-industrial) (e.g.\ ISO 13482, ISO 23482-1, ISO 23482-2), and the industrial robotics sector (e.g.\ ISO 10218-1, ISO 10218-2, ISO/TS 15066) \cite{Abeywickrama2022}. 
-However, although these industry standards focus on ensuring assurance of robots at the individual-level, they do not cover safety or any other extra-functional property at the \emph{swarm}-level that may arise through emergent behaviour, which provides motivation for our study.
+However, although these industry standards focus on ensuring assurance of robots at the individual-level, they do not cover safety or any other extra-functional property at the \emph{swarm}-level that may arise through emergent behaviour (EB). %, which provides motivation for our study.
 %The ability to adapt and to learn from experience are important abilities to enable AS to operate in real world environments. 
 
 %AS with evolving functionality follow a different, much more iterative life-cycle. 
 %Thus, there is a need for new standards and assurance processes that extend beyond design time and allow continuous certification at runtime~\cite{rushby:2008}.
 
-The main contribution of this paper is a process or guidance for the assurance of emergent behaviour for use in autonomous robotic swarms (AERoS), following the AMLAS guidance~\cite{Hawkins2021} proposed for machine learning-based systems. 
-AERoS covers six emergent behaviour (EB) lifecycle stages: safety assurance scoping, safety requirements elicitation, data management, model EB, model verification, and model deployment. 
+The main contribution of this paper is a process or guidance for the assurance of EB for use in autonomous robotic swarms (AERoS), following the AMLAS guidance~\cite{Hawkins2021} proposed for machine learning systems. 
+AERoS covers six EB lifecycle stages: safety assurance scoping, safety requirements elicitation, data management, model EB, model verification, and model deployment. 
 We illustrate the AERoS process using examples from a public cloakroom case study. 
 %where swarm of robots assist customers looking to deposit their jackets at a public event. 
 Let us consider a company that organizes bespoke events with 50 to 10000 attendees~\cite{Jia2021}. 
 The company automates their cloakroom by deploying a swarm of robots to assist attendees (customers) to deposit, store, and deliver their belongings (e.g. jackets) \cite{Jones2020}. 
-As the swarm operates in a public setting, the system must prioritize public safety.
-
+As the swarm operates in a public setting, the system must prioritize on public safety. 
 The rest of the paper is organised as follows. 
 In Section~\ref{relatedwork}, we provide key related works to our study. Section~\ref{framework} discusses the six stages of the AERoS process. Finally, Section~\ref{discussion-conclusions} provides a brief discussion and concludes the paper. 
 %
@@ -190,15 +189,15 @@ Then, IEEE through its initiative Global Initiative on Ethics of Autonomous and 
 %\emph{IEEE P7001} standard describes measurable, testable levels of transparency for autonomous systems so that they can be objectively assessed and levels of compliance determined\cite{IEEE-P7001}. 
 %This standard outlines five stakeholder groups, and for each group it explains the structure of the normative definitions of levels of transparency. 
 %There are several standards and guidance related to machine learning in aeronautics, automotive, railway and industrial domains \cite{Kaakai2022}, e.g. \emph{Assurance of Machine Learning for use in Autonomous Systems (AMLAS)} process~\cite{Hawkins2021}, EASA concept paper~\cite{EASA2021}, DEEL white paper~\cite{Mamalet2021}, AVSI report~\cite{AFE2020}, LNE certification~\cite{LNE2021}, and UL 4600 standard~\cite{UL4600}. 
-There are several standards and guidance related to machine learning in aeronautics, automotive, railway and industrial domains \cite{Kaakai2022}, e.g. \emph{Assurance of Machine Learning for use in Autonomous Systems (AMLAS)} process~\cite{Hawkins2021}, EASA concept paper, DEEL white paper, AVSI report, LNE certification, and UL 4600 standard. 
+There are several standards and guidance related to machine learning in aeronautics, automotive, railway and industrial domains \cite{Kaakai2022}, e.g. Assurance of Machine Learning for use in Autonomous Systems (AMLAS) process~\cite{Hawkins2021}, European Union Aviation Safety Agency (EASA) concept paper, DEpendable and Explainable Learning (DEEL) white paper, Aerospace Vehicle System Institute (AVSI) report, Laboratoire National de Métrologie et d'Essais (LNE) certification, and UL 4600 standard. 
+
 \emph{AMLAS} provides guidance on how to systematically integrate safety assurance into the development of the machine learning components based on offline supervised learning~\cite{Hawkins2021}. 
 %AMLAS provides an explicit and structured safety case that the system is safe to operate in its intended context of use. 
 AMLAS contains six stages, and the assurance activities are performed in parallel to the development of machine learning component. 
 The process is iterative by design and feedback is used to update previous stages. 
-In AMLAS, the safety requirements are based on performance and robustness of the machine learning model. 
-However, none of the aforementioned standards and guidance target swarm systems. 
-AMLAS targets safety assurance of a machine learning model for a single system, and not for a collective as considered in our study. 
-Furthermore, as mentioned in Section 1, ISO standards like ISO 13482 and ISO 10218-1 target individual robots, and they do not consider safety or any other non-functional properties at the swarm-level.
+%In AMLAS, the safety requirements are based on performance and robustness of the machine learning model. 
+However, AMLAS specifically targets safety assurance of a machine learning model for a single system, and not for a collective as considered in our study. 
+Also, none of the aforementioned standards and guidance target swarm systems. 
 %The original AMLAS application in Stage 4 focused on the creation, testing and instantiation of a machine learning model for a single system with no emergent behaviours to consider for a collective. 
 
 
