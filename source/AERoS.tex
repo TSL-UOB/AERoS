@@ -118,7 +118,7 @@ The main contribution of this paper is a process or guidance for the assurance o
 AERoS covers six EB lifecycle stages: safety assurance scoping, safety requirements elicitation, data management, model EB, model verification, and model deployment. 
 We illustrate the AERoS process using examples from a public cloakroom case study. 
 %where swarm of robots assist customers looking to deposit their jackets at a public event. 
-Let us consider a company that organizes bespoke events with 50 to 10000 attendees~\cite{Jia2021}. 
+Let us consider a company that organizes bespoke events with 50 to 10000 attendees~\cite{Jones2020}. 
 The company automates their cloakroom by deploying a swarm of robots to assist attendees (customers) to deposit, store, and deliver their belongings (e.g. jackets) \cite{Jones2020}. 
 As the swarm operates in a public setting, the system must prioritize on public safety. 
 The rest of the paper is organised as follows. 
@@ -184,7 +184,7 @@ An AS with evolving functionality is considered to follow a different, much more
 Thus, there is a need for new standards and assurance processes that extend beyond design time and allow continuous certification at runtime~\cite{Rushby2008}. 
 In this context, lately, there have been several standards and guidance introduced by several industry committees and research groups. 
 
-In 2016, the British Standards Institution introduced the \emph{BS 8611} standard that provides a guide to the ethical design and application of robots and robotic systems \cite{BS8611}. 
+In 2016, the British Standards Institution introduced the \emph{BS 8611} standard that provides a guide to the ethical design and application of robots and robotic systems. % \cite{BS8611}. 
 Then, IEEE through its initiative Global Initiative on Ethics of Autonomous and Intelligent Systems initiated the development of a series of standards to address autonomy, ethical issues, transparency, data privacy and trustworthiness (for e.g. IEEE P7001~\cite{IEEE-P7001}, P7007, P7010). 
 %\emph{IEEE P7001} standard describes measurable, testable levels of transparency for autonomous systems so that they can be objectively assessed and levels of compliance determined\cite{IEEE-P7001}. 
 %This standard outlines five stakeholder groups, and for each group it explains the structure of the normative definitions of levels of transparency. 
@@ -367,18 +367,24 @@ In this section, we discuss the six main stages of the AERoS process targeting s
 %Instead, these will be considered as part of future work once AMLAS has been applied to the swarm.
 %However, we may consider this later once AMLAS has been applied to the swarm.
 Stage 1 contains two activities which are performed to define the safety assurance scope for the swarm (see Fig.~\ref{amlas-a-stage1}). 
-The goal of activity 1 is to define the safety assurance scope for the EB description and expected output. 
+The goal of Activity 1 is to define the safety assurance scope for the EB description and expected output. 
 The requirements defined in Stage 1 are independent of any EB technique or metric, which reflects the need for the swarm system to perform safely regardless of the deployed technology.
-The output of activity 1 is the safety requirements that are allocated to the swarm [E].
-In activity 2, we use the artefacts generated from Stage 1 to instantiate the EB Assurance Scoping Argument Pattern, which  produces output [F] (see Fig.~\ref{stage1-ap}). 
+The output of Activity 1 is the safety requirements that are allocated to the swarm [E]. 
+
+Following AMLAS \cite{Hawkins2021}, each stage of the AERoS process includes an activity to instantiate a safety argument pattern. 
+Argument patterns, which are modelled using the Goal Structuring Notation, can be used to explain the extent to which the evidence supports the relevant EB safety claims.  
+In Activity 2, we use the artefacts generated from Stage 1 (i.e. [A–E]) to instantiate the EB Assurance Scoping Argument Pattern ([F] – see Fig.~\ref{stage1-ap}). %, which produces output [G]. 
+Along with the other instantiated arguments resulting from the other stages of AERoS, this will constitute the safety case for the swarm. 
+Due to space considerations, we will discuss an example of the key elements from an argument pattern in a future paper.
+%Following AMLAS \cite{Hawkins2021}, each stage of the AERoS process includes an activity to instantiate a safety argument pattern. These patterns, which are modelled using the Goal Structuring Notation, can be used to explain the extent to which the evidence supports the relevant EB safety claims.  
+%Due to space considerations, a future paper will discuss an example of the key elements from an argument pattern.
+%In activity 2, we use the artefacts generated from Stage 1 to instantiate the EB Assurance Scoping Argument Pattern, which  produces output [G] (see Fig.~\ref{stage1-ap}). 
 % \subsubsection*{Activity 1. Define the safety assurance scope for the EB description and expected output}
 %\noindent \textbf{Activity 1: Define the safety assurance scope for the EB description and expected output}
 %The activity 1 requires the four following inputs: system safety requirements ([A]), the operating environment [B], the system description [C], and a description of the EB and expected output ([D]). 
 %Inputs A, B, C and D will later be used to determine the safety requirements which are allocated to the swarm. 
 
-
-
-\vspace{-4ex}
+%\vspace{-4ex}
 \begin{figure}
 	\centering
 	\begin{minipage}{.5\textwidth}
@@ -450,7 +456,7 @@ The agents are required to navigate a public space between collection and delive
 %
 %To describe our cloakroom use case, we must consider three inputs: sensor availability, neighbourhood data, and swarm parameters. 
 In the cloakroom use case, one can consider three inputs: sensor availability, neighbourhood data, and swarm parameters. 
-Here, the \emph{sensors} available to agents can be: cameras, Bluetooth communication devices, and light detection and ranging systems (see Fig.~\ref{system-description}). 
+The \emph{sensors} available to agents are: cameras, Bluetooth communication devices, and light detection and ranging systems (see Fig.~\ref{system-description}). 
 The neighbourhood data of the swarm can be specified through the communication systems available to agents, in this case Bluetooth. 
 Through the use of this short range communication, we can assume agents have access to neighbourhood data such as: approximate position of local agents, current behaviour statuses, an approximate history of box movement, and the amount of time deployed. 
 As for the swarm-level parameters, we can consider options specified by a user, i.e. the number of agents deployed, maximum speed of agents, and the number of agents permitted to be active at a time.
@@ -463,7 +469,7 @@ Once defined, the three inputs are then fed to the individual agents to instruct
 	% 	\label{system-description}
 	% \end{figure}
 
-\vspace{-5ex}
+%\vspace{-5ex}
 \begin{figure}
 	\centering
 	\begin{minipage}{.5\textwidth}
@@ -487,10 +493,12 @@ Once defined, the three inputs are then fed to the individual agents to instruct
 %\setlength{\belowcaptionskip}{-2ex}
 %\vspace{-15pt}
 
+\vspace{-1ex}
 \emph{[D] EB Description and Expected Output:}
 %\noindent \textbf{Artefact D -- EB description and expected output: }
 %This artefact describes the role and scope of the component within the system of which it is part, and the interfaces to which it is exposed.
-By ``expected output", we refer to the gains that can arise from the system by deploying multiple agents. In the cloakroom use case, the output is a collaborative system capable of collecting, sorting, and redelivering jackets in a public setting. 
+By ``expected output", we refer to the gains that can arise from the system by deploying multiple agents. 
+In the cloakroom use case, the output is a collaborative system capable of collecting, sorting, and redelivering jackets in a public setting. 
 To achieve this, the EB of the system needs to be manually engineered with consideration to the available sub-behaviours within an agent and the constraints outlined in the system description.
 
 %\noindent \textbf{Activity 2: Instantiate the EB assurance scoping argument pattern}
@@ -517,8 +525,8 @@ To achieve this, the EB of the system needs to be manually engineered with consi
 		%}}\\
 %As in the AMLAS process, Stage 2 contains three activities (Fig.~\ref{amlas-a-stage2}), which are performed to provide assurance in EB safety requirements for the swarm. 
 Stage 2 contains three activities (Fig.~\ref{amlas-a-stage2}), which are performed to provide assurance in EB safety requirements for the swarm. 
-In activity 5, the artefacts generated are used to instantiate the EB safety requirements assurance argument pattern. The scope of this stage is limited to the EB model of the swarm.
-A key output of activity 4 is [H] EB Safety Requirements, which states the safety requirements relating to: performance, adaptability and environment (see Table \ref{tab:reqs}), as well as human safety requirements (see Table \ref{tab:human-s}).
+In Activity 5, the artefacts generated are used to instantiate the EB safety requirements assurance argument pattern. The scope of this stage is limited to the EB model of the swarm.
+A key output of Activity 4 is [H] EB Safety Requirements, which states the safety requirements relating to: performance, adaptability and environment (see Table \ref{tab:reqs}), as well as human safety requirements (see Table \ref{tab:human-s}).
 
 %\begin{figure}[!h]
 %	\centering
@@ -594,7 +602,7 @@ A key output of activity 4 is [H] EB Safety Requirements, which states the safet
 \subsubsection*{Activity 3. Develop EB Safety Requirements}
 %\noindent \textbf{Activity 3: Develop EB safety requirements}
 
-The required input to activity 3 in Stage 2 is the safety requirements allocated to the swarm ([E]).
+The required input to Activity 3 in Stage 2 is the safety requirements allocated to the swarm ([E]).
 We define EB safety requirements to control the risk of swarm-level hazards by taking into account the system architecture defined and operating environment. 
 
 %Following AMLAS, although there can be a wide range of requirements for the swarm like scalability, security and interpretability, the EB safety requirements need to be limited to the ones that have an impact on the operational safety of the system. 
@@ -621,7 +629,7 @@ As the swarm system is composed of many agents, there is potential for a large n
 \subsubsection*{Activity 4: Validate EB Safety Requirements}
 %\noindent \textbf{Activity 4: Validate EB safety requirements}
 
-The required input to activity 4 in Stage 2 is the safety requirements allocated to the swarm ([E]). 
+The required input to Activity 4 in Stage 2 is the safety requirements allocated to the swarm ([E]). 
 % We use reviews and simulations to validate the EB safety requirements. 
 The EB safety requirements are validated by both review and simulation.
 Firstly, the requirements derived for the cloakroom have been reviewed by a safety-critical systems engineering expert to ensure that the specified EB safety requirements for the swarm will deliver its intended safe operation. 
@@ -925,7 +933,7 @@ When designing EB, data plays a vital role, though one that differs from the mac
 
 % AMLAS - This activity requires as input the ML safety requirements ([H]) as described in Stage 2 and, from these requirements, data requirements ([L]) shall be generated. Of particular interest in the development of data requirements are those safety requirements which pertain to the description of the system environment.
 
-In our adaptation of activity 6, we take the EB safety requirements [H] outlined in Stage 2 as an input (see Fig.~\ref{amlas-a-stage3}). These safety requirements guide the data requirements in this activity, feeding into the data specification that we outline here. We split the data requirement outputs into two multi-agent focused requirements: [L.0] data type requirements and [L.1] data availability constraints.
+In our adaptation of Activity 6, we take the EB safety requirements [H] outlined in Stage 2 as an input (see Fig.~\ref{amlas-a-stage3}). These safety requirements guide the data requirements in this activity, feeding into the data specification that we outline here. We split the data requirement outputs into two multi-agent focused requirements: [L.0] data type requirements and [L.1] data availability constraints.
 
 % \begin{table}[!t]%[h]
 	%     \centering
@@ -1098,10 +1106,10 @@ This report acts as an assessment of the data requirements, providing analysis a
 \vspace{-2ex}
 \subsubsection*{Activity 7. Define Swarm Evaluation Requirements}
 
-Taking the outputs [L.0] and [L.1] from activity 6, the evaluation requirements take into account how the EB of the swarm will be assessed, specifying the testing environment and the metrics comprising the test results.  
+Taking the outputs [L.0] and [L.1] from Activity 6, the evaluation requirements take into account how the EB of the swarm will be assessed, specifying the testing environment and the metrics comprising the test results.  
 
 
-\emph{[N] Test Environment:} This takes into consideration the requirements specified in activity 6, and defines the environment in which the EB will be tested. In most cases this will be multiple simulation environments featuring diverse sets of terrain, environmental conditions and obstacle configurations. There may also be instances in which this test environment is specified as a physical environment operating under laboratory conditions, with a hardware system acting as a test bed to observe designed behaviours.
+\emph{[N] Test Environment:} This takes into consideration the requirements specified in Activity 6, and defines the environment in which the EB will be tested. In most cases this will be multiple simulation environments featuring diverse sets of terrain, environmental conditions and obstacle configurations. There may also be instances in which this test environment is specified as a physical environment operating under laboratory conditions, with a hardware system acting as a test bed to observe designed behaviours.
 
 %\paragraph*{[O] Swarm Performance Metrics}
 \emph{[O] Swarm Performance Metrics:} This output is used to quantify how well the system is performing. While there may be multiple performance metrics, these metrics should be defined with respect to the primary function of the swarm system. Metrics that might feature in this output could include: the delivery rate in a logistics scenario, rate of area coverage in an exploration task, or the response time in disaster scenarios.
@@ -1116,7 +1124,7 @@ Taking the outputs [L.0] and [L.1] from activity 6, the evaluation requirements 
 
 \subsubsection*{Activity 8. Validate Evaluation Requirements}
 
-Taking into account outputs [N], [O] and [P] from activity 7, this activity aims to validate these components with respect to the requirements specified in activity 6. Should any discrepancies exist between the data requirements and the evaluation requirements, they should be justified appropriately and recorded in output [S] Swarm Evaluation Validation Results.
+Taking into account outputs [N], [O] and [P] from Activity 7, this activity aims to validate these components with respect to the requirements specified in Activity 6. Should any discrepancies exist between the data requirements and the evaluation requirements, they should be justified appropriately and recorded in output [S] Swarm Evaluation Validation Results.
 
 \subsection{Stage 4: Model Emergent Behaviour} \label{framework-stage4}
 
@@ -1236,7 +1244,8 @@ For example, to assess that the swarm system meets the requirements for performa
 
 % For example, assessing the swarm system meets the requirements for performance given a motor fault injection [RQ1.6] may be easier to realise in physical or simulation based testing approaches, than constructing a reliable formal model of robot behaviour given the complex physical dynamics of a faulty wheel. 
 %
-However, when considering the adaptability requirements, a formal, probabilistic-based verification technique of the EB algorithm [V] is more suitable. For example, in RQ2.1 analysis using a probabilistic finite state machine of the swarm behaviour (see \cite{Hoffmann2016,Calinescu2018}) could identify the dwell period within states. Monitors could be used to observe when agents enter a stationary state, e.g. \texttt{agent\_velocity=0 $\land $  t\_counter  $\ge$ 100}, and identify if time within that state exceeds some fixed value, and ascertain a probabilistic value to this metric.
+However, when considering the adaptability requirements, a formal, probabilistic-based verification technique of the EB algorithm [V] is more suitable. For example, in RQ2.1 analysis using a probabilistic finite state machine of the swarm behaviour could identify the dwell period within states. Monitors could be used to observe when agents enter a stationary state, e.g. \texttt{agent\_velocity=0 $\land $  t\_counter  $\ge$ 100}, and identify if time within that state exceeds some fixed value, and ascertain a probabilistic value to this metric.
+%However, when considering the adaptability requirements, a formal, probabilistic-based verification technique of the EB algorithm [V] is more suitable. For example, in RQ2.1 analysis using a probabilistic finite state machine of the swarm behaviour (see \cite{Hoffmann2016,Calinescu2018}) could identify the dwell period within states. Monitors could be used to observe when agents enter a stationary state, e.g. \texttt{agent\_velocity=0 $\land $  t\_counter  $\ge$ 100}, and identify if time within that state exceeds some fixed value, and ascertain a probabilistic value to this metric.
 %
 %These examples will now be expanded in more detail below.
 % \begin{figure}[!t]
@@ -1382,11 +1391,21 @@ Once the initial integration is complete, the physical implementation should und
 %\subsection{Stage 7: Assurance Case}
 
 \section{Discussion and Conclusions} \label{discussion-conclusions}
-\noindent \textbf{[Paragraph discussing the 6 stages of AERoS]}
+\noindent \textbf{[Paragraph discussing the 6 stages of AERoS – to be added by JW]}
 
-\noindent \textbf{[Ethics and Regulatory requirements]}
-%\subsubsection{Ethics Requirements}\label{ethics-r} 
-\newline Building on \cite{Porter2022}, and adapting it for our purposes, we intend to develop ethics requirements for swarm robots around the ethical principles of beneficence, non-maleficence, respect for autonomy, and justice. For this we will focus on the impact of our case study on members of the public, trained humans, manufacturers, and the company deploying the swarm, hence leaving aside questions about broader societal and environmental implications. A few examples of the main ethics requirements, each corresponding to a principle, are: (i) RQ1: The swarm \emph{shall} provide benefits to stakeholders; (ii) RQ2: The swarm \emph{shall} avoid causing unjustified harm to stakeholders; RQ3: The swarm \emph{shall} avoid undue constraints on stakeholders' personal autonomy. RQ4: The swarm \emph{shall} allow fair treatment of stakeholders.  
+...
+
+The focus of the AERoS process is ensuring safety assurance of EB in swarms. 
+However, the trustworthiness of an AS can be dependent on many other factors and not just safety, that include consideration of ethics, and governance and regulation of AS design and operation. 
+To this end, as part of future work, our study intends to build on \cite{Porter2022}, and develop ethics requirements for swarm robots around the ethical principles of beneficence, non-maleficence, respect for autonomy, and justice. A few examples of the main ethics requirements, each corresponding to a principle, are: (i) RQ1: The swarm \emph{shall} provide benefits to stakeholders; (ii) RQ2: The swarm \emph{shall} avoid causing unjustified harm to stakeholders; RQ3: The swarm \emph{shall} avoid undue constraints on stakeholders' personal autonomy. RQ4: The swarm \emph{shall} allow fair treatment of stakeholders. 
+In addition to ethical requirements, we also intend to introduce regulatory requirements into the consideration of AS specification.
+In particular we have observed the work of Macrae \cite{macrae2021learning}, who proposes: Structural, Organisational, Technological, Epistemic, and Cultural framework of sociotechnical risk in Autonomous and Intelligent systems and discusses its regulatory implications for swarms in a cloakroom scenario. 
+Viewing regulatory requirement analysis from a sociotechnical perspective allows us to move away from a purely technical conception of requirements, and helps us design AS that better fit the organisation and operators’ work in which safety considerations are meaningful within the wider system and operational context. 
+
+%\noindent \textbf{[Ethics and Regulatory requirements]}
+%%\subsubsection{Ethics Requirements}\label{ethics-r} 
+%\newline Building on \cite{Porter2022}, and adapting it for our purposes, we intend to develop ethics requirements for swarm robots around the ethical principles of beneficence, non-maleficence, respect for autonomy, and justice. For this we will focus on the impact of our case study on members of the public, trained humans, manufacturers, and the company deploying the swarm, hence leaving aside questions about broader societal and environmental implications. A few examples of the main ethics requirements, each corresponding to a principle, are: (i) RQ1: The swarm \emph{shall} provide benefits to stakeholders; (ii) RQ2: The swarm \emph{shall} avoid causing unjustified harm to stakeholders; RQ3: The swarm \emph{shall} avoid undue constraints on stakeholders' personal autonomy. RQ4: The swarm \emph{shall} allow fair treatment of stakeholders.  
+
 %
 %These broad requirements should be further specified, and this is where developing ethics matrices is helpful. The matrices allow us to identify benefits, risks of harm, and threats to autonomy and fair treatment caused by the development and deployment of the system. The significance and likelihood of the identified benefits, harms, and threats should then be considered to decide which can be tolerated and which should be addressed; for the latter, ethics sub-requirements should be developed to make changes to the design of the system, and so ensure the development of a more ethically aligned technology. Deciding which changes to prioritise is the most difficult part of the process, because there is no formulaic approach to follow; rather, this process requires interdisciplinary and multi-stakeholder discussions, individual and collective judgment, and ethics deliberation, which should include consideration of opportunity costs. However, that extends beyond the scope of this paper. Below we only give examples of how the matrices could be used to develop sub-requirements to specify RQ1-4. In line with the core aim of this paper, we only give examples focusing on the swarm's emergent behaviour.
 %Building on \cite{Porter2022}, and adapting it for our purposes, we developed ethics requirements for swarm robots around the ethical principles of beneficence, non-maleficence, respect for autonomy, and justice. To limit the scope of this paper, we decided to focus on the impact of our case study on members of the public, trained humans, manufacturers, and the company deploying the swarm, hence leaving aside questions about broader societal and environmental implications.
@@ -1416,8 +1435,9 @@ Once the initial integration is complete, the physical implementation should und
 
 %\subsubsection{Using the Structural, Organisational, Technological, Epistemic, and Cultural (SOTEC) framework for a regulatory requirements analysis of autonomous robotic swarms}\label{regulations-r}
 
-In addition to ethical requirements, we also introduce regulatory requirements into the consideration of specification produced in Stage 2.
-In particular we have observed the work of Macrae \cite{macrae2021learning}, who proposes: Structural, Organisational, Technological, Epistemic, and Cultural (SOTEC) framework of sociotechnical risk in Autonomous and Intelligent systems (AIS) and discusses its regulatory implications for autonomous swarms in a cloakroom scenario. The SOTEC framework proposes that risk and failure in AIS be understood in terms of five broad sociotechnical categories, each corresponding to different organisational, contextual, and human factors that might inform AIS safety requirements. The spotlight on sociotechnical sources of risk in AIS throughout section one provides a crucial launching point for the identification of regulatory requirements. Viewing regulatory requirement analysis from a sociotechnical perspective allows us to move away from a purely technical conception of requirements, and helps us design autonomous systems that better fit the organisation and operators’ work in which safety considerations are meaningful within the wider system and operational context. 
+%In addition to ethical requirements, we also introduce regulatory requirements into the consideration of specification produced in Stage 2.
+%In particular we have observed the work of Macrae \cite{macrae2021learning}, who proposes: Structural, Organisational, Technological, Epistemic, and Cultural (SOTEC) framework of sociotechnical risk in Autonomous and Intelligent systems (AIS) and discusses its regulatory implications for autonomous swarms in a cloakroom scenario. The SOTEC framework proposes that risk and failure in AIS be understood in terms of five broad sociotechnical categories, each corresponding to different organisational, contextual, and human factors that might inform AIS safety requirements. The spotlight on sociotechnical sources of risk in AIS throughout section one provides a crucial launching point for the identification of regulatory requirements. Viewing regulatory requirement analysis from a sociotechnical perspective allows us to move away from a purely technical conception of requirements, and helps us design autonomous systems that better fit the organisation and operators’ work in which safety considerations are meaningful within the wider system and operational context. 
+%%
 %Based on these considerations, we illustrate the relevance of the SOTEC framework for crafting regulatory requirements for autonomous robotic swarms as a safety assurance mechanism. Following this, we then apply the framework by utilising insights from swarm engineers who are in the process of developing a case study of a swarm system for a cloakroom setting that is in early development and offering autonomous solutions to customers depositing their garments.
 
 % END OF PETE'S ADDITIONS
