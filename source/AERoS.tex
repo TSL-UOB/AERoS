@@ -371,11 +371,14 @@ The goal of Activity 1 is to define the safety assurance scope for the EB descri
 The requirements defined in Stage 1 are independent of any EB technique or metric, which reflects the need for the swarm system to perform safely regardless of the deployed technology.
 The output of Activity 1 is the safety requirements that are allocated to the swarm [E]. 
 
-Following AMLAS \cite{Hawkins2021}, each stage of the AERoS process includes an activity to instantiate a safety argument pattern. 
-Argument patterns, which are modelled using the Goal Structuring Notation, can be used to explain the extent to which the evidence supports the relevant EB safety claims.  
-In Activity 2, we use the artefacts generated from Stage 1 (i.e. [A–E]) to instantiate the EB Assurance Scoping Argument Pattern ([F] – see Fig.~\ref{stage1-ap}). %, which produces output [G]. 
-Along with the other instantiated arguments resulting from the other stages of AERoS, this will constitute the safety case for the swarm. 
-Due to space considerations, we will discuss an example of the key elements from an argument pattern in a future paper.
+Each stage of the AERoS process includes an activity to instantiate a safety argument pattern, following AMLAS~\cite{Hawkins2021}. 
+\textit{Argument patterns}, which are modelled using the Goal Structuring Notation, can be used to explain the extent to which the evidence supports the relevant EB safety claims.  
+In Activity 2, we use the artefacts generated from Stage 1 (i.e. [A–E]) to instantiate the EB Assurance Scoping Argument Pattern ([F] – see Fig.~\ref{stage1-ap}). 
+Due to space limitations, the descriptions of an argument pattern (e.g. [F]) are not included in this paper. 
+The instantiated argument [G] along with other other instantiated arguments resulting from the other five stages of AERoS constitute the safety case for the swarm. 
+%The safety case for the swarm will constitute all the instantiated arguments resulting from the six stages of AERoS.%, these will constitute the safety case for the swarm. 
+%Along with the other instantiated arguments resulting from the other five stages of AERoS, these will constitute the safety case for the swarm. 
+%Due to space considerations, we will discuss an example of the key elements from an argument pattern in a future paper.
 %Following AMLAS \cite{Hawkins2021}, each stage of the AERoS process includes an activity to instantiate a safety argument pattern. These patterns, which are modelled using the Goal Structuring Notation, can be used to explain the extent to which the evidence supports the relevant EB safety claims.  
 %Due to space considerations, a future paper will discuss an example of the key elements from an argument pattern.
 %In activity 2, we use the artefacts generated from Stage 1 to instantiate the EB Assurance Scoping Argument Pattern, which  produces output [G] (see Fig.~\ref{stage1-ap}). 
@@ -1396,11 +1399,15 @@ Once the initial integration is complete, the physical implementation should und
 ...
 
 The focus of the AERoS process is ensuring safety assurance of EB in swarms. 
-However, the trustworthiness of an AS can be dependent on many other factors and not just safety, that include consideration of ethics, and governance and regulation of AS design and operation. 
-To this end, as part of future work, our study intends to build on \cite{Porter2022}, and develop ethics requirements for swarm robots around the ethical principles of beneficence, non-maleficence, respect for autonomy, and justice. A few examples of the main ethics requirements, each corresponding to a principle, are: (i) RQ1: The swarm \emph{shall} provide benefits to stakeholders; (ii) RQ2: The swarm \emph{shall} avoid causing unjustified harm to stakeholders; RQ3: The swarm \emph{shall} avoid undue constraints on stakeholders' personal autonomy. RQ4: The swarm \emph{shall} allow fair treatment of stakeholders. 
-In addition to ethical requirements, we also intend to introduce regulatory requirements into the consideration of AS specification.
-In particular we have observed the work of Macrae \cite{macrae2021learning}, who proposes: Structural, Organisational, Technological, Epistemic, and Cultural framework of sociotechnical risk in Autonomous and Intelligent systems and discusses its regulatory implications for swarms in a cloakroom scenario. 
-Viewing regulatory requirement analysis from a sociotechnical perspective allows us to move away from a purely technical conception of requirements, and helps us design AS that better fit the organisation and operators’ work in which safety considerations are meaningful within the wider system and operational context. 
+However, the trustworthiness of an AS can be dependent on many other factors and not just safety, which include consideration of ethics, and governance and regulation of AS design and operation. 
+To this end, our study intends to build on \cite{Porter2022}, and develop ethics requirements for swarm robots around the ethical principles of beneficence, non-maleficence, respect for autonomy, and justice. A few examples of the main ethics requirements, each corresponding to a principle, are: (i) RQ1: The swarm \emph{shall} provide benefits to stakeholders; (ii) RQ2: The swarm \emph{shall} avoid causing unjustified harm to stakeholders; (iii) RQ3: The swarm \emph{shall} avoid undue constraints on stakeholders' personal autonomy; and (iv) RQ4: The swarm \emph{shall} allow fair treatment of stakeholders. 
+In addition to ethical requirements, we intend to introduce regulatory requirements into the consideration of AS specification.
+In particular we have observed the work of Macrae \cite{macrae2021learning}, who proposes: Structural, Organisational, Technological, Epistemic, and Cultural (SOTEC) framework of sociotechnical risk in Autonomous and Intelligent systems. 
+Viewing regulatory requirements analysis from a sociotechnical perspective allows us to move away from a purely technical conception of requirements, and helps us design AS that better fit the organisation and operators’ work in which safety considerations are meaningful within the wider system and operational context. 
+We will illustrate the relevance of SOTEC for crafting regulatory requirements for swarms as a safety assurance mechanism.
+%We will discusses SOTEC and the regulatory implications for swarms in a cloakroom scenario. 
+%and discusses its regulatory implications for autonomous swarms in a cloakroom scenario.
+%Based on these considerations, we illustrate the relevance of the SOTEC framework for crafting regulatory requirements for autonomous robotic swarms as a safety assurance mechanism.
 
 %\noindent \textbf{[Ethics and Regulatory requirements]}
 %%\subsubsection{Ethics Requirements}\label{ethics-r} 
@@ -1439,6 +1446,8 @@ Viewing regulatory requirement analysis from a sociotechnical perspective allows
 %In particular we have observed the work of Macrae \cite{macrae2021learning}, who proposes: Structural, Organisational, Technological, Epistemic, and Cultural (SOTEC) framework of sociotechnical risk in Autonomous and Intelligent systems (AIS) and discusses its regulatory implications for autonomous swarms in a cloakroom scenario. The SOTEC framework proposes that risk and failure in AIS be understood in terms of five broad sociotechnical categories, each corresponding to different organisational, contextual, and human factors that might inform AIS safety requirements. The spotlight on sociotechnical sources of risk in AIS throughout section one provides a crucial launching point for the identification of regulatory requirements. Viewing regulatory requirement analysis from a sociotechnical perspective allows us to move away from a purely technical conception of requirements, and helps us design autonomous systems that better fit the organisation and operators’ work in which safety considerations are meaningful within the wider system and operational context. 
 %%
 %Based on these considerations, we illustrate the relevance of the SOTEC framework for crafting regulatory requirements for autonomous robotic swarms as a safety assurance mechanism. Following this, we then apply the framework by utilising insights from swarm engineers who are in the process of developing a case study of a swarm system for a cloakroom setting that is in early development and offering autonomous solutions to customers depositing their garments.
+
+
 
 % END OF PETE'S ADDITIONS
 \section*{Acknowledgments}
