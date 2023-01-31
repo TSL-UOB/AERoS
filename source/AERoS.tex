@@ -48,7 +48,7 @@
 \begin{abstract} 
 The overall behaviours of a swarm are not explicitly engineered in the system, but they are an emergent consequence of the interaction of individual agents with each other and their environment. 
 This emergent functionality poses a challenge to ensure their \emph{assurance}, such as safety. 
-The main contribution of this paper is a process for the assurance of the emergent behaviour for use in autonomous robotic swarms called \emph{AERoS}, following the AMLAS guidance for machine learning-based systems. 
+The main contribution of this paper is a process for the safety assurance of the emergent behaviour for use in autonomous robotic swarms called \emph{AERoS}, following the AMLAS guidance for machine learning-based systems. 
 We explore our proposed guidance using illustrative examples taken from a public cloakroom case study.
 	
 \keywords{Assurance \and Safety \and Emergent behaviour \and Guidance \and Swarms.}
@@ -69,7 +69,7 @@ However, this model is unlikely to be suitable for systems with the ability to a
 ISO standards have been developed for the service robotics sector (non-industrial) (e.g.\ ISO 13482, ISO 23482-1, ISO 23482-2), and the industrial robotics sector (e.g.\ ISO 10218-1, ISO 10218-2, ISO/TS 15066) \cite{Abeywickrama2022}. 
 However, although these industry standards focus on ensuring assurance of robots at the individual-level, they do not cover safety or any other extra-functional property at the \emph{swarm}-level that may arise through emergent behaviour (EB). %, which provides motivation for our study.
 
-The main contribution of this paper is a process or guidance for the assurance of EB for use in autonomous robotic swarms (AERoS), following the AMLAS guidance~\cite{Hawkins2021} proposed for machine learning systems. 
+The main contribution of this paper is a process or guidance for the safety assurance of EB for use in autonomous robotic swarms (AERoS), following the AMLAS guidance~\cite{Hawkins2021} proposed for machine learning systems. 
 AERoS covers six EB lifecycle stages: safety assurance scoping, safety requirements elicitation, data management, model EB, model verification, and model deployment. 
 We illustrate the AERoS process using examples taken from a public cloakroom case study. 
 Let us consider a company that organises bespoke events with 50 to 10000 attendees~\cite{Jones2020}. 
@@ -85,8 +85,8 @@ In Section~\ref{relatedwork}, we provide key related works to our study. Section
 An AS with evolving functionality is considered to follow a different, much more iterative life-cycle compared to the conventional V\&V model. 
 Thus, there is a need for new standards and assurance processes that extend beyond design time and allow continuous certification at runtime~\cite{Rushby2008}. 
 In this context, there have been several standards and guidance introduced by several industry committees and research groups. In 2016, the British Standards Institution introduced the \emph{BS 8611} standard that provides a guide to the ethical design and application of robots and robotic systems. % \cite{BS8611}. 
-Then, IEEE initiated the development of a series of standards to address autonomy, ethical issues, transparency, data privacy and trustworthiness (for e.g. IEEE P7001~\cite{IEEE-P7001}, P7007, P7010). 
-%Then, IEEE through its initiative Global Initiative on Ethics of Autonomous and Intelligent Systems initiated the development of a series of standards to address autonomy, ethical issues, transparency, data privacy and trustworthiness (for e.g. IEEE P7001~\cite{IEEE-P7001}, P7007, P7010). 
+%Then, IEEE initiated the development of a series of standards to address autonomy, ethical issues, transparency, data privacy and trustworthiness (for e.g. IEEE P7001~\cite{IEEE-P7001}, P7007, P7010). 
+Then, IEEE through its Global Initiative on Ethics of Autonomous and Intelligent Systems initiated the development of a series of standards to address autonomy, ethical issues, transparency, data privacy and trustworthiness (for e.g. IEEE P7001~\cite{IEEE-P7001}, P7007, P7010). 
 There are several standards and guidance related to machine learning in aeronautics, automotive, railway and industrial domains \cite{Kaakai2022}, e.g. Assurance of Machine Learning for use in Autonomous Systems (AMLAS) process~\cite{Hawkins2021}, European Union Aviation Safety Agency (EASA) concept paper, DEpendable and Explainable Learning (DEEL) white paper, Aerospace Vehicle System Institute (AVSI) report, Laboratoire National de Métrologie et d'Essais (LNE) certification, and UL 4600 standard. 
 
 \emph{AMLAS} provides guidance on how to systematically integrate safety assurance into the development of the machine learning components based on offline supervised learning~\cite{Hawkins2021}. 
@@ -116,11 +116,11 @@ In this section, we discuss the six main stages of the AERoS process targeting s
 
 \vspace{-2ex}
 \subsection{Stage 1: EB Safety Assurance Scoping} \label{framework-stage1}
-Stage 1 contains two activities which are performed to define the safety assurance scope for the swarm (Fig.~\ref{amlas-a-stage1}). In a swarm, individual robots execute simple behaviours, and these simple behaviours when performed by a large number of agents build to form EB.  
+Stage 1 contains two activities which are performed to define the safety assurance scope for the swarm (see Fig.~\ref{amlas-a-stage1}). In a swarm, individual robots execute simple behaviours, and these simple behaviours when performed by a large number of agents build to form EB.  
 \vspace{-2ex}
 \subsubsection*{Activity 1. Define Assurance Scope for the EB Description and Expected Output}
 The goal of Activity 1, which has four inputs [A--D], is to define the safety assurance scope for the EB description and expected output. 
-The output of this activity is the Safety Requirements Allocated to the Swarm [E]. The requirements defined are independent of any EB technique or metric, which reflects the need for the swarm system to perform safely regardless of the deployed technology.
+The output of this activity is the Safety Requirements Allocated to the Swarm [E]. The requirements defined in this stage are independent of any EB technique or metric, which reflects the need for the swarm system to perform safely regardless of the deployed technology.
 
 \begin{figure}
 	\vspace{-4ex}
@@ -149,7 +149,7 @@ Although this has been illustrated as a simplified linear chain of events, in re
 
 \emph{[B] Environment Description:}
 It is essential to consider the system environment when allocating safety requirements to the swarm. 
-In the cloakroom, a swarm of robotic agents collect and deliver jackets, stored in small box-like containers. 
+In the cloakroom, a swarm of robotic agents collects and delivers jackets, which are stored in small box-like containers. 
 The agents are required to navigate a public space between collection and delivery points. They use local communication, perception, and data to form an emergent system of navigation which allows them to easily traverse the public space. 
 
 \emph{[C] System Description:}
@@ -245,7 +245,7 @@ A key output of Activity 3 is the EB Safety Requirements [H], which states the s
 
 The required input to Activity 4 is the EB Safety Requirements [H].  
 The EB safety requirements are validated by both review and simulation.
-Firstly, the requirements derived for the cloakroom have been reviewed by a safety-critical systems engineering expert to ensure that the specified EB safety requirements for the swarm will deliver its intended safe operation. Secondly, in simulation we validated all safety requirements specified (except RQ3.5) for the cloakroom system using the Gazebo 3D simulator. 
+Firstly, the requirements derived for the cloakroom have been reviewed by a safety-critical systems engineering expert to ensure that the specified EB safety requirements for the swarm will deliver its intended safe operation. Secondly, in simulation we validated all safety requirements specified (excepting RQ3.5) for the cloakroom system using the Gazebo 3D simulator. 
 The simulation used is an exact replication of the 4m x 4m lab environment used for hardware implementation (see Fig.~\ref{3Dsim}). 
 In \textbf{Activity 5}, the artefacts generated in this stage are used to instantiate the EB Safety Requirements Argument Pattern [I].
 
@@ -338,7 +338,7 @@ In \textbf{Activity 5}, the artefacts generated in this stage are used to instan
 	\hline
 	4.9 & The swarm \emph{shall} experience \textbf{$<$ 10\%} increase in \textbf{human encounters }across \textbf{1000 seconds} of operation with \textbf{50\% injection} of \textbf{half-of-wheels motor faults} to the swarm.\\
 	\hline
-	4.10 & The agents of the swarm \emph{shall} only come within \textbf{2m} distance of a \textbf{human $<$ 20} times collectively across \textbf{1000 seconds} of \textbf{faulty} operations.
+	4.10 & The agents in the swarm \emph{shall} only come within \textbf{2m} distance of a \textbf{human $<$ 20} times collectively across \textbf{1000 seconds} of \textbf{faulty} operations.
 	\\		[1ex] 		
 	\hline
 \end{tabular}
@@ -356,7 +356,7 @@ When designing EB, data plays a vital role, though one that differs from the mac
 \centering
 \includegraphics[width=0.75\textwidth]{figures/AMLAS-STAGE-3-V4.png}
 \vspace{-2ex}
-\caption{AERoS data management process.}
+\caption{Stage 3: AERoS data management process.}
 \label{amlas-a-stage3}
 \vspace{-4ex}
 \end{figure*}
@@ -444,7 +444,7 @@ In our adaptation of AMLAS for the robot swarm,  we step away from the machine l
 \centering
 \includegraphics[width=0.55\textwidth]{figures/AMLAS-STAGE-4-V5.png}%amlas-a-stage4.png
 \vspace{-2ex}
-\caption{AERoS model learning process.}
+\caption{Stage 4: AERoS model learning process.}
 \label{amlas-a-stage4}
 \vspace{-4ex}
 \end{figure}
@@ -499,14 +499,14 @@ In this activity, we use the inputs to this stage to educate the implementation 
 	\centering
 	\includegraphics[width=0.99\textwidth]{figures/AMLAS-STAGE-5-V4.png}%amlas-a-stage5.png
 	\vspace{-2ex}
-	\caption{AERoS verification process.}
+	\caption{Stage 5: AERoS verification process.}
 	\label{amlas-a-stage5}
 \end{minipage}%
 \begin{minipage}{.5\textwidth}
 	\centering
 	\includegraphics[width=0.99\textwidth]{figures/AMLAS-STAGE-6-V5.png}%amlas-a-stage5.png
 	\vspace{-2ex}
-	\caption{AERoS model deployment assurance process.}
+	\caption{Stage 6: AERoS model deployment assurance process.}
 	\label{amlas-a-stage6}
 \end{minipage}
 \vspace{-4ex}
