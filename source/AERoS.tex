@@ -32,13 +32,13 @@
 %
 \author{Dhaminda B. Abeywickrama\inst{\dag}\inst{1}\orcidID{0000-0002-4423-0284} \and
 	James Wilson\inst{\dag}\inst{1}\orcidID{0000-0002-0758-6732} \and
-	Suet Lee\inst{1}\orcidID{2222--3333-4444-5555} \and
-	Greg Chance\inst{1}\orcidID{2222--3333-4444-5555} \and
-	Pete Winter\inst{1}\orcidID{2222--3333-4444-5555} \and
-	Arianna Manzini\inst{1}\orcidID{2222--3333-4444-5555} \and
-	Shane Windsor\inst{1}\orcidID{2222--3333-4444-5555} \and
-	Sabine Hauert\inst{1}\orcidID{2222--3333-4444-5555} \and
-	Kerstin Eder\inst{1}\orcidID{2222--3333-4444-5555}\thanks{\dag D. B. Abeywickrama and J. Wilson contributed equally.}}
+	Suet Lee\inst{1}\orcidID{?} \and
+	Greg Chance\inst{1}\orcidID{0000-0001-5334-370X} \and
+	Pete Winter\inst{1}\orcidID{0000-0003-0766-6297} \and
+	Arianna Manzini\inst{1}\orcidID{0000-0001-7710-8974} \and
+	Shane Windsor\inst{1}\orcidID{0000-0002-7597-4497} \and
+	Sabine Hauert\inst{1}\orcidID{0000-0003-0341-7306} \and
+	Kerstin Eder\inst{1}\orcidID{0000-0001-9746-1409}\thanks{\dag D. B. Abeywickrama and J. Wilson contributed equally.}}
 %
 \authorrunning{D. B. Abeywickrama and J. Wilson et al.}
 % First names are abbreviated in the running head.
@@ -120,7 +120,8 @@ In this section, we discuss the six main stages of the AERoS process targeting s
 
 %\vspace{-2ex}
 \subsection{Stage 1: EB Safety Assurance Scoping} \label{framework-stage1}
-Stage 1 contains two activities which are performed to define the safety assurance scope for the swarm (see Fig.~\ref{amlas-a-stage1}). In a swarm, individual robots execute simple behaviours, and these simple behaviours when performed by a large number of agents build to form EB.  
+Stage 1 contains two activities which are performed to define the safety assurance scope for the swarm (see Fig.~\ref{amlas-a-stage1}). In a swarm, individual robots execute simple behaviours, and when performed by a large number of agents, these simple behaviours build to form EB.
+%these simple behaviours when performed by a large number of agents build to form EB.  
 %\vspace{-2ex}
 \subsubsection*{Activity 1. Define Assurance Scope for the EB Description and Expected Output}
 The goal of Activity 1, which has four inputs [A--D], is to define the safety assurance scope for the EB description and expected output. 
@@ -270,9 +271,9 @@ A key output of Activity 3 is the EB Safety Requirements [H], which states the s
 		\hline
 		2.4 & The swarm agents \emph{shall} experience $<$ \textbf{10\%} increase in \textbf{stationary time} with \textbf{50\% injection} of \textbf{half-of-wheels motor faults} to the swarm.\\ 
 		\hline
-		2.5 & The swarm \emph{shall} experience $<$ \textbf{10\%} increase in \textbf{number of stationary agents} at any given time \textbf{10\% injection} of \textbf{full communication fault} to the swarm.\\
+		2.5 & The swarm \emph{shall} experience $<$ \textbf{10\%} increase in \textbf{number of stationary agents} at any given time with \textbf{10\% injection} of \textbf{full communication fault} to the swarm.\\
 		\hline
-		2.6 & The swarm agents \emph{shall} experience $<$ 10\% increase in \textbf{stationary time 10\% injection} of \textbf{full communication fault} to the swarm. \\	
+		2.6 & The swarm agents \emph{shall} experience $<$ \textbf{10\%} increase in \textbf{stationary time} with \textbf{10\% injection} of \textbf{full communication fault} to the swarm. \\	
 		\hline
 		2.7 & The swarm \emph{shall} have \textbf{$<$ 20\%} of its agents \textbf{stationary*} outside of the \textbf{delivery site} at a given time.
 		*Assumption: Agents are considered stationary once they have not moved for $>$ \textbf{10 seconds}. \\
@@ -307,7 +308,7 @@ A key output of Activity 3 is the EB Safety Requirements [H], which states the s
 	\begin{tabular}{p{6mm} p{116mm}}
 		RQ & \textbf{Human Safety Requirements} \\
 		\hline
-		4.1 & The agents in the swarm \emph{shall} travel at speeds of less than \textbf{0.5m/s} when within \textbf{2m} distance of a \textbf{trained human}.
+		4.1 & The agents in the swarm \emph{shall} travel at speeds of less than \textbf{0.5m/s} when within \textbf{2m} distance of a \textbf{trained human} (a worker who has received relevant training).
 		\\ 
 		\hline
 		4.2 & The agents in the swarm \emph{shall} travel at speeds of less than \textbf{0.25m/s} when within \textbf{3m} distance of a \textbf{member of the public}.
@@ -316,7 +317,7 @@ A key output of Activity 3 is the EB Safety Requirements [H], which states the s
 		4.3 & The agents in the swarm \emph{shall} only come within \textbf{2m} distance of a \textbf{human $<$ 10} times collectively across \textbf{1000 seconds} of \textbf{faultless} operations.
 		\\ 
 		\hline
-		4.4 & The swarm \emph{shall} only allow \textbf{$<$ 5 agents} to request intervention from a \textbf{trained human} at a given time
+		4.4 & The swarm \emph{shall} only allow \textbf{$<$ 5 agents} to request intervention from a \textbf{trained human} at a given time.
 		\\ 
 		\hline
 		4.5 & A \textbf{trained human} \emph{shall} monitor \textbf{5-20 agents} at a given time.
