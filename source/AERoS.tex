@@ -70,6 +70,7 @@ We explore our proposed guidance using an illustrative case study centred on a r
 
 \section{Introduction}\label{introduction}
 \todo{A friend of mine (who worked for an insurance company as safety inspector) read this and asked after the first page, whether this is grounded or airborne. This ought to be made clear at the start.}
+\todo{SW: Please check referencing commands - not clear why first reference is 13}
 Swarm robotics provides an approach to the coordination of large numbers of robots, which is inspired from the observation of social insects \cite{Sahin2005}. 
 The functionality of a swarm is emergent, and evolves based on the capabilities of the robots and the numbers of robots used. 
 The overall behaviours of a swarm are not explicitly engineered in the system, but they are an emergent consequence of the interaction of individual agents with each other and the environment \cite{Abeywickrama2022}, and this poses a challenge to ensure their \emph{assurance}. 
@@ -83,7 +84,7 @@ However, this model is unlikely to be suitable for systems with the ability to a
 ISO standards have been developed for the service robotics sector (non-industrial) (e.g.\ ISO 13482, ISO 23482-1, ISO 23482-2), and the industrial robotics sector (e.g.\ ISO 10218-1, ISO 10218-2, ISO/TS 15066) \cite{Abeywickrama2022}. 
 However, although these industry standards focus on ensuring assurance of robots at the individual-level, they do not cover safety or any other extra-functional property at the \emph{swarm}-level that may arise through emergent behaviour (EB). %, which provides motivation for our study.
 
-The main contribution of this paper is a process or guidance for the safety assurance of EB for use in autonomous robotic swarms (AERoS), following the AMLAS guidance~\cite{Hawkins2021} proposed for machine learning systems. 
+The main contribution of this paper is a process or guidance for the safety assurance of EB for use in autonomous robotic swarms (AERoS), adapted from the Assurance of Machine Learning for use in Autonomous Systems (AMLAS) process~\cite{Hawkins2021} proposed for machine learning systems. 
 AERoS covers six EB lifecycle stages: safety assurance scoping, safety requirements elicitation, data management, model EB, model verification, and model deployment. 
 We illustrate the AERoS process using examples taken from a public cloakroom case study. 
 Let us consider a company that organises bespoke events with 50 to 10000 attendees~\cite{Jones2020}. 
@@ -101,14 +102,13 @@ Thus, there is a need for new standards and assurance processes that extend beyo
 In this context, there have been several standards and guidance introduced by several industry committees and research groups. In 2016, the British Standards Institution introduced the \emph{BS 8611} standard that provides a guide to the ethical design and application of robots and robotic systems. % \cite{BS8611}. 
 %Then, IEEE initiated the development of a series of standards to address autonomy, ethical issues, transparency, data privacy and trustworthiness (for e.g. IEEE P7001~\cite{IEEE-P7001}, P7007, P7010). 
 Then, IEEE through its Global Initiative on Ethics of Autonomous and Intelligent Systems initiated the development of a series of standards to address autonomy, ethical issues, transparency, data privacy and trustworthiness (for e.g. IEEE P7001~\cite{IEEE-P7001}, P7007, P7010). 
-There are several standards and guidance related to machine learning in aeronautics, automotive, railway and industrial domains \cite{Kaakai2022}, e.g. Assurance of Machine Learning for use in Autonomous Systems (AMLAS) process~\cite{Hawkins2021}, European Union Aviation Safety Agency (EASA) concept paper, DEpendable and Explainable Learning (DEEL) white paper, Aerospace Vehicle System Institute (AVSI) report, Laboratoire National de Métrologie et d'Essais (LNE) certification, and UL 4600 standard. 
+There are several standards and guidance related to machine learning in aeronautics, automotive, railway and industrial domains \cite{Kaakai2022}, e.g. AMLAS process~\cite{Hawkins2021}, European Union Aviation Safety Agency (EASA) concept paper, DEpendable and Explainable Learning (DEEL) white paper, Aerospace Vehicle System Institute (AVSI) report, Laboratoire National de Métrologie et d'Essais (LNE) certification, and UL 4600 standard. None of the aforementioned standards and guidance target swarm systems.
 
-\emph{AMLAS} provides guidance on how to systematically integrate safety assurance into the development of the machine learning components based on offline supervised learning~\cite{Hawkins2021}. 
+In this work we used AMLAS \cite{Hawkins2021} as the foundation for developing an assurance process for autonomous robotic swarms. \emph{AMLAS} provides guidance on how to systematically integrate safety assurance into the development of the machine learning components based on offline supervised learning. 
 %AMLAS provides an explicit and structured safety case that the system is safe to operate in its intended context of use. 
 AMLAS contains six stages, and the assurance activities are performed in parallel to the development of machine learning component. 
 The process is iterative by design and feedback is used to update previous stages. 
-However, AMLAS specifically targets safety assurance of a machine learning model for a single system, and not for a collective as considered in our study. 
-Also, none of the aforementioned standards and guidance target swarm systems. 
+However, AMLAS specifically targets safety assurance of a machine learning model for a single system, and not for a collective as considered in our study.  
 
 %\vspace{-2ex}
 \section{AERoS Process}\label{framework}
@@ -167,9 +167,10 @@ The agents are required to navigate a public space between collection and delive
 	\vspace{-4ex}
 \end{figure}
 
+\todo{SW: Need to have white space between adjacent figures}
+
 \emph{[C] System Description:}
-In the cloakroom, we can consider three inputs: sensor availability, neighbourhood data, and swarm parameters. 
-The \emph{sensors} available to agents can be: cameras, Bluetooth communication devices, and light detection and ranging systems (see Fig.~\ref{system-description}). 
+In the cloakroom, we can consider three inputs: sensor availability, neighbourhood data, and swarm parameters (see Fig.~\ref{system-description}). The \emph{sensors} available to agents can be: cameras, Bluetooth communication devices, and light detection and ranging systems. 
 The neighbourhood data of the swarm can be specified through the communication systems available to agents, in this case Bluetooth. 
 Through the use of this short range communication, we can assume agents have access to neighbourhood data, such as: approximate position of local agents, current behaviour statuses, an approximate history of box movement, and the amount of time deployed. 
 As for the swarm-level parameters, we can consider options specified by a user, i.e. the number of agents deployed, maximum speed of agents, and the number of agents permitted to be active at a time.
@@ -187,8 +188,9 @@ Each stage of the AERoS process includes an activity to instantiate a safety arg
 \emph{Argument patterns}, which are modelled using the Goal Structuring Notation, can be used to explain the extent to which the evidence supports the relevant EB safety claims.  
 %GSN is widely used graphical notation to capture safety cases.  
 In Activity 2, we use the artefacts generated from Stage 1 (i.e. [A–E]) to instantiate the EB Assurance Scoping Argument Pattern ([F] – see Fig.~\ref{stage1-ap}). 
-The instantiated argument [G] along with other instantiated arguments resulting from the other five stages of AERoS constitute the safety case for the swarm. 
-Due to space limitations, activities to instantiate argument patterns of other stages are not included in this paper.
+The instantiated argument [G] along with other instantiated arguments resulting from the other five stages of AERoS constitute the safety case for the swarm. The activities to instantiate argument patterns of the other stages follow a very similar pattern so are not shown due to space limitations.
+%Due to space limitations, activities to instantiate argument patterns of other stages are not included in this paper.
+
 %Due to space limitations, the descriptions of activities to instantiate argument patterns in other stages of AERoS are not included in this paper.
 
 \begin{figure}[!t]
@@ -229,7 +231,7 @@ We consider several performance safety metrics under each requirements category:
 (ii) adaptability: percentage of swarm stationary outside of the delivery site, number of stationary agents, time since last agent moved; 
 (iii) human-safety: velocity or average velocity of agents, swarm size, rate of human encountered, proximity to humans;
 (iv) environment: sum of objects/$m^2$.
-As the swarm system is composed of many agents, there is potential for a large number of faults to occur at any given time. This motivates three further sub-categories for each of performance, adaptability and human-safety requirements: \emph{faultless operations}, \emph{failure modes (graceful degradation)}, and \emph{worst case}. 
+As the swarm system is composed of many agents, there is potential for a large number of faults to occur at any given time. This motivates three further sub-categories for each of the performance, adaptability and human-safety requirements: \emph{faultless operations}, \emph{failure modes (graceful degradation)}, and \emph{worst case}. 
 \emph{Graceful degradation} refers to the acceptable level of faults, their impact, and how the system should react when those faults are introduced. \emph{Worst case} accounts for the least acceptable impact the system should experience and the means to avoid it. 
 A key output of Activity 3 is the EB Safety Requirements [H], which states the safety requirements relating to: performance, adaptability and environment (see Table \ref{tab:reqs}), as well as human safety requirements (see Table \ref{tab:human-s}).
 
@@ -254,6 +256,7 @@ A key output of Activity 3 is the EB Safety Requirements [H], which states the s
 \vspace{-4ex}
 \end{figure}
 
+\todo{SW: Not sure of 'injection' phrasing used in table. This is something you would do during testing, but is it the right term for a requirement during operation? Maybe "with 10\% full communication faults within the swarm"}
 %\vspace{-4ex}
 %\tiny
 \begin{table}[!t]
@@ -306,7 +309,7 @@ A key output of Activity 3 is the EB Safety Requirements [H], which states the s
 		\\		[1ex] 		
 		\hline
 	\end{tabular}
-	\caption{\label{tab:reqs}Safety requirements for the cloakroom.}
+	\caption{\label{tab:reqs}Example safety requirements for the cloakroom scenario.}
 	\vspace{-4ex}
 \end{table}
 %\normalsize
@@ -351,7 +354,7 @@ A key output of Activity 3 is the EB Safety Requirements [H], which states the s
 		\\		[1ex] 		
 		\hline
 	\end{tabular}
-	\caption{\label{tab:human-s}Human safety requirements for the cloakroom.}
+	\caption{\label{tab:human-s}Example human safety requirements for the cloakroom scenario.}
 	\vspace{-4ex}
 \end{table}   
 %\normalsize
@@ -465,6 +468,7 @@ In our adaptation of AMLAS for the robot swarm,  we step away from the machine l
 
 The EB algorithm is engineered at the level of the individual agent behaviours for the Test Environment output [N] from Stage 3. The resultant EB must meet the Safety Requirements [H] defined in Stage 2 (see Fig.~\ref{amlas-a-stage4}). 
 In the cloakroom case study, the target EB for the swarm must ensure that items are stored and retrieved by individuals whilst meeting all requirements specified. For example, performance requirements RQ1.1 and RQ1.2 specify an upper bound on the low/high impact collisions that a swarm shall experience in a given time frame. These requirements may be fulfilled by constraining the maximum velocity of individual robots or by ensuring that a robot has a camera or infra-red sensors enabling it to detect obstacles.\todo{To make this future-proof, use ``is equipped with one or more sensory devices''} The key output from this activity is the candidate EB for testing.
+\todo{SW: Does the Candidate EB Algorithm box need a letter label? Odd to have every other box labelled and not this one.}
 
 \emph{[U] Model Development Log:} This should log the rationale in the design process of the EB algorithm, in particular how all specified Safety [H] and Data Type Requirements [L.0] have been met given the Data Availability Constraints [L.1].
 
@@ -500,7 +504,7 @@ However, when considering the adaptability requirements, a formal, probabilistic
 
 \emph{[P] Verification Scenario (Test Generation):} In most cases there will be multiple, valid verification scenarios (test cases) applicable for each of the safety specifications. A `good test case' must be \emph{effective} at finding bugs or defects, \emph{efficient} in minimising the number of tests required, use resources \emph{economically} and be \emph{robust} to system changes~\cite{Fewster1999}. 
 
-Verification Results [Z] from individual assessments form entries in the Verification Log [AA]. The Verification Log identifies assessments where assurance of the EB Algorithm [V] is acceptable with respect to the Safety Requirements [H] and can be used as a set of evidence for building an assurance case.%, eg. safety case, regulator, type approval. 
+Verification Results [Z] from individual assessments form entries in the Verification Log [AA]. The Verification Log identifies assessments where assurance of the EB Algorithm [V] is acceptable with respect to the Safety Requirements [H] and can be used as a set of evidence for building an assurance case. %, eg. safety case, regulator, type approval. 
 The artefacts generated in this stage are used to instantiate the EB Verification Argument Pattern [BB] in \textbf{Activity 14}.
 
 
@@ -545,6 +549,9 @@ The artefacts generated in this stage are used to instantiate the EB Deployment 
 
 %\vspace{-2ex}
 \section{Discussion and Future Work} \label{discussion-conclusions}
+
+\todo{SW: Just an optional thought, but it feels like the discussion of the AERoS framework itself is missing. Could one of the tables be removed to make more space for discussion? I think a paragraph or two on advantages and limitations would be enough.}
+
 Using AMLAS \cite{Hawkins2021} as a foundation, we have produced the six stage development process AERoS. This process acts as guidance for those looking to construct swarm robot systems, particularly those that exhibit EB through environmental and agent-to-agent interaction. The stages of AERoS break down the design of these systems to ensure that fundamental safety requirements are adhered to, even in instances of system degradation and compounded failures that should be expected, and managed, in swarm robot solutions. We achieve this with an approach that allows for iteration and feedback to the previous stages as issues of safety are encountered and investigated. We combine this iteration with repeated specification at each stage, observing the issue of safety through the lens of: data, modelling/behaviour design, verification, and deployment.
 
 While the focus of the AERoS process is to ensure safety assurance of EB in swarms, the trustworthiness of an AS can be dependent on many factors other than safety, which include consideration of ethics, and governance and regulation of AS design and operation. 
