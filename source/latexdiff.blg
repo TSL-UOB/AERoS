@@ -1,0 +1,76 @@
+This is BibTeX, Version 0.99d (TeX Live 2018)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: latexdiff.aux
+The style file: splncs04.bst
+Database file #1: AERoS-Bib.bib
+I was expecting a `,' or a `}'---line 31 of file AERoS-Bib.bib
+ :  abstract="A self-adaptive software system modifies its behavior at runtime in response to changes within the system or in its execution environment. The fulfillment of the system requirements needs to be guaranteed even in the presence of adverse conditions and adaptations. Thus, a key challenge for self-adaptive software systems is assurance. Traditionally, confidence in the correctness of a system is gained through a variety of activities and processes performed at development time, such as design analysis and testing. In the presence of self-adaptation, however, some of the assurance tasks may need to be performed at runtime. This need calls for the development of techniques that enable continuous assurance throughout the software life cycle. Fundamental to the development of runtime assurance techniques is research into the use of models at runtime (M@RT). This chapter explores the state of the art for using M@RT to address the assurance of self-adaptive software systems. It defines what information can be captured by M@RT, specifically for the purpose of assurance, and puts this definition into the context of existing work. We then outline key research challenges for assurance at runtime and characterize assurance methods. The chapter concludes with an exploration of selected application areas where M@RT could provide significant benefits beyond existing assurance techniques for adaptive systems."
+ :                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   %,
+I'm skipping whatever remains of this entry
+You're missing a field name---line 199 of file AERoS-Bib.bib
+ :  title =        "AFE 87: Machine learning",
+ :                                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 280 of file AERoS-Bib.bib
+ : @misc{Jia2021
+ :              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 288 of file AERoS-Bib.bib
+ : @inproceedings{Rushby2008
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 301 of file AERoS-Bib.bib
+ : @article{IEEE-P7001
+ :                    ,
+I'm skipping whatever remains of this entry
+You're missing a field name---line 557 of file AERoS-Bib.bib
+ :  
+ :  %doi = {https://doi.org/10.1002/aisy.202000110},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--empty journal in Abeywickrama2022
+Warning--can't use both author and editor fields in Cheng2014
+Warning--missing publisher in Fewster1999
+Warning--empty year in Jones2020
+You've used 14 entries,
+            2850 wiz_defined-function locations,
+            697 strings with 8110 characters,
+and the built_in function-call counts, 8895 in all, are:
+= -- 638
+> -- 444
+< -- 11
++ -- 180
+- -- 165
+* -- 631
+:= -- 1190
+add.period$ -- 18
+call.type$ -- 14
+change.case$ -- 125
+chr.to.int$ -- 0
+cite$ -- 18
+duplicate$ -- 744
+empty$ -- 711
+format.name$ -- 176
+if$ -- 1846
+int.to.chr$ -- 0
+int.to.str$ -- 14
+missing$ -- 178
+newline$ -- 48
+num.names$ -- 32
+pop$ -- 361
+preamble$ -- 1
+purify$ -- 109
+quote$ -- 0
+skip$ -- 175
+stack$ -- 0
+substring$ -- 343
+swap$ -- 440
+text.length$ -- 11
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 52
+warning$ -- 4
+while$ -- 58
+width$ -- 16
+write$ -- 142
+(There were 6 error messages)

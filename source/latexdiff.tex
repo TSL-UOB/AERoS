@@ -1,4 +1,7 @@
 % This is samplepaper.tex, a sample chapter demonstrating the
+%DIF LATEXDIFF DIFFERENCE FILE
+%DIF DEL SH.tex      Mon Feb  6 07:26:51 2023
+%DIF ADD AERoS.tex   Mon Feb  6 07:19:17 2023
 % LLNCS macro package for Springer Computer Science proceedings;
 % Version 2.20 of 2017/10/04
 %
@@ -21,6 +24,66 @@
 
 % Added by Dhaminda
 %\setlength{\belowcaptionskip}{-20pt}
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+\newcommand{\DIFscaledelfig}{0.5}
+%DIF HIGHLIGHTGRAPHICS PREAMBLE %DIF PREAMBLE
+\RequirePackage{settobox} %DIF PREAMBLE
+\RequirePackage{letltxmacro} %DIF PREAMBLE
+\newsavebox{\DIFdelgraphicsbox} %DIF PREAMBLE
+\newlength{\DIFdelgraphicswidth} %DIF PREAMBLE
+\newlength{\DIFdelgraphicsheight} %DIF PREAMBLE
+% store original definition of \includegraphics %DIF PREAMBLE
+\LetLtxMacro{\DIFOincludegraphics}{\includegraphics} %DIF PREAMBLE
+\newcommand{\DIFaddincludegraphics}[2][]{{\color{blue}\fbox{\DIFOincludegraphics[#1]{#2}}}} %DIF PREAMBLE
+\newcommand{\DIFdelincludegraphics}[2][]{% %DIF PREAMBLE
+\sbox{\DIFdelgraphicsbox}{\DIFOincludegraphics[#1]{#2}}% %DIF PREAMBLE
+\settoboxwidth{\DIFdelgraphicswidth}{\DIFdelgraphicsbox} %DIF PREAMBLE
+\settoboxtotalheight{\DIFdelgraphicsheight}{\DIFdelgraphicsbox} %DIF PREAMBLE
+\scalebox{\DIFscaledelfig}{% %DIF PREAMBLE
+\parbox[b]{\DIFdelgraphicswidth}{\usebox{\DIFdelgraphicsbox}\\[-\baselineskip] \rule{\DIFdelgraphicswidth}{0em}}\llap{\resizebox{\DIFdelgraphicswidth}{\DIFdelgraphicsheight}{% %DIF PREAMBLE
+\setlength{\unitlength}{\DIFdelgraphicswidth}% %DIF PREAMBLE
+\begin{picture}(1,1)% %DIF PREAMBLE
+\thicklines\linethickness{2pt} %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,0){\framebox(1,1){}}}% %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,0){\line( 1,1){1}}}% %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,1){\line(1,-1){1}}}% %DIF PREAMBLE
+\end{picture}% %DIF PREAMBLE
+}\hspace*{3pt}}} %DIF PREAMBLE
+} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddbegin}{\DIFaddbegin} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddend}{\DIFaddend} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelbegin}{\DIFdelbegin} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelend}{\DIFdelend} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddbegin}{\DIFOaddbegin \let\includegraphics\DIFaddincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddend}{\DIFOaddend \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelbegin}{\DIFOdelbegin \let\includegraphics\DIFdelincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelend}{\DIFOaddend \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddbeginFL}{\DIFaddbeginFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddendFL}{\DIFaddendFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelbeginFL}{\DIFdelbeginFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelendFL}{\DIFdelendFL} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddbeginFL}{\DIFOaddbeginFL \let\includegraphics\DIFaddincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelbeginFL}{\DIFOdelbeginFL \let\includegraphics\DIFdelincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
 
 \begin{document}
 	%
@@ -32,13 +95,20 @@
 %
 \author{Dhaminda B. Abeywickrama\inst{\dag}\inst{1}\orcidID{0000-0002-4423-0284} \and
 	James Wilson\inst{\dag}\inst{1}\orcidID{0000-0002-0758-6732} \and
-	Suet Lee\inst{1}\orcidID{0000-0002-9196-5769} \and
-	Greg Chance\inst{1}\orcidID{0000-0001-5334-370X} \and
-	Peter D. Winter\inst{1}\orcidID{0000-0003-0766-6297} \and
-	Arianna Manzini\inst{1}\orcidID{0000-0001-7710-8974} \and
-	Shane Windsor\inst{1}\orcidID{0000-0002-7597-4497} \and
-	Sabine Hauert\inst{1}\orcidID{0000-0003-0341-7306} \and
-	Kerstin Eder\inst{1}\orcidID{0000-0001-9746-1409}\thanks{\dag D. B. Abeywickrama and J. Wilson contributed equally.}}
+	Suet Lee\inst{1}\DIFdelbegin %DIFDELCMD < \orcidID{2222--3333-4444-5555} %%%
+\DIFdelend \DIFaddbegin \orcidID{?} \DIFaddend \and
+	Greg Chance\inst{1}\DIFdelbegin %DIFDELCMD < \orcidID{2222--3333-4444-5555} %%%
+\DIFdelend \DIFaddbegin \orcidID{0000-0001-5334-370X} \DIFaddend \and
+	\DIFdelbegin \DIFdel{Pete }\DIFdelend \DIFaddbegin \DIFadd{Peter D. }\DIFaddend Winter\inst{1}\DIFdelbegin %DIFDELCMD < \orcidID{2222--3333-4444-5555} %%%
+\DIFdelend \DIFaddbegin \orcidID{0000-0003-0766-6297} \DIFaddend \and
+	Arianna Manzini\inst{1}\DIFdelbegin %DIFDELCMD < \orcidID{2222--3333-4444-5555} %%%
+\DIFdelend \DIFaddbegin \orcidID{0000-0001-7710-8974} \DIFaddend \and
+	\DIFdelbegin \DIFdel{7th Author}\DIFdelend \DIFaddbegin \DIFadd{Shane Windsor}\DIFaddend \inst{1}\DIFdelbegin %DIFDELCMD < \orcidID{2222--3333-4444-5555} %%%
+\DIFdelend \DIFaddbegin \orcidID{0000-0002-7597-4497} \DIFaddend \and
+	\DIFdelbegin \DIFdel{8th Author}\DIFdelend \DIFaddbegin \DIFadd{Sabine Hauert}\DIFaddend \inst{1}\DIFdelbegin %DIFDELCMD < \orcidID{2222--3333-4444-5555} %%%
+\DIFdelend \DIFaddbegin \orcidID{0000-0003-0341-7306} \DIFaddend \and
+	\DIFdelbegin \DIFdel{9th Author}\DIFdelend \DIFaddbegin \DIFadd{Kerstin Eder}\DIFaddend \inst{1}\DIFdelbegin %DIFDELCMD < \orcidID{2222--3333-4444-5555}%%%
+\DIFdelend \DIFaddbegin \orcidID{0000-0001-9746-1409}\DIFaddend \thanks{\dag D. B. Abeywickrama and J. Wilson contributed equally.}}
 %
 \authorrunning{D. B. Abeywickrama and J. Wilson et al.}
 % First names are abbreviated in the running head.
@@ -50,12 +120,14 @@
 \maketitle              % typeset the header of the contribution
 %
 \begin{abstract} 
-The overall behaviours of a swarm are not explicitly engineered in the system. However, they are an emergent consequence of the interaction of individual agents with each other and their environment. 
+The overall behaviours of a swarm are not explicitly engineered in the system\DIFdelbegin \DIFdel{, but }\DIFdelend \DIFaddbegin \DIFadd{. However, }\DIFaddend they are an emergent consequence of the interaction of individual agents with each other and their environment. 
 This emergent functionality poses a challenge to ensure their \emph{assurance}, such as safety. 
-The main contribution of this paper is a process for the safety assurance of the emergent behaviour for use in autonomous robotic swarms called \emph{AERoS}, following the AMLAS guidance for machine learning systems. 
-We explore our proposed guidance using an illustrative case study centred on a robot swarm operating a public cloakroom.
-%We explore our proposed guidance using illustrative examples taken from a public cloakroom case study.
-	
+The main contribution of this paper is a process for the safety assurance of the emergent behaviour for use in autonomous robotic swarms called \emph{AERoS}, following the AMLAS guidance for machine \DIFdelbegin \DIFdel{learning-based }\DIFdelend \DIFaddbegin \DIFadd{learning }\DIFaddend systems. 
+We explore our proposed guidance using \DIFdelbegin \DIFdel{illustrative examples taken from a public cloakroom case study.
+}\DIFdelend \DIFaddbegin \DIFadd{an illustrative case study centred on a robot swarm operating a public cloakroom.
+%DIF > We explore our proposed guidance using illustrative examples taken from a public cloakroom case study.
+	}\DIFaddend 
+
 \keywords{Assurance \and Safety \and Emergent behaviour \and Guidance \and Swarms.}
 \end{abstract}
 
@@ -121,8 +193,8 @@ In this section, we discuss the six main stages of the AERoS process targeting s
 
 %\vspace{-2ex}
 \subsection{Stage 1: EB Safety Assurance Scoping} \label{framework-stage1}
-Stage 1 contains two activities which are performed to define the safety assurance scope for the swarm (see Fig.~\ref{amlas-a-stage1}). In a swarm, individual robots execute simple behaviours, and when performed by a large number of agents, these simple behaviours build to form EB.
-%these simple behaviours when performed by a large number of agents build to form EB.  
+Stage 1 contains two activities which are performed to define the safety assurance scope for the swarm (see Fig.~\ref{amlas-a-stage1}). In a swarm, individual robots execute simple behaviours, and \DIFdelbegin \DIFdel{these simple behaviours }\DIFdelend when performed by a large number of agents\DIFaddbegin \DIFadd{, these simple behaviours }\DIFaddend build to form EB.
+%DIF > these simple behaviours when performed by a large number of agents build to form EB.  
 %\vspace{-2ex}
 \subsubsection*{Activity 1. Define Assurance Scope for the EB Description and Expected Output}
 The goal of Activity 1, which has four inputs [A--D], is to define the safety assurance scope for the EB description and expected output. 
@@ -272,9 +344,9 @@ A key output of Activity 3 is the EB Safety Requirements [H], which states the s
 		\hline
 		2.4 & The swarm agents \emph{shall} experience $<$ \textbf{10\%} increase in \textbf{stationary time} with \textbf{50\% injection} of \textbf{half-of-wheels motor faults} to the swarm.\\ 
 		\hline
-		2.5 & The swarm \emph{shall} experience $<$ \textbf{10\%} increase in \textbf{number of stationary agents} at any given time with \textbf{10\% injection} of \textbf{full communication fault} to the swarm.\\
+		2.5 & The swarm \emph{shall} experience $<$ \textbf{10\%} increase in \textbf{number of stationary agents} at any given time \DIFaddbeginFL \DIFaddFL{with }\DIFaddendFL \textbf{10\% injection} of \textbf{full communication fault} to the swarm.\\
 		\hline
-		2.6 & The swarm agents \emph{shall} experience $<$ \textbf{10\%} increase in \textbf{stationary time} with \textbf{10\% injection} of \textbf{full communication fault} to the swarm. \\	
+		2.6 & The swarm agents \emph{shall} experience $<$ \DIFdelbeginFL \DIFdelFL{10\% increase in }\DIFdelendFL \DIFaddbeginFL \textbf{\DIFaddFL{10\%}} \DIFaddFL{increase in }\DIFaddendFL \textbf{stationary time\DIFdelbeginFL \DIFdelFL{10\% injection}\DIFdelendFL } \DIFaddbeginFL \DIFaddFL{with }\textbf{\DIFaddFL{10\% injection}} \DIFaddendFL of \textbf{full communication fault} to the swarm. \\	
 		\hline
 		2.7 & The swarm \emph{shall} have \textbf{$<$ 20\%} of its agents \textbf{stationary*} outside of the \textbf{delivery site} at a given time.
 		*Assumption: Agents are considered stationary once they have not moved for $>$ \textbf{10 seconds}. \\
@@ -309,7 +381,7 @@ A key output of Activity 3 is the EB Safety Requirements [H], which states the s
 	\begin{tabular}{p{6mm} p{116mm}}
 		RQ & \textbf{Human Safety Requirements} \\
 		\hline
-		4.1 & The agents in the swarm \emph{shall} travel at speeds of less than \textbf{0.5m/s} when within \textbf{2m} distance of a \textbf{trained human} (a worker who has received relevant training).
+		4.1 & The agents in the swarm \emph{shall} travel at speeds of less than \textbf{0.5m/s} when within \textbf{2m} distance of a \textbf{trained human} \DIFaddbeginFL \DIFaddFL{(a worker who has received relevant training)}\DIFaddendFL .
 		\\ 
 		\hline
 		4.2 & The agents in the swarm \emph{shall} travel at speeds of less than \textbf{0.25m/s} when within \textbf{3m} distance of a \textbf{member of the public}.
@@ -318,8 +390,8 @@ A key output of Activity 3 is the EB Safety Requirements [H], which states the s
 		4.3 & The agents in the swarm \emph{shall} only come within \textbf{2m} distance of a \textbf{human $<$ 10} times collectively across \textbf{1000 seconds} of \textbf{faultless} operations.
 		\\ 
 		\hline
-		4.4 & The swarm \emph{shall} only allow \textbf{$<$ 5 agents} to request intervention from a \textbf{trained human} at a given time.
-		\\ 
+		4.4 & The swarm \emph{shall} only allow \textbf{$<$ 5 agents} to request intervention from a \textbf{trained human} at a given time\DIFaddbeginFL \DIFaddFL{.
+		}\DIFaddendFL \\ 
 		\hline
 		4.5 & A \textbf{trained human} \emph{shall} monitor \textbf{5-20 agents} at a given time.
 		\\ 
@@ -535,14 +607,26 @@ The artefacts generated in this stage are used to instantiate the EB Deployment 
 Using AMLAS \cite{Hawkins2021} as a foundation, we have produced the six stage development process AERoS. This process acts as guidance for those looking to construct swarm robot systems, particularly those that exhibit EB through environmental and agent-to-agent interaction. The stages of AERoS break down the design of these systems to ensure that fundamental safety requirements are adhered to, even in instances of system degradation and compounded failures that should be expected, and managed, in swarm robot solutions. We achieve this with an approach that allows for iteration and feedback to the previous stages as issues of safety are encountered and investigated. We combine this iteration with repeated specification at each stage, observing the issue of safety through the lens of: data, modelling/behaviour design, verification, and deployment.
 
 While the focus of the AERoS process is to ensure safety assurance of EB in swarms, the trustworthiness of an AS can be dependent on many factors other than safety, which include consideration of ethics, and governance and regulation of AS design and operation. 
-In future work, we intend to build on Porter et al.’s \cite{Porter2022} Principle-based Ethical Assurance Argument for AI and Autonomous Systems and develop ethics requirements for swarm robots around the ethical principles of beneficence, non-maleficence, respect for autonomy, and justice. 
-%For example, based on these four principles, we may produce four key principles: (i) the swarm shall provide benefits to stakeholders; (ii) the swarm shall avoid causing unjustified harm to stakeholders; (iii) the swarm shall avoid undue constraints on stakeholders’ personal autonomy; and (iv) the swarm shall allow fair treatment of stakeholders. % Removed as informed by Pete on 3 Feb 2023
-In addition to ethics requirements, we intend to introduce regulatory requirements into the consideration of AS specification. In particular, we observe the work of Macrae’s~\cite{macrae2021learning} Structural, Organisational, Technological, Epistemic, and Cultural (SOTEC) framework to help us identify sources of socio-technical risk in Autonomous and Intelligent systems. Viewing regulatory requirement analysis from a socio-technical perspective allows us to move away from a purely technical conception of requirements, and helps us design AS that better fit the organisation and operators’ work in which safety considerations are meaningful within the wider system and operational context. The relevance of SOTEC for crafting regulatory requirements for the swarms in the cloakroom as a safety assurance mechanism will be described in a future paper. 
+\DIFdelbegin \DIFdel{To this end, our future workintends }\DIFdelend \DIFaddbegin \DIFadd{In future work, we intend }\DIFaddend to build on \DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
+\cite{Porter2022}}\hspace{0pt}%DIFAUXCMD
+, and }\DIFdelend \DIFaddbegin \DIFadd{Porter et al.’s \mbox{%DIFAUXCMD
+\cite{Porter2022} }\hspace{0pt}%DIFAUXCMD
+Principle-based Ethical Assurance Argument for AI and Autonomous Systems and }\DIFaddend develop ethics requirements for swarm robots around the ethical principles of beneficence, non-maleficence, respect for autonomy, and justice. 
+\DIFdelbegin \DIFdel{A few examples of the core considerations to ethics requirements, each corresponding to a principle, are: (i) RQ1: The swarm }\emph{\DIFdel{shall}} %DIFAUXCMD
+\DIFdel{provide benefits to stakeholders; (ii) RQ2: The swarm }\emph{\DIFdel{shall}} %DIFAUXCMD
+\DIFdel{avoid causing unjustified harm to stakeholders; (iii) RQ3: The swarm }\emph{\DIFdel{shall}} %DIFAUXCMD
+\DIFdel{avoid undue constraints on stakeholders' personal autonomy; and (iv) RQ4: The swarm }\emph{\DIFdel{shall}} %DIFAUXCMD
+\DIFdel{allow fair treatment of stakeholders. 
+}\DIFdelend %DIF > For example, based on these four principles, we may produce four key principles: (i) the swarm shall provide benefits to stakeholders; (ii) the swarm shall avoid causing unjustified harm to stakeholders; (iii) the swarm shall avoid undue constraints on stakeholders’ personal autonomy; and (iv) the swarm shall allow fair treatment of stakeholders. % Removed as informed by Pete on 3 Feb 2023
+In addition to ethics requirements, we intend to introduce regulatory requirements into the consideration of AS specification. In particular, we observe the work of Macrae’s\DIFaddbegin \DIFadd{~}\DIFaddend \cite{macrae2021learning} Structural, Organisational, Technological, Epistemic, and Cultural (SOTEC) framework to help us identify sources of socio-technical risk in Autonomous and Intelligent systems. Viewing regulatory requirement analysis from a socio-technical perspective allows us to move away from a purely technical conception of requirements, and helps us design AS that better fit the organisation and operators’ work in which safety considerations are meaningful within the wider system and operational context. \DIFdelbegin \DIFdel{We will illustrate the }\DIFdelend \DIFaddbegin \DIFadd{The }\DIFaddend relevance of SOTEC for crafting regulatory requirements for the swarms in the cloakroom as a safety assurance mechanism \DIFdelbegin \DIFdel{.
+}\DIFdelend \DIFaddbegin \DIFadd{will be described in a future paper. 
+}
 
 
-%While the focus of the AERoS process is to ensure safety assurance of EB in swarms, the trustworthiness of an AS can be dependent on many factors other than safety, which include consideration of ethics, and governance and regulation of AS design and operation. 
-%To this end, our future work intends to build on \cite{Porter2022}, and develop ethics requirements for swarm robots around the ethical principles of beneficence, non-maleficence, respect for autonomy, and justice. A few examples of the core considerations to ethics requirements, each corresponding to a principle, are: (i) RQ1: The swarm \emph{shall} provide benefits to stakeholders; (ii) RQ2: The swarm \emph{shall} avoid causing unjustified harm to stakeholders; (iii) RQ3: The swarm \emph{shall} avoid undue constraints on stakeholders' personal autonomy; and (iv) RQ4: The swarm \emph{shall} allow fair treatment of stakeholders. 
-%In addition to ethics requirements, we intend to introduce regulatory requirements into the consideration of AS specification. In particular, we observe the work of Macrae’s \cite{macrae2021learning} Structural, Organisational, Technological, Epistemic, and Cultural (SOTEC) framework to help us identify sources of socio-technical risk in Autonomous and Intelligent systems. Viewing regulatory requirement analysis from a socio-technical perspective allows us to move away from a purely technical conception of requirements, and helps us design AS that better fit the organisation and operators’ work in which safety considerations are meaningful within the wider system and operational context. We will illustrate the relevance of SOTEC for crafting regulatory requirements for the swarms in the cloakroom as a safety assurance mechanism.
+%DIF > While the focus of the AERoS process is to ensure safety assurance of EB in swarms, the trustworthiness of an AS can be dependent on many factors other than safety, which include consideration of ethics, and governance and regulation of AS design and operation. 
+%DIF > To this end, our future work intends to build on \cite{Porter2022}, and develop ethics requirements for swarm robots around the ethical principles of beneficence, non-maleficence, respect for autonomy, and justice. A few examples of the core considerations to ethics requirements, each corresponding to a principle, are: (i) RQ1: The swarm \emph{shall} provide benefits to stakeholders; (ii) RQ2: The swarm \emph{shall} avoid causing unjustified harm to stakeholders; (iii) RQ3: The swarm \emph{shall} avoid undue constraints on stakeholders' personal autonomy; and (iv) RQ4: The swarm \emph{shall} allow fair treatment of stakeholders. 
+%DIF > In addition to ethics requirements, we intend to introduce regulatory requirements into the consideration of AS specification. In particular, we observe the work of Macrae’s \cite{macrae2021learning} Structural, Organisational, Technological, Epistemic, and Cultural (SOTEC) framework to help us identify sources of socio-technical risk in Autonomous and Intelligent systems. Viewing regulatory requirement analysis from a socio-technical perspective allows us to move away from a purely technical conception of requirements, and helps us design AS that better fit the organisation and operators’ work in which safety considerations are meaningful within the wider system and operational context. We will illustrate the relevance of SOTEC for crafting regulatory requirements for the swarms in the cloakroom as a safety assurance mechanism.
+\DIFaddend 
 
 
 %In addition to ethical requirements, we also introduce regulatory requirements into the consideration of specification produced in Stage 2. In particular, we observe the work of Macrae’s \cite{macrae2021learning} Structural, Organisational, Technological, Epistemic, and Cultural (SOTEC) framework to help us identify sources of socio-technical risk in Autonomous and Intelligent systems (AIS). The SOTEC framework proposes that risk and failure in AIS be understood in terms of five broad socio-technical categories, each corresponding to different organisational, contextual, and human factors that might inform AIS safety requirements. The spotlight on socio-technical sources of risk in AIS provides a crucial launching point for the identification of regulatory requirements for autonomous swarms as part of the cloakroom case study. Viewing regulatory requirement analysis from a socio-technical perspective allows us to move away from a purely technical conception of requirements, and helps us design autonomous systems that better fit the organisation and operators’ work in which safety considerations are meaningful within the wider system and operational context. We will illustrate the relevance of SOTEC for crafting regulatory requirements for swarms as a safety assurance mechanism.

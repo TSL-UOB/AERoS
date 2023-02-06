@@ -1,0 +1,81 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\doi}[1]{https://doi.org/#1}
+
+\bibitem{Abeywickrama2022}
+Abeywickrama, D.B., Bennaceur, A., Chance, G., Demiris, Y., Kordoni, A.,
+  Levine, M., Moffat, L., Moreau, L., Mousavi, M.R., Nuseibeh, B., Ramamoorthy,
+  S., Ringert, J.O., Wilson, J., Windsor, S., Eder, K.: {On specifying for
+  trustworthiness}  (2022), \url{http://arxiv.org/abs/2206.11421}
+
+\bibitem{Cheng2014}
+Cheng, B.H.C., Eder, K.I., Gogolla, M., Grunske, L., Litoiu, M., M{\"u}ller,
+  H.A., Pelliccione, P., Perini, A., Qureshi, N.A., Rumpe, B., Schneider, D.,
+  Trollmann, F., Villegas, N.M.: Using Models at Runtime to Address Assurance
+  for Self-Adaptive Systems, pp. 101--136. Springer International Publishing,
+  Cham (2014)
+
+\bibitem{Fewster1999}
+Fewster, M., Graham, D.: Software Test Automation Effective use of test
+  execution tools (1999)
+
+\bibitem{Fisher2020}
+Fisher, M., Mascardi, V., Rozier, K.Y., Schlingloff, B.H., Winikoff, M.,
+  Yorke-Smith, N.: Towards a framework for certification of reliable autonomous
+  systems. Autonomous Agents and Multi-Agent Systems  \textbf{35}(8), ~65
+  (2021)
+
+\bibitem{Hawkins2021}
+Hawkins, R., Paterson, C., Picardi, C., Jia, Y., Calinescu, R., Habli, I.:
+  \relax{Guidance on the assurance of machine learning in autonomous systems
+  (AMLAS)}. Guidance Version 1.1, University of York (Mar 2021)
+
+\bibitem{Jia2021}
+Jia, Y., McDermid, J., Lawton, T., Habli, I.: The role of explainability in
+  assuring safety of machine learning in healthcare (2021).
+  \doi{10.48550/ARXIV.2109.00520}
+
+\bibitem{Jones2020}
+Jones, S., Milner, E., Sooriyabandara, M., Hauert, S.: Distributed situational
+  awareness in robot swarms. Advanced Intelligent Systems  \textbf{2}(11),
+  2000110
+
+\bibitem{Kaakai2022}
+Kaakai, F., Dmitriev, K., Adibhatla, S., Baskaya, E., Bezzecchi, E., Bharadwaj,
+  R., Brown, B., Gentile, G., Gingins, C., Grihon, S., Travers, C.: Toward a
+  machine learning development lifecycle for product certification and approval
+  in aviation. SAE Int. J. Aerosp.  \textbf{15}(2) (May 2022).
+  \doi{10.4271/01-15-02-0009}
+
+\bibitem{macrae2021learning}
+Macrae, C.: Learning from the failure of autonomous and intelligent systems:
+  Accidents, safety, and sociotechnical sources of risk. Risk analysis  (2021)
+
+\bibitem{Porter2022}
+Porter, Z., Habli, I., McDermid, J.A.: \relax{A Principle-based Ethical
+  Assurance Argument for AI and Autonomous Systems} (Mar 2022).
+  \doi{10.48550/ARXIV.2203.15370}
+
+\bibitem{ISO24765:2017}
+\relax{International Organization for Standardization}: \relax{ISO/IEC/IEEE
+  24765:2017 Systems and software engineering — Vocabulary}. Online (2017),
+  \url{https://www.iso.org/standard/71952.html}
+
+\bibitem{Rushby2008}
+Rushby, J.: Runtime certification. In: Leucker, M. (ed.) Runtime verification.
+  pp. 21--35. Springer Berlin Heidelberg, Berlin, Heidelberg (2008)
+
+\bibitem{Sahin2005}
+{\c{S}}ahin, E.: Swarm robotics: From sources of inspiration to domains of
+  application. In: {\c{S}}ahin, E., Spears, W.M. (eds.) Swarm Robotics. pp.
+  10--20. Springer Berlin Heidelberg, Berlin, Heidelberg (2005)
+
+\bibitem{IEEE-P7001}
+Winfield, A., Booth, S., Dennis, L.A., Egawa, T., Hastie, H., Jacobs, N.,
+  Muttram, R.I., Olszewska, J.I., Rajabiyazdi, F., Theodorou, A., Underwood,
+  M.A., Wortham, R.H., Watson, E.: \relax{IEEE P7001: A proposed standard on
+  transparency}. Frontiers in robotics and AI  \textbf{8}, ~225 (2021).
+  \doi{10.3389/frobt.2021.665729}
+
+\end{thebibliography}
