@@ -22,6 +22,8 @@
 % Added by Dhaminda
 %\setlength{\belowcaptionskip}{-20pt}
 
+\usepackage{todonotes}
+
 \begin{document}
 	%
 	\title{AERoS: Assurance of Emergent Behaviour for use in Autonomous Robotic Swarms}%\thanks{....}}
@@ -30,9 +32,9 @@
 % If the paper title is too long for the running head, you can set
 % an abbreviated paper title here
 %
-\author{Dhaminda B. Abeywickrama\inst{\dag}\inst{1}\orcidID{0000-0002-4423-0284} \and
+\author{Dhaminda B. Abeywickrama\inst{\dag}\inst{1}\orcidID{0000-0002-4423-0284} \and \\
 	James Wilson\inst{\dag}\inst{1}\orcidID{0000-0002-0758-6732} \and
-	Suet Lee\inst{1}\orcidID{0000-0002-9196-5769} \and
+	Suet Lee\inst{1}\orcidID{0000-0002-9196-5769} \and \\
 	Greg Chance\inst{1}\orcidID{0000-0001-5334-370X} \and
 	Peter D. Winter\inst{1}\orcidID{0000-0003-0766-6297} \and
 	Arianna Manzini\inst{1}\orcidID{0000-0001-7710-8974} \and
@@ -50,17 +52,24 @@
 \maketitle              % typeset the header of the contribution
 %
 \begin{abstract} 
-The overall behaviours of a swarm are not explicitly engineered in the system. However, they are an emergent consequence of the interaction of individual agents with each other and their environment. 
-This emergent functionality poses a challenge to ensure their \emph{assurance}, such as safety. 
-The main contribution of this paper is a process for the safety assurance of the emergent behaviour for use in autonomous robotic swarms called \emph{AERoS}, following the AMLAS guidance for machine learning systems. 
+%The overall behaviours of a swarm are not explicitly engineered in the system. However, they are an emergent consequence of the interaction of individual agents with each other and their environment. 
+%This emergent functionality poses a challenge to ensure their \emph{assurance}, such as safety. 
+%The main contribution of this paper is a process for the safety assurance of the emergent behaviour for use in autonomous robotic swarms called \emph{AERoS}, following the AMLAS guidance for machine learning systems. 
+%We explore our proposed guidance using an illustrative case study centred on a robot swarm operating a public cloakroom.
+% OLD> We explore our proposed guidance using illustrative examples taken from a public cloakroom case study.
+
+
+The behaviours of a swarm are not explicitly engineered. Instead, they are an emergent consequence of the interaction of individual agents within the swarm with each other and their environment.
+This emergent functionality poses a challenge to \emph{assurance}, such as safety assurance.
+The main contribution of this paper is a process for safety assurance of emergent behaviour for use in autonomous robotic swarms called \emph{AERoS}, following the Assurance of Machine Learning for use in Autonomous Systems (AMLAS) guidance. 
 We explore our proposed guidance using an illustrative case study centred on a robot swarm operating a public cloakroom.
-%We explore our proposed guidance using illustrative examples taken from a public cloakroom case study.
 	
 \keywords{Assurance \and Safety \and Emergent behaviour \and Guidance \and Swarms.}
 \end{abstract}
 
 
 \section{Introduction}\label{introduction}
+\todo{A friend of mine (who worked for an insurance company as safety inspector) read this and asked after the first page, whether this is grounded or airborne. This ought to be made clear at the start.}
 Swarm robotics provides an approach to the coordination of large numbers of robots, which is inspired from the observation of social insects \cite{Sahin2005}. 
 The functionality of a swarm is emergent, and evolves based on the capabilities of the robots and the numbers of robots used. 
 The overall behaviours of a swarm are not explicitly engineered in the system, but they are an emergent consequence of the interaction of individual agents with each other and the environment \cite{Abeywickrama2022}, and this poses a challenge to ensure their \emph{assurance}. 
@@ -266,7 +275,7 @@ A key output of Activity 3 is the EB Safety Requirements [H], which states the s
 		*Assumption: Agents are considered stationary once they have not moved for $>$ \textbf{10 seconds}.
 		\\ 
 		\hline
-		2.2 & All agents of the swarm \emph{shall} move at least every \textbf{100 seconds} if outside of the \textbf{delivery site}. \\ 
+		2.2 & All agents of the swarm \emph{shall} move at least every \textbf{100 seconds} if outside of the \textbf{delivery site}.\\ 
 		\hline
 		2.3 & The swarm \emph{shall} experience $<$ \textbf{10\%} increase in \textbf{number of stationary agents} at any given time with \textbf{50\% injection} of \textbf{half-of-wheels motor faults} to the swarm. \\
 		\hline
@@ -301,6 +310,10 @@ A key output of Activity 3 is the EB Safety Requirements [H], which states the s
 	\vspace{-4ex}
 \end{table}
 %\normalsize
+
+\todo{For 2.2, specify max.\ speed of swarm robots?}
+\todo{Specify the (max.) weight of the entities in the swarm, max.\ power of robots, allows conclusions on impact of forces, e.g.\ when crushing?}
+\todo{Specify max. weight of objects to be moved?}
 
 %\vspace{-4ex}
 %\tiny
@@ -451,7 +464,7 @@ In our adaptation of AMLAS for the robot swarm,  we step away from the machine l
 \subsubsection*{Activity 10. Create EB Algorithm}
 
 The EB algorithm is engineered at the level of the individual agent behaviours for the Test Environment output [N] from Stage 3. The resultant EB must meet the Safety Requirements [H] defined in Stage 2 (see Fig.~\ref{amlas-a-stage4}). 
-In the cloakroom case study, the target EB for the swarm must ensure that items are stored and retrieved by individuals whilst meeting all requirements specified. For example, performance requirements RQ1.1 and RQ1.2 specify an upper bound on the low/high impact collisions that a swarm shall experience in a given time frame. These requirements may be fulfilled by constraining the maximum velocity of individual robots or by ensuring that a robot has a camera or infra-red sensors enabling it to detect obstacles. The key output from this activity is the candidate EB for testing.
+In the cloakroom case study, the target EB for the swarm must ensure that items are stored and retrieved by individuals whilst meeting all requirements specified. For example, performance requirements RQ1.1 and RQ1.2 specify an upper bound on the low/high impact collisions that a swarm shall experience in a given time frame. These requirements may be fulfilled by constraining the maximum velocity of individual robots or by ensuring that a robot has a camera or infra-red sensors enabling it to detect obstacles.\todo{To make this future-proof, use ``is equipped with one or more sensory devices''} The key output from this activity is the candidate EB for testing.
 
 \emph{[U] Model Development Log:} This should log the rationale in the design process of the EB algorithm, in particular how all specified Safety [H] and Data Type Requirements [L.0] have been met given the Data Availability Constraints [L.1].
 
@@ -505,7 +518,7 @@ In this activity, we use the inputs to this stage to educate the implementation 
 
 Once the initial integration is complete, the physical implementation should undergo additional testing in which the system will be observed in multiple operational scenarios, as specified in [EE].
 
-\emph{[EE] Operational Scenarios:} These operational scenarios should reflect the environment descriptions specified in [B], offering a real-world situations to examine the behaviour of the integrated system. The testing of the integrated system in these true-to-operation environments should be conducted in a safe manner. Ensuring that the entire multi-agent system can be shut down in an emergency, or providing shadow operators for groups of agents, taking over should the swarm behave erroneously. In our use case, an example of [EE] may take the form of a small deployment of agents in a real but controlled storage area.
+\emph{[EE] Operational Scenarios:} These operational scenarios should reflect the environment descriptions specified in [B], offering a real-world situations to examine the behaviour of the integrated system. The testing of the integrated system in these true-to-operation environments should be conducted in a safe manner. Ensuring that the entire multi-agent system can be shut down in an emergency, or providing shadow operators for groups of agents, taking over should the swarm behave erroneously. In our use case, an example of [EE] may take the form of a small deployment of agents in a real but controlled storage area.\todo{More general, they should retire in an area/location that will not interfere with emergency services.}
 
 \emph{[FF] Integration Testing Results:} Results from the integration testing will be reported here, detailing how the system performs against the EB Safety Requirements [H] specified in Stage 2. 
 The artefacts generated in this stage are used to instantiate the EB Deployment Argument Pattern [GG] in \textbf{Activity 17}.
@@ -625,3 +638,7 @@ The work presented in this paper has been supported by the UK Engineering and Ph
 %\end{spacing}
 %
 \end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
