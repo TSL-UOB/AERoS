@@ -8,9 +8,11 @@
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage[firstpage]{draftwatermark}
+
 \SetWatermarkColor[gray]{0.95}
 \SetWatermarkText{Review}
 \SetWatermarkScale{5}
+\usepackage[export]{adjustbox}
 %\usepackage{setspace}
 % Used for displaying a sample figure. If possible, figure files should
 % be included in EPS format.
@@ -85,7 +87,7 @@ We explore our proposed guidance using an illustrative case study centred on a r
 
 \section{Introduction}\label{introduction}
 %\todo{A friend of mine (who worked for an insurance company as safety inspector) read this and asked after the first page, whether this is grounded or airborne. This ought to be made clear at the start.}
-% Dhaminda: This is addressed now
+% Dhaminda - this has been addressed. Please check. 
 %\todo{SW: Please check referencing commands - not clear why first reference is 13}
 %Dhaminda: We are using the bibliographystyle provided by the template without any changes. The template has been double checked and it is correct. \bibliographystyle{splncs04}
 
@@ -169,19 +171,39 @@ It is essential to consider the system environment when allocating safety requir
 In the cloakroom, a swarm of robotic agents collects and delivers jackets, which are stored in small box-like containers. 
 The agents are required to navigate a public space between collection and delivery points. They use local communication, perception, and data to form an emergent system of navigation which allows them to easily traverse the public space. 
 
+%\begin{figure}[!t]
+%	%\vspace{-4ex}
+%	\centering
+%	\begin{minipage}{.5\textwidth}
+%		\centering
+%		\includegraphics[width=0.99\textwidth]{figures/AMLAS-STAGE-1-V4.png}
+%		\vspace{-2ex}
+%		\caption{Stage 1: AERoS EB assurance scoping process.}
+%		\label{amlas-a-stage1}
+%	\end{minipage}%
+%	\begin{minipage}{.5\textwidth}
+%		\centering
+%		\includegraphics[width=0.99\textwidth]{figures/stage1-failureevents-v3.png}
+%		\vspace{-2ex}
+%		\caption{Failure conditions in a swarm adapted from DO-178C and AMLAS.}
+%		\label{failure-events}
+%	\end{minipage}
+%	\vspace{-4ex}
+%\end{figure}
+
 \begin{figure}[!t]
 	%\vspace{-4ex}
 	\centering
-	\begin{minipage}{.5\textwidth}
+	\begin{minipage}{.45\textwidth}
 		\centering
 		\includegraphics[width=0.99\textwidth]{figures/AMLAS-STAGE-1-V4.png}
 		\vspace{-2ex}
-		\caption{Stage 1: The AERoS EB assurance scoping process.}
+		\caption{Stage 1: The AERoS EB \newline assurance scoping process.}
 		\label{amlas-a-stage1}
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
-		\centering
-		\includegraphics[width=0.85\textwidth]{figures/stage1-failureevents-v3.png}
+		%\centering
+		\includegraphics[width=0.90\textwidth,right]{figures/stage1-failureevents-v3.png}
 		\vspace{-2ex}
 		\caption{Failure conditions in a swarm adapted from DO-178C and AMLAS.}
 		\label{failure-events}
@@ -189,7 +211,8 @@ The agents are required to navigate a public space between collection and delive
 	\vspace{-4ex}
 \end{figure}
 
-\todo{SW: Need to have white space between adjacent figures}
+%\todo{SW: Need to have white space between adjacent figures}
+% Dhaminda - this has been addressed. Please check. 
 
 \emph{[C] System Description:}
 In the cloakroom, we can consider three inputs: sensor availability, neighbourhood data, and swarm parameters (see Fig.~\ref{system-description}). The \emph{sensors} available to agents can be: cameras, Bluetooth communication devices, and light detection and ranging systems. 
@@ -234,6 +257,7 @@ The instantiated argument [G] along with other instantiated arguments resulting 
 %	\end{minipage}	
 %	\vspace{-4ex}
 %\end{figure}
+
 \begin{figure}[!t]
 	%\vspace{-4ex}
 	\centering
@@ -277,7 +301,6 @@ As the swarm system is composed of many agents, there is potential for a large n
 A key output of Activity 3 is [H], which describes the EB Safety Requirements relating to: performance, adaptability, and environment (see Table \ref{tab:reqs}), as well as human safety (see Table \ref{tab:human-s}).
 %A key output of Activity 3 is the EB Safety Requirements [H] which states the safety requirements relating to: performance, adaptability and environment (see Table \ref{tab:reqs}), as well as human safety requirements (see Table \ref{tab:human-s}).
 
-%\vspace{-4ex}
 %\begin{figure}[!t]
 %	%\vspace{-4ex}
 %	\centering
@@ -297,19 +320,20 @@ A key output of Activity 3 is [H], which describes the EB Safety Requirements re
 %\end{minipage}
 %\vspace{-4ex}
 %\end{figure}
+
 \begin{figure}[!t]
 	%\vspace{-4ex}
 	\centering
-	\begin{minipage}{.5\textwidth}
+	\begin{minipage}{.57\textwidth}
 		\centering
-		\includegraphics[width=0.99\textwidth]{figures/amlas-a-stage2-v3.png}
+		\includegraphics[width=0.9\textwidth]{figures/amlas-a-stage2-v3.png}
 		\vspace{-2ex}
-		\caption{Stage 2: The AERoS EB safety requirements assurance.}% process.}
+		\caption{Stage 2: The AERoS EB safety \newline requirements assurance.}% process.}
 	\label{amlas-a-stage2}
 \end{minipage}%
-\begin{minipage}{.55\textwidth}
+\begin{minipage}{.43\textwidth}
 	\centering
-	\includegraphics[width=0.9\textwidth]{figures/3Dsim.png}
+	\includegraphics[trim={30mm 25mm 45mm 30mm},clip,width=0.8\textwidth]{figures/3Dsim.png}
 	\vspace{-2ex}
 	\caption{3D simulation created to validate several EB safety requirements.}
 	\label{3Dsim}
@@ -338,7 +362,7 @@ A key output of Activity 3 is [H], which describes the EB Safety Requirements re
 %\end{figure}
 
 
-\todo{SW: Not sure of 'injection' phrasing used in table. This is something you would do during testing, but is it the right term for a requirement during operation? Maybe "with 10\% full communication faults within the swarm"}
+%\todo{SW: Not sure of 'injection' phrasing used in table. This is something you would do during testing, but is it the right term for a requirement during operation? Maybe "with 10\% full communication faults within the swarm"}
 %\vspace{-4ex}
 %\tiny
 \begin{table}[!t]
@@ -396,9 +420,9 @@ A key output of Activity 3 is [H], which describes the EB Safety Requirements re
 \end{table}
 %\normalsize
 
-\todo{For 2.2, specify max.\ speed of swarm robots?}
-\todo{Specify the (max.) weight of the entities in the swarm, max.\ power of robots, allows conclusions on impact of forces, e.g.\ when crushing?}
-\todo{Specify max. weight of objects to be moved?}
+%\todo{For 2.2, specify max.\ speed of swarm robots?}
+%\todo{Specify the (max.) weight of the entities in the swarm, max.\ power of robots, allows conclusions on impact of forces, e.g.\ when crushing?}
+%\todo{Specify max. weight of objects to be moved?}
 
 %\vspace{-4ex}
 %\tiny
@@ -617,12 +641,32 @@ A more general example of [EE] can be robots retiring in an area that will not i
 \emph{[FF] Integration Testing Results:} Results from the integration testing will be reported here, detailing how the system performs against the EB Safety Requirements [H] specified in Stage 2. 
 The artefacts generated in this stage are used to instantiate the EB Deployment Argument Pattern [GG] in \textbf{Activity 17}.
 
+%\begin{figure}[!t]
+%	%\vspace{-4ex}
+%	\centering
+%	\begin{minipage}{.5\textwidth}
+%		\centering
+%		\includegraphics[width=0.99\textwidth]{figures/AMLAS-STAGE-5-V4.png}%amlas-a-stage5.png
+%		\vspace{-2ex}
+%		\caption{Stage 5: The AERoS verification process.}
+%		\label{amlas-a-stage5}
+%	\end{minipage}%
+%	\begin{minipage}{.5\textwidth}
+%		\centering
+%		\includegraphics[width=0.99\textwidth]{figures/AMLAS-STAGE-6-V5.png}%amlas-a-stage5.png
+%		\vspace{-2ex}
+%		\caption{Stage 6: The AERoS model deployment assurance process.}
+%		\label{amlas-a-stage6}
+%	\end{minipage}
+%	\vspace{-4ex}
+%\end{figure}
+
 \begin{figure}[!t]
 	%\vspace{-4ex}
 	\centering
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[width=0.99\textwidth]{figures/AMLAS-STAGE-5-V4.png}%amlas-a-stage5.png
+		\includegraphics[width=0.9\textwidth]{figures/AMLAS-STAGE-5-V4.png}%amlas-a-stage5.png
 		\vspace{-2ex}
 		\caption{Stage 5: The AERoS verification process.}
 		\label{amlas-a-stage5}
@@ -641,13 +685,13 @@ The artefacts generated in this stage are used to instantiate the EB Deployment 
 \section{Discussion and Future Work} \label{discussion-conclusions}
 
 %\todo{SW: Just an optional thought, but it feels like the discussion of the AERoS framework itself is missing. Could one of the tables be removed to make more space for discussion? I think a paragraph or two on advantages and limitations would be enough.}
-
 Using AMLAS \cite{Hawkins2021} as a foundation, we have produced the six-stage development process AERoS. This process acts as guidance for those looking to construct swarm robot systems, particularly those that exhibit EB through environmental and agent-to-agent interaction. The stages of AERoS break down the design of these systems to ensure that fundamental safety requirements are adhered to, even in instances of system degradation and compounded failures that should be expected, and managed, in swarm robot solutions. We achieve this with an approach that allows for iteration of and feedback to the previous stages as issues of safety are encountered and investigated. We combine this iteration with repeated specification at each stage, observing the issue of safety through the lens of: data, modelling/behaviour design, verification, and deployment. 
 % Added by Dhaminda to address Shane's comment
 While the iterative nature of AERoS is a key advantage, a few limitations of this work can be identified. 
-First, the scope of this work has been limited to looking at inherent swarm qualities and the adaptation that arises from these. 
-However, one can expand on this, and consider machine learning for individual robots, for example by applying AMLAS. 
-Second, in this work, we explored the AERoS process by using only a single case study, which can be broadened by considering additional swarm use cases (e.g. monitoring fires in a natural environment, and a social swarm), and a worked example of the entire AERoS process.
+First, the scope of this work has been limited to investigating inherent swarm qualities and the adaptation that arises from these. 
+However, one can expand on this, and consider machine learning for individual robots (e.g. by applying AMLAS). 
+Second, we can broaden the evaluation by considering additional swarm use cases (e.g. monitoring fires in a natural environment, and a social swarm), and a worked example of the entire AERoS process.
+%in this work, we explored the AERoS process by using only a single case study, which can be broadened by considering additional swarm use cases (e.g. monitoring fires in a natural environment, and a social swarm), and a worked example of the entire AERoS process.
 
 
 %While the iterative nature of AERoS is a key advantage, a few limitations can be identified which we hope to address in future work. 
