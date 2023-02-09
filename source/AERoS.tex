@@ -108,7 +108,9 @@ The main contribution of this paper is a process or guidance for the safety assu
 %The main contribution of this paper is a process for the safety assurance of EB for use in autonomous robotic swarms. which can be grounded or airborne (AERoS).
 %AERoS is adapted from the Assurance of Machine Learning for use in Autonomous Systems (AMLAS) process~\cite{Hawkins2021} proposed for machine learning systems. 
 AERoS covers six EB lifecycle stages: safety assurance scoping, safety requirements elicitation, data management, model EB, model verification, and model deployment. 
-Although AERoS is generic and therefore can be applied to any swarm type (e.g. grounded, airborne), in this work, we explore it using an illustrative case study centred on a robot swarm operating in a public cloakroom. 
+The AERoS process is generic and therefore can be applied to any swarm type (e.g. grounded, airborne). 
+In this paper, we explore it using an illustrative case study centered on a grounded robot swarm operating in a public cloakroom. 
+%Although AERoS is generic and therefore can be applied to any swarm type (e.g. grounded, airborne), in this work, we explore it using an illustrative case study centred on a robot swarm operating in a public cloakroom. 
 %We explore the AERoS process using an illustrative case study centered on a robot swarm operating in a public cloakroom. 
 %We illustrate the AERoS process using examples taken from a public cloakroom case study. 
 Let us consider a company that organises bespoke events with 50 to 10000 attendees~\cite{Jones2020}. 
@@ -574,8 +576,8 @@ In our adaptation of AMLAS for the robot swarm,  we step away from the machine l
 
 The EB algorithm is engineered at the level of the individual agent behaviours for the Test Environment output [N] from Stage 3. The resultant EB must meet the Safety Requirements [H] defined in Stage 2 (see Fig.~\ref{amlas-a-stage4}). 
 In the cloakroom case study, the target EB for the swarm must ensure that items are stored and retrieved by individuals whilst meeting all requirements specified. For example, performance requirements RQ1.1 and RQ1.2 specify an upper bound on the low/high-impact collisions that a swarm shall experience in a given time frame. 
-%These requirements may be fulfilled by constraining the maximum velocity of individual robots. To future-proof, , or by making this future-proof a robot has one or more sensory devices, such as a camera or infra-red sensors enabling it to detect obstacles. 
-These requirements may be fulfilled by constraining the maximum velocity of individual robots, or to future-proof this by ensuring a robot has one or more sensory devices, such as a camera or infra-red sensors enabling it to detect obstacles. 
+%These requirements may be fulfilled by constraining the maximum velocity of individual robots, or to future-proof this by ensuring a robot has one or more sensory devices, such as a camera or infra-red sensors enabling it to detect obstacles. 
+These requirements may be fulfilled by constraining the maximum velocity of individual robots or by ensuring that a robot has one or more sensory devices, such as a camera or infra-red sensors, enabling it to detect obstacles. 
 The key output from this activity is the candidate EB for testing.
 %These requirements may be fulfilled by constraining the maximum velocity of individual robots or by ensuring that a robot has a camera or infra-red sensors enabling it to detect obstacles.\todo{To make this future-proof, use ``is equipped with one or more sensory devices''} The key output from this activity is the candidate EB for testing.
 %\todo{SW: Does the Candidate EB Algorithm box need a letter label? Odd to have every other box labelled and not this one.}
@@ -636,7 +638,9 @@ Once the initial integration is complete, the physical implementation should und
 %The testing of the integrated system in these true-to-operation environments should be conducted in a safe manner. 
 %Ensuring that the entire multi-agent system can be shut down in an emergency, or providing shadow operators for groups of agents, taking over should the swarm behave erroneously. 
 The testing of the integrated system in these true-to-operation environments should be conducted in a safe manner and ensure that the entire multi-agent system can be shut down in an emergency. 
-A more general example of [EE] can be robots retiring in an area that will not interfere with emergency services. In our use case, this can be a small deployment of agents in a real but controlled storage area.
+In the cloakroom, an example of [EE] may take the form of a small deployment of agents in a controlled storage area that will not interfere with emergency services.
+%A more general example of [EE] can be robots retiring in an area that will not interfere with emergency services. In our use case, this can be a small deployment of agents in a real but controlled storage area.
+%
 %In our use case, an example of [EE] may take the form of a small deployment of agents in a real but controlled storage area.\todo{More general, they should retire in an area/location that will not interfere with emergency services.}
 %Ensuring that the entire multi-agent system can be shut down in an emergency, or providing shadow operators for groups of agents, taking over should the swarm behave erroneously. In our use case, an example of [EE] may take the form of a small deployment of agents in a real but controlled storage area.\todo{More general, they should retire in an area/location that will not interfere with emergency services.}
 
@@ -684,7 +688,6 @@ The artefacts generated in this stage are used to instantiate the EB Deployment 
 \end{figure}
 
 %\vspace{-2ex}
-\newpage
 \section{Discussion and Future Work} \label{discussion-conclusions}
 
 %\todo{SW: Just an optional thought, but it feels like the discussion of the AERoS framework itself is missing. Could one of the tables be removed to make more space for discussion? I think a paragraph or two on advantages and limitations would be enough.}
@@ -692,7 +695,7 @@ Using AMLAS \cite{Hawkins2021} as a foundation, we have produced the six-stage d
 % Added by Dhaminda to address Shane's comment
 While the iterative nature of AERoS is a key advantage, a few limitations of this work can be identified. 
 First, the scope of this work has been limited to investigating inherent swarm qualities and the adaptation that arises from these. 
-However, one can expand on this, and consider machine learning for individual robots (e.g. by applying AMLAS). 
+However, one can expand on this, and consider adaptation of individual robots through techniques such as machine learning (e.g. by applying AMLAS).
 Second, we can broaden the evaluation by considering additional swarm use cases (e.g. monitoring fires in a natural environment, and a social swarm), and a worked example of the entire AERoS process.
 %in this work, we explored the AERoS process by using only a single case study, which can be broadened by considering additional swarm use cases (e.g. monitoring fires in a natural environment, and a social swarm), and a worked example of the entire AERoS process.
 
