@@ -198,7 +198,7 @@ The agents are required to navigate a public space between collection and delive
 	\centering
 	\begin{minipage}{.45\textwidth}
 		\centering
-		\includegraphics[width=0.99\textwidth]{figures/AMLAS-STAGE-1-V4.png}
+		\includegraphics[width=0.99\textwidth]{figures/AERoS-Stage1.png}
 		\vspace{-2ex}
 		\caption{Stage 1: The AERoS EB \newline assurance scoping process.}
 		\label{amlas-a-stage1}
@@ -328,7 +328,7 @@ A key output of Activity 3 is [H], which describes the EB Safety Requirements re
 	\centering
 	\begin{minipage}{.57\textwidth}
 		\centering
-		\includegraphics[width=0.9\textwidth]{figures/amlas-a-stage2-v3.png}
+		\includegraphics[width=0.9\textwidth]{figures/AERoS-Stage2.png}%amlas-a-stage2-v3.png}
 		\vspace{-2ex}
 		\caption{Stage 2: The AERoS EB safety \newline requirements assurance.}% process.}
 	\label{amlas-a-stage2}
@@ -489,7 +489,7 @@ In our adaptation of Activity 6, we take the EB Safety Requirements [H] outlined
 %\vspace{-2ex}
 \begin{figure*}[!t]
 	\centering
-	\includegraphics[width=0.75\textwidth]{figures/AMLAS-STAGE-3-V4.png}
+	\includegraphics[width=0.75\textwidth]{figures/AERoS-Stage3.png}%AMLAS-STAGE-3-V4.png
 	\vspace{-2ex}
 	\caption{Stage 3: The AERoS data management process.}
 	\label{amlas-a-stage3}
@@ -578,15 +578,15 @@ The EB algorithm is engineered at the level of the individual agent behaviours f
 In the cloakroom case study, the target EB for the swarm must ensure that items are stored and retrieved by individuals whilst meeting all requirements specified. For example, performance requirements RQ1.1 and RQ1.2 specify an upper bound on the low/high-impact collisions that a swarm shall experience in a given time frame. 
 %These requirements may be fulfilled by constraining the maximum velocity of individual robots, or to future-proof this by ensuring a robot has one or more sensory devices, such as a camera or infra-red sensors enabling it to detect obstacles. 
 These requirements may be fulfilled by constraining the maximum velocity of individual robots or by ensuring that a robot has one or more sensory devices, such as a camera or infra-red sensors, enabling it to detect obstacles. 
-The key output from this activity is the candidate EB for testing.
+The key output from this activity is the Candidate EB [U] for testing.
 %These requirements may be fulfilled by constraining the maximum velocity of individual robots or by ensuring that a robot has a camera or infra-red sensors enabling it to detect obstacles.\todo{To make this future-proof, use ``is equipped with one or more sensory devices''} The key output from this activity is the candidate EB for testing.
 %\todo{SW: Does the Candidate EB Algorithm box need a letter label? Odd to have every other box labelled and not this one.}
 
-\emph{[U] Model Development Log:} This should log the rationale in the design process of the EB algorithm, in particular how all specified Safety [H] and Data Type Requirements [L.0] have been met given the Data Availability Constraints [L.1].
+\emph{[V] Model Development Log:} This should log the rationale in the design process of the EB algorithm, in particular how all specified Safety [H] and Data Type Requirements [L.0] have been met given the Data Availability Constraints [L.1].
 
 \begin{figure}[!t]
 	\centering
-	\includegraphics[width=0.55\textwidth]{figures/AMLAS-STAGE-4-V5.png}%amlas-a-stage4.png
+	\includegraphics[width=0.55\textwidth]{figures/AERoS-Stage4.png}%amlas-a-stage4.png
 	\vspace{-2ex}
 	\caption{Stage 4: The AERoS model learning process.}
 	\label{amlas-a-stage4}
@@ -596,28 +596,28 @@ The key output from this activity is the candidate EB for testing.
 %\vspace{-2ex}
 \subsubsection*{Activity 11. Test EB Algorithm}
 
-In this activity, the candidate EB will be tested against the Swarm Performance Metrics [O] produced in Stage 3. Testing ensures that the EB performs as desired with respect to the defined metrics and in the case where performance passes accepted thresholds, the EB Algorithm [V] will be produced as the output of the activity. 
+In this activity, the candidate EB will be tested against the Swarm Performance Metrics [O] produced in Stage 3. Testing ensures that the EB performs as desired with respect to the defined metrics and in the case where performance passes accepted thresholds, the EB Algorithm [W] will be produced as the output of the activity. 
 
-\emph{[X] Internal Test Results:} This output provides a degree of transparency in the testing procedure as the results may be further examined to ensure tests have run correctly. 
-In \textbf{Activity 12}, the artefacts generated in this stage are used to instantiate the EB Argument Pattern [W].
+\emph{[Y] Internal Test Results:} This output provides a degree of transparency in the testing procedure as the results may be further examined to ensure tests have run correctly. 
+In \textbf{Activity 12}, the artefacts generated in this stage are used to instantiate the EB Argument Pattern [X].
 
 %\vspace{-2ex}
 \subsection{Stage 5: Model Verification} \label{framework-stage5}
 %\vspace{-2ex}
 \subsubsection*{Activity 13. Verify EB}
-The inputs to the verification process are the EB Safety Requirements [H], Verification Scenarios (Test Generation) [P], and the EB Algorithm [V] (see Fig.~\ref{amlas-a-stage5}). 
+The inputs to the verification process are the EB Safety Requirements [H], Verification Scenarios (Test Generation) [P], and the EB Algorithm [W] (see Fig.~\ref{amlas-a-stage5}). 
 %
 The verification method and assessment process within that method will be largely determined by the specifics of the safety requirements. Some safety specifications lend themselves towards certain assessment methods due to the scenarios they prescribe.
 %
 For example, to assess that the swarm system meets the requirements for performance given a motor fault injection RQ1.3, it may be easier to realise this in physical or simulation-based testing approaches rather than constructing a reliable formal model of robot behaviour given the complex physical dynamics of a faulty wheel.
 
 %
-However, when considering the adaptability requirements, a formal, probabilistic-based verification technique of the EB Algorithm [V] is more suitable. For example, in RQ2.1 analysis using a probabilistic finite state machine of the swarm behaviour could identify the dwell period within states. Monitors could be used to observe when agents enter a stationary state, for example, \texttt{agent\_velocity=0 $\land $  t\_counter  $\ge$ 100}, and identify if time within that state exceeds some fixed value, and ascertain a probabilistic value to this metric.
+However, when considering the adaptability requirements, a formal, probabilistic-based verification technique of the EB Algorithm [W] is more suitable. For example, in RQ2.1 analysis using a probabilistic finite state machine of the swarm behaviour could identify the dwell period within states. Monitors could be used to observe when agents enter a stationary state, for example, \texttt{agent\_velocity=0 $\land $  t\_counter  $\ge$ 100}, and identify if time within that state exceeds some fixed value, and ascertain a probabilistic value to this metric.
 
 \emph{[P] Verification Scenario (Test Generation):} In most cases there will be multiple, valid verification scenarios (test cases) applicable for each of the safety specifications. A `good test case' must be \emph{effective} at finding bugs or defects, \emph{efficient} in minimising the number of tests required, use resources \emph{economically} and be \emph{robust} to system changes~\cite{Fewster1999}. 
 
-Verification Results [Z] from individual assessments form entries in the Verification Log [AA]. The Verification Log identifies assessments where assurance of the EB Algorithm [V] is acceptable with respect to the Safety Requirements [H] and can be used as a set of evidence for building an assurance case. %, eg. safety case, regulator, type approval. 
-The artefacts generated in this stage are used to instantiate the EB Verification Argument Pattern [BB] in \textbf{Activity 14}.
+Verification Results [AA] from individual assessments form entries in the Verification Log [BB]. The Verification Log identifies assessments where assurance of the EB Algorithm [W] is acceptable with respect to the Safety Requirements [H] and can be used as a set of evidence for building an assurance case. %, eg. safety case, regulator, type approval. 
+The artefacts generated in this stage are used to instantiate the EB Verification Argument Pattern [CC] in \textbf{Activity 14}.
 
 
 %\vspace{-2ex}
@@ -625,27 +625,27 @@ The artefacts generated in this stage are used to instantiate the EB Verificatio
 %\vspace{-2ex}
 \subsubsection*{Activity 15. Integrate EB}
 
-With the EB verified, the next step is to take the EB Algorithm [V], System Safety Requirements [A], Environment Description [B], and System Description [C] and integrate the EB with the system to be deployed (see Fig.~\ref{amlas-a-stage6}). 
+With the EB verified, the next step is to take the EB Algorithm [W], System Safety Requirements [A], Environment Description [B], and System Description [C] and integrate the EB with the system to be deployed (see Fig.~\ref{amlas-a-stage6}). 
 
-In this activity, we use the inputs to this stage to educate the implementation of the EB and anticipate errors we might expect in the interactions between agents and the overall EB. Despite the rigorous validation and testing conducted in previous stages, there will still be a gap between the test environment and the intended, everyday-use, deployed scenario. The output, [DD] Erroneous Behaviour Log, captures these anticipated gaps between testing and reality and the differences in behaviour that may surface. 
+In this activity, we use the inputs to this stage to educate the implementation of the EB and anticipate errors we might expect in the interactions between agents and the overall EB. Despite the rigorous validation and testing conducted in previous stages, there will still be a gap between the test environment and the intended, everyday-use, deployed scenario. The output, [EE] Erroneous Behaviour Log, captures these anticipated gaps between testing and reality and the differences in behaviour that may surface. 
 
 %\vspace{-2ex}
 \subsubsection*{Activity 16. Test the Integration}
 
-Once the initial integration is complete, the physical implementation should undergo additional testing in which the system will be observed in multiple operational scenarios, as specified in [EE].
+Once the initial integration is complete, the physical implementation should undergo additional testing in which the system will be observed in multiple operational scenarios, as specified in [FF].
 
-\emph{[EE] Operational Scenarios:} These operational scenarios should reflect the environment descriptions specified in [B], offering real-world situations to examine the behaviour of the integrated system. 
+\emph{[FF] Operational Scenarios:} These operational scenarios should reflect the environment descriptions specified in [B], offering real-world situations to examine the behaviour of the integrated system. 
 %The testing of the integrated system in these true-to-operation environments should be conducted in a safe manner. 
 %Ensuring that the entire multi-agent system can be shut down in an emergency, or providing shadow operators for groups of agents, taking over should the swarm behave erroneously. 
 The testing of the integrated system in these true-to-operation environments should be conducted in a safe manner and ensure that the entire multi-agent system can be shut down in an emergency. 
-In the cloakroom, an example of [EE] may take the form of a small deployment of agents in a controlled storage area that will not interfere with emergency services.
+In the cloakroom, an example of [FF] may take the form of a small deployment of agents in a controlled storage area that will not interfere with emergency services.
 %A more general example of [EE] can be robots retiring in an area that will not interfere with emergency services. In our use case, this can be a small deployment of agents in a real but controlled storage area.
 %
 %In our use case, an example of [EE] may take the form of a small deployment of agents in a real but controlled storage area.\todo{More general, they should retire in an area/location that will not interfere with emergency services.}
 %Ensuring that the entire multi-agent system can be shut down in an emergency, or providing shadow operators for groups of agents, taking over should the swarm behave erroneously. In our use case, an example of [EE] may take the form of a small deployment of agents in a real but controlled storage area.\todo{More general, they should retire in an area/location that will not interfere with emergency services.}
 
-\emph{[FF] Integration Testing Results:} Results from the integration testing will be reported here, detailing how the system performs against the EB Safety Requirements [H] specified in Stage 2. 
-The artefacts generated in this stage are used to instantiate the EB Deployment Argument Pattern [GG] in \textbf{Activity 17}.
+\emph{[GG] Integration Testing Results:} Results from the integration testing will be reported here, detailing how the system performs against the EB Safety Requirements [H] specified in Stage 2. 
+The artefacts generated in this stage are used to instantiate the EB Deployment Argument Pattern [HH] in \textbf{Activity 17}.
 
 %\begin{figure}[!t]
 %	%\vspace{-4ex}
@@ -672,14 +672,14 @@ The artefacts generated in this stage are used to instantiate the EB Deployment 
 	\centering
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[width=0.9\textwidth]{figures/AMLAS-STAGE-5-V4.png}%amlas-a-stage5.png
+		\includegraphics[width=0.9\textwidth]{figures/AERoS-Stage5.png}%AMLAS-STAGE-5-V4.png
 		\vspace{-2ex}
 		\caption{Stage 5: The AERoS verification process.}
 		\label{amlas-a-stage5}
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
 		\centering
-		\includegraphics[width=0.99\textwidth]{figures/AMLAS-STAGE-6-V5.png}%amlas-a-stage5.png
+		\includegraphics[width=0.99\textwidth]{figures/AERoS-Stage6.png}%AMLAS-STAGE-6-V5.png
 		\vspace{-2ex}
 		\caption{Stage 6: The AERoS model \newline deployment assurance process.}
 		\label{amlas-a-stage6}
