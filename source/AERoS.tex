@@ -121,7 +121,7 @@ In Section~\ref{relatedwork}, we provide key related work to our study. Section~
 %\vspace{-2ex}
 \section{Related Work}\label{relatedwork}%\label{background-relatedwork}
 %\vspace{-2ex}
-AS with evolving functionality are considered to follow much more iterative life-cycle compared to the conventional V\&V model. 
+AS with evolving functionality are considered to follow a much more iterative life-cycle compared to the conventional V\&V model. 
 Thus, there is a need for new standards and assurance processes that extend beyond design time and allow continuous certification at runtime~\cite{Rushby2008}. 
 In this context, there have been several standards and guidance introduced by several industry committees and research groups. In 2016, the British Standards Institution introduced the BS 8611 standard that provides a guide to the ethical design and application of robots and robotic systems. % \cite{BS8611}. 
 %Then, IEEE initiated the development of a series of standards to address autonomy, ethical issues, transparency, data privacy and trustworthiness (for e.g. IEEE P7001~\cite{IEEE-P7001}, P7007, P7010). 
@@ -272,7 +272,7 @@ The instantiated argument [G] along with other instantiated arguments resulting 
 		\centering
 		\includegraphics[width=0.99\textwidth]{figures/stage1-argumentpattern-v3.png}
 		\vspace{-5ex}
-		\caption{EB Safety assurance scoping argument pattern.}
+		\caption{EB Safety assurance scoping \newline argument pattern.}
 		\label{stage1-ap}
 	\end{minipage}	
 	\vspace{-4ex}
@@ -335,7 +335,7 @@ A key output of Activity 3 is [H], which describes the EB Safety Requirements re
 	\centering
 	\includegraphics[trim={30mm 25mm 45mm 30mm},clip,width=0.8\textwidth]{figures/3Dsim.png}
 	\vspace{-2ex}
-	\caption{3D simulation created to validate several EB safety requirements.}
+	\caption{3D simulation created to \newline validate several EB safety requirements.}
 	\label{3Dsim}
 \end{minipage}
 \vspace{-4ex}
@@ -632,8 +632,10 @@ In this activity, we use the inputs to this stage to educate the implementation 
 
 Once the initial integration is complete, the physical implementation should undergo additional testing in which the system will be observed in multiple operational scenarios, as specified in [EE].
 
-\emph{[EE] Operational Scenarios:} These operational scenarios should reflect the environment descriptions specified in [B], offering real-world situations to examine the behaviour of the integrated system. The testing of the integrated system in these true-to-operation environments should be conducted in a safe manner. 
-Ensuring that the entire multi-agent system can be shut down in an emergency, or providing shadow operators for groups of agents, taking over should the swarm behave erroneously. 
+\emph{[EE] Operational Scenarios:} These operational scenarios should reflect the environment descriptions specified in [B], offering real-world situations to examine the behaviour of the integrated system. 
+%The testing of the integrated system in these true-to-operation environments should be conducted in a safe manner. 
+%Ensuring that the entire multi-agent system can be shut down in an emergency, or providing shadow operators for groups of agents, taking over should the swarm behave erroneously. 
+The testing of the integrated system in these true-to-operation environments should be conducted in a safe manner and ensure that the entire multi-agent system can be shut down in an emergency. 
 A more general example of [EE] can be robots retiring in an area that will not interfere with emergency services. In our use case, this can be a small deployment of agents in a real but controlled storage area.
 %In our use case, an example of [EE] may take the form of a small deployment of agents in a real but controlled storage area.\todo{More general, they should retire in an area/location that will not interfere with emergency services.}
 %Ensuring that the entire multi-agent system can be shut down in an emergency, or providing shadow operators for groups of agents, taking over should the swarm behave erroneously. In our use case, an example of [EE] may take the form of a small deployment of agents in a real but controlled storage area.\todo{More general, they should retire in an area/location that will not interfere with emergency services.}
@@ -675,13 +677,14 @@ The artefacts generated in this stage are used to instantiate the EB Deployment 
 		\centering
 		\includegraphics[width=0.99\textwidth]{figures/AMLAS-STAGE-6-V5.png}%amlas-a-stage5.png
 		\vspace{-2ex}
-		\caption{Stage 6: The AERoS model deployment assurance process.}
+		\caption{Stage 6: The AERoS model \newline deployment assurance process.}
 		\label{amlas-a-stage6}
 	\end{minipage}
 	\vspace{-4ex}
 \end{figure}
 
 %\vspace{-2ex}
+\newpage
 \section{Discussion and Future Work} \label{discussion-conclusions}
 
 %\todo{SW: Just an optional thought, but it feels like the discussion of the AERoS framework itself is missing. Could one of the tables be removed to make more space for discussion? I think a paragraph or two on advantages and limitations would be enough.}
