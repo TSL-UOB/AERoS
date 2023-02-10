@@ -28,9 +28,9 @@
 
 \begin{document}
 	%
-	\title{AERoS: Assurance of Emergent Behaviour for use in Autonomous Robotic Swarms}%\thanks{....}}
+	\title{AERoS: Assurance of Emergent Behaviour in Autonomous Robotic Swarms}%\thanks{....}}
 %
-\titlerunning{Assurance of Emergent Behaviour for use in Autonomous Robotic Swarms}%{Abbreviated paper title}
+\titlerunning{AERoS: Assurance of Emergent Behaviour in Autonomous Robotic Swarms}%{Abbreviated paper title}
 % If the paper title is too long for the running head, you can set
 % an abbreviated paper title here
 %
@@ -78,7 +78,7 @@
 
 The behaviours of a swarm are not explicitly engineered. Instead, they are an emergent consequence of the interaction of individual agents with each other and their environment.
 This emergent functionality poses a challenge to \emph{safety assurance}. %, such as safety assurance.
-The main contribution of this paper is a process for the safety assurance of emergent behaviour for use in autonomous robotic swarms called \emph{AERoS}, following the guidance on the Assurance of Machine Learning for use in Autonomous Systems (AMLAS). 
+The main contribution of this paper is a process for the safety assurance of emergent behaviour in autonomous robotic swarms called \emph{AERoS}, following the guidance on the Assurance of Machine Learning for use in Autonomous Systems (AMLAS). 
 We explore our proposed process using an illustrative case study centred on a robot swarm operating a public cloakroom.
 	
 \keywords{Assurance \and Safety \and Emergent behaviour \and Guidance \and Swarms.}
@@ -91,7 +91,7 @@ We explore our proposed process using an illustrative case study centred on a ro
 %\todo{SW: Please check referencing commands - not clear why first reference is 13}
 %Dhaminda: We are using the bibliographystyle provided by the template without any changes. The template has been double checked and it is correct. \bibliographystyle{splncs04}
 
-Swarm robotics provides an approach to the coordination of large numbers of robots inspired from the observation of social insects \cite{Sahin2005}. 
+Swarm robotics provides an approach to the coordination of large numbers of robots inspired from swarm behaviours in nature~\cite{Sahin2005}. 
 %The functionality of a swarm is emergent, and evolves based on the capabilities of the robots and the numbers of robots used. 
 The overall behaviours of a swarm are not explicitly engineered in the system, but they are an emergent consequence of the interaction of individual agents with each other and the environment \cite{Abeywickrama2022}, and this poses a challenge to ensure their \emph{assurance}. 
 According to the ISO standard for systems and software engineering vocabulary~\cite{ISO24765:2017}, \emph{assurance} is defined as ``all the planned and systematic activities implemented within the quality system, and demonstrated as needed, to provide adequate confidence that an entity will fulfil requirements for quality''. 
@@ -205,7 +205,7 @@ The agents are required to navigate a public space between collection and delive
 		\centering
 		\includegraphics[width=0.99\textwidth]{figures/AERoS-Stage1.png}
 		\vspace{-2ex}
-		\caption{Stage 1: The AERoS EB \newline assurance scoping process.}
+		\caption{Stage 1: The AERoS emergent behaviour assurance scoping process.}
 		\label{amlas-a-stage1}
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
@@ -222,10 +222,11 @@ The agents are required to navigate a public space between collection and delive
 % Dhaminda - this has been addressed. Please check. 
 
 \emph{[C] System Description:}
-In the cloakroom, we can consider three inputs: sensor availability, neighbourhood data, and swarm parameters (see Fig.~\ref{system-description}). The \emph{sensors} available to agents can be: cameras, Bluetooth communication devices, and light detection and ranging systems. 
+In the cloakroom, we can consider three inputs: sensor availability, neighbourhood data, and swarm parameters (see Fig.~\ref{system-description}). The \emph{sensors} available to agents can be cameras and laser time-of-flight sensors. 
 The neighbourhood data of the swarm can be specified through the communication systems available to agents, in this case Bluetooth. 
-Through the use of this short-range communication, agents can access neighbourhood data, such as approximate position of local agents, current behaviour statuses. %, an approximate history of box movement, and the amount of time deployed. 
-As for the swarm level parameters, we can consider options specified by a user, that is, the number of agents deployed, maximum speed of agents, and the number of agents permitted to be active at a time.
+Through the use of this short-range communication, agents can access neighbourhood data, such as approximate position and current state of local agents.  
+%, an approximate history of box movement, and the amount of time deployed. 
+As for the swarm level parameters, we can consider options specified by a user, that is, the number of agents deployed, and the maximum speed of agents. %, and the number of agents permitted to be active at a time.
 Once defined, the three inputs are then fed to the individual agents to instruct their behaviour. This behaviour enacted by multiple agents then produces a swarm level EB as the individuals interact with one another and their environment.
 %\vspace{-1ex}
 
@@ -236,7 +237,7 @@ For this the EB of the system needs to be manually engineered with consideration
 
 %\vspace{-7ex}
 \subsubsection*{Activity 2. Instantiate EB Assurance Scoping Argument Pattern}
-Each stage of the AERoS process includes an activity to instantiate a safety argument pattern based on the evidence and artefacts generated in that stage, following AMLAS~\cite{Hawkins2021}. 
+Each stage of the AERoS process includes an activity to instantiate a safety argument pattern based on the evidence and artefacts generated in that stage. %, following AMLAS~\cite{Hawkins2021}. 
 \emph{Argument patterns}, which are modelled using the Goal Structuring Notation, can be used to explain the extent to which the evidence supports the relevant EB safety claims.  
 %GSN is widely used graphical notation to capture safety cases.  
 In Activity 2, we use the artefacts generated from Stage 1 (i.e. [A–E]) to instantiate the EB Assurance Scoping Argument Pattern ([F] – see Fig.~\ref{stage1-ap}). 
@@ -272,14 +273,14 @@ The instantiated argument [G] along with other instantiated arguments resulting 
 		\centering
 		\includegraphics[width=0.9\textwidth]{figures/stage1-systema-v2.png}
 		%\vspace{-2ex}
-		\caption{System description.}
+		\caption{Inputs fed into individual agents to instruct their behaviour producing a swarm level emergent behaviour. }%{System description.}
 		\label{system-description}
 	\end{minipage}%
 	\begin{minipage}{.45\textwidth}
 		\centering
 		\includegraphics[width=0.99\textwidth]{figures/stage1-argumentpattern-v3.png}
 		\vspace{-5ex}
-		\caption{EB Safety assurance scoping \newline argument pattern.}
+		\caption{Emergent behaviour safety assurance scoping argument pattern.}
 		\label{stage1-ap}
 	\end{minipage}	
 	\vspace{-4ex}
@@ -288,7 +289,7 @@ The instantiated argument [G] along with other instantiated arguments resulting 
 %\vspace{-2ex}
 \subsection{Stage 2: EB Safety Requirements Assurance} \label{framework-stage2}
 Stage 2 contains three activities (Fig.~\ref{amlas-a-stage2}), which are performed to provide assurance in EB safety requirements for the swarm. 
-The scope of this stage is limited to the EB model of the swarm.
+%The scope of this stage is limited to the EB model of the swarm.
 
 %\vspace{-2ex}
 \subsubsection*{Activity 3. Develop EB Safety Requirements}
@@ -302,7 +303,7 @@ We consider several safety metrics under each requirement category:
 (i) performance: low-impact and high-impact collisions; 
 (ii) adaptability: percentage of swarm stationary outside of the delivery site, number of stationary agents, time since last agent moved; 
 (iii) human safety: velocity or average velocity of agents, swarm size, rate of humans encountered, proximity to humans;
-(iv) environment: sum of objects/$m^2$.
+(iv) environment: sum of objects in the area. %/$m^2$.
 As the swarm system is composed of many agents, there is potential for a large number of faults to occur at any given time. This motivates three further sub-categories for each of the performance, adaptability and human safety requirements: \emph{faultless operations}, \emph{failure modes (graceful degradation)}, and \emph{worst case}. 
 \emph{Graceful degradation} refers to the acceptable level of faults, their impact, and how the system should react when those faults are introduced. \emph{Worst case} accounts for the least acceptable impact the system should experience and the means to avoid it. 
 A key output of Activity 3 is [H], which describes the EB Safety Requirements relating to: performance, adaptability, and environment (see Table \ref{tab:reqs}), as well as human safety (see Table \ref{tab:human-s}).
@@ -335,14 +336,14 @@ A key output of Activity 3 is [H], which describes the EB Safety Requirements re
 		\centering
 		\includegraphics[width=0.9\textwidth]{figures/AERoS-Stage2.png}%amlas-a-stage2-v3.png}
 		\vspace{-2ex}
-		\caption{Stage 2: The AERoS EB safety \newline requirements assurance.}% process.}
+		\caption{Stage 2: The AERoS emergent behaviour safety requirements assurance.}% process.}
 	\label{amlas-a-stage2}
 \end{minipage}%
 \begin{minipage}{.43\textwidth}
 	\centering
 	\includegraphics[trim={30mm 25mm 45mm 30mm},clip,width=0.8\textwidth]{figures/3Dsim.png}
 	\vspace{-2ex}
-	\caption{3D simulation created to \newline validate several EB safety requirements.}
+	\caption{3D simulation created to validate several emergent behaviour safety requirements.}
 	\label{3Dsim}
 \end{minipage}
 \vspace{-4ex}
@@ -547,7 +548,7 @@ This element focuses on the \emph{relevance}, \emph{completeness}, \emph{accurac
 %\normalsize
 
 \emph{[L.1] Data Availability Constraints:}
-With the introduction of multiple agents comes the issue of data availability. Distributed communication is a key feature found in emergent systems. As such, it is crucial to define how much information each agent is expected to hold, how easily data may transfer between agents, and across what range agents should be able to transfer information between one another. Feasible constraints include: (i) \emph{storage capacity: }the swarm agents shall have a maximum of 2 GB of information stored on board at any point in time; (ii) \emph{available sensors:} the swarm agents shall only have access to environmental data deemed feasibly collectable by radially positioned infrared sensors; (iii) \emph{communication range:} the swarm agents shall only have access to other agent data when within communications range of 5 metres; and (iv) \emph{operator feedback:} the swarm agents shall only share information with non-agents (e.g. operator terminal) when within communications range of 5 metres.
+With the introduction of multiple agents comes the issue of data availability. Distributed communication is a key feature found in emergent systems. As such, it is crucial to define how much information each agent is expected to hold, how easily data may transfer between agents, and across what range agents should be able to transfer information between one another. Feasible constraints include: (i) \emph{storage capacity: }the swarm agents shall have a maximum of 2 GB of information stored on board at any point in time; (ii) \emph{available sensors:} the swarm agents shall only have access to environmental data deemed feasibly collectable by radially positioned cameras and laser time-of-flight sensors; (iii) \emph{communication range:} the swarm agents shall only have access to other agent data when within communications range of 5 metres; and (iv) \emph{operator feedback:} the swarm agents shall only share information with non-agents (e.g. operator terminal) when within communications range of 5 metres.
 
 \emph{[M] Data Requirements Justification Report:}
 This report acts as an assessment of the data requirements, providing analysis and explanation for how the requirements and constraints (outlined in [L.0] and [L.1]) address the EB Safety Requirements specified in [H].
@@ -555,7 +556,7 @@ This report acts as an assessment of the data requirements, providing analysis a
 %\vspace{-2ex}
 \subsubsection*{Activity 7. Define Swarm Evaluation Requirements}
 
-Taking the outputs [L.0] and [L.1] from Activity 6, the evaluation requirements take into account how the EB of the swarm will be assessed, specifying the testing environment and the metrics comprising the test results.  
+Taking the outputs [L.0] and [L.1] from Activity 6, the evaluation requirements consider how the EB of the swarm will be assessed, specifying the testing environment and the metrics comprising the test results.  
 
 \emph{[N] Test Environment:} This takes into consideration the requirements specified in Activity 6, and defines the environment in which the EB will be tested. In most cases this will be multiple simulation environments featuring diverse sets of the terrain, environmental conditions, and obstacle configurations. There may also be instances in which this test environment is specified as a physical environment operating under laboratory conditions, with a hardware system acting as a test bed to observe designed behaviours.
 
@@ -796,7 +797,7 @@ In addition to ethics requirements, we intend to introduce regulatory requiremen
 %\vspace{-2ex}
 \section*{Acknowledgments}
 %\vspace{-2.5ex}
-The authors would like to thank John Downer, Jonathan Ives, and Alvin Wilby for their fruitful comments. The work presented in this paper has been supported by the UK Engineering and Physical Sciences Research Council (EPSRC) under the grant [EP/V026518/1].
+The authors would like to thank John Downer, Jonathan Ives, Alvin Wilby, and the rest of the AMLAS team for their fruitful comments. The work presented in this paper has been supported by the UK Engineering and Physical Sciences Research Council (EPSRC) under the grant [EP/V026518/1].
 
 %\vspace{-1ex}
 %
