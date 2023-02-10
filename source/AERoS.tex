@@ -132,12 +132,15 @@ In this context, there have been several standards and guidance introduced by se
 Then, IEEE through its Global Initiative on Ethics of Autonomous and Intelligent Systems initiated the development of a series of standards to address autonomy, ethical issues, transparency, data privacy and trustworthiness (e.g. IEEE P7001~\cite{IEEE-P7001}, P7007, P7010). 
 There are several standards and guidance related to machine learning in aeronautics, automotive, railway and industrial domains \cite{Kaakai2022}, for example the AMLAS process~\cite{Hawkins2021}, the European Union Aviation Safety Agency (EASA) concept paper, the DEpendable and Explainable Learning (DEEL) white paper, the Aerospace Vehicle System Institute (AVSI) report, the Laboratoire National de Métrologie et d'Essais (LNE) certification, and the UL 4600 standard. None of the aforementioned standards and guidance targets swarm systems.
 
-In this work we used AMLAS \cite{Hawkins2021} as the foundation for developing an assurance process for autonomous robotic swarms. AMLAS provides guidance on how to systematically integrate safety assurance into the development of the machine learning components based on offline supervised learning. 
-%AMLAS provides an explicit and structured safety case that the system is safe to operate in its intended context of use. 
-AMLAS contains six stages, and the assurance activities are performed in parallel to the development of machine learning component. 
-The process is iterative by design and feedback is used to update previous stages. 
-However, AMLAS specifically targets the safety assurance of a machine learning model for a single system, and not for a collective as considered in our study.  
-In machine learning the behaviour emerges from the learning process, in swarms it emerges from the local interactions of the agents.
+In this work we used AMLAS \cite{Hawkins2021} as the foundation for developing an assurance process for autonomous robotic swarms. AMLAS provides a framework for the systematic integration of safety assurance in the development of a single machine learning component. In our case, the component under consideration is the EB of the swarm system which differs from AMLAS. However the development process for the EB algorithm is analogous to that of a machine learning model which provides a strong basis for adapting the AMLAS approach to safety assurance integration.
+AMLAS contains six stages where assurance activities are performed in parallel to the development of the machine learning components. The process is iterative by design and feedback is used to update previous stages. We follow a similar approach in the development of an algorithm for EB which arises as a result of local interactions of agents in the system, as opposed to the single model system that AMLAS targets.
+
+% In this work we used AMLAS \cite{Hawkins2021} as the foundation for developing an assurance process for autonomous robotic swarms. AMLAS provides guidance on how to systematically integrate safety assurance into the development of the machine learning components based on offline supervised learning. 
+% %AMLAS provides an explicit and structured safety case that the system is safe to operate in its intended context of use. 
+% AMLAS contains six stages, and the assurance activities are performed in parallel to the development of machine learning component. 
+% The process is iterative by design and feedback is used to update previous stages. 
+% However, AMLAS specifically targets the safety assurance of a machine learning model for a single system, and not for a collective as considered in our study.  
+% In machine learning the behaviour emerges from the learning process, in swarms it emerges from the local interactions of the agents.
 
 %\vspace{-2ex}
 \section{The AERoS Process}\label{framework}
@@ -300,11 +303,11 @@ We define EB safety requirements to control the risk of swarm level hazards by t
 In the swarm context, we consider four types of requirements: \emph{performance}, \emph{adaptability}, \emph{human safety}, and \emph{environment}. 
 In particular, the environment requirements capture the need for the system to be robust to variation in the operative space.
 We consider several safety metrics under each requirement category: 
-(i) performance: low-impact and high-impact collisions; 
+(i) performance: low-impact and high-impact collisions (the swarm should have the ability to avoid a \emph{critical number} of such collisions); 
 (ii) adaptability: percentage of swarm stationary outside of the delivery site, number of stationary agents, time since last agent moved; 
 (iii) human safety: velocity or average velocity of agents, swarm size, rate of humans encountered, proximity to humans;
-(iv) environment: sum of objects in the area. %/$m^2$.
-As the swarm system is composed of many agents, there is potential for a large number of faults to occur at any given time. This motivates three further sub-categories for each of the performance, adaptability and human safety requirements: \emph{faultless operations}, \emph{failure modes (graceful degradation)}, and \emph{worst case}. 
+(iv) environment: sum of objects in an area (density of objects in the environment \emph{should not block} swarm operation).
+As the swarm system is composed of many agents, there is potential for a large number of faults to occur at any given time \cite{Lee2022}. This motivates three further sub-categories for each of the performance, adaptability and human safety requirements: \emph{faultless operations}, \emph{failure modes (graceful degradation)}, and \emph{worst case}. 
 \emph{Graceful degradation} refers to the acceptable level of faults, their impact, and how the system should react when those faults are introduced. \emph{Worst case} accounts for the least acceptable impact the system should experience and the means to avoid it. 
 A key output of Activity 3 is [H], which describes the EB Safety Requirements relating to: performance, adaptability, and environment (see Table \ref{tab:reqs}), as well as human safety (see Table \ref{tab:human-s}).
 %A key output of Activity 3 is the EB Safety Requirements [H] which states the safety requirements relating to: performance, adaptability and environment (see Table \ref{tab:reqs}), as well as human safety requirements (see Table \ref{tab:human-s}).
@@ -380,9 +383,9 @@ A key output of Activity 3 is [H], which describes the EB Safety Requirements re
 		\hline
 		1.1 & The swarm \emph{shall} experience \textbf{$<$ 1 high-impact (V $>$ 0.5m/s)} collisions across \textbf{a day} of \textbf{faultless} operation. \\ 
 		\hline
-		1.2 & The swarm \emph{shall} experience \textbf{$<$ 0.1\%} increase in \textbf{high-impact} collisions across \textbf{a day's} operation with \textbf{10\% injection} of \textbf{full communication fault} to the swarm.\\ 
+		1.2 & The swarm \emph{shall} experience \textbf{$<$ 0.1\%} increase in \textbf{high-impact} collisions across \textbf{a day's} operation with \textbf{full communication faults} occurring in \textbf{10\%} of the swarm.\\ 
 		\hline
-		1.3 & The swarm \emph{shall} experience \textbf{$<$ 0.1\%} increase in \textbf{high-impact} collisions across \textbf{a day's} operation with \textbf{50\% injection} of \textbf{half-of-wheels motor faults} to the swarm.	\\	
+		1.3 & The swarm \emph{shall} experience \textbf{$<$ 0.1\%} increase in \textbf{high-impact} collisions across \textbf{a day's} operation with \textbf{half-of-wheels motor faults} occurring in \textbf{50\%} of the swarm.	\\	
 		\hline
 		1.4 & The swarm \emph{shall} experience \textbf{$<$ 2 high-impact (V $>$ 0.5m/s)} collisions across \textbf{a day} of \textbf{faulty} operation.  \\		[1ex] 		
 		\hline
@@ -394,13 +397,13 @@ A key output of Activity 3 is [H], which describes the EB Safety Requirements re
 		\hline
 		2.2 & All agents of the swarm \emph{shall} move at least every \textbf{100 seconds} if outside of the \textbf{delivery site}.\\ 
 		\hline
-		2.3 & The swarm \emph{shall} experience $<$ \textbf{10\%} increase in \textbf{number of stationary agents} at any given time with \textbf{50\% injection} of \textbf{half-of-wheels motor faults} to the swarm. \\
+		2.3 & The swarm \emph{shall} experience $<$ \textbf{10\%} increase in \textbf{number of stationary agents} at any given time with \textbf{half-of-wheels motor faults} occurring in \textbf{50\%} of the swarm. \\
 		\hline
-		2.4 & The swarm agents \emph{shall} experience $<$ \textbf{10\%} increase in \textbf{stationary time} with \textbf{50\% injection} of \textbf{half-of-wheels motor faults} to the swarm.\\ 
+		2.4 & The swarm agents \emph{shall} experience $<$ \textbf{10\%} increase in \textbf{stationary time} with \textbf{half-of-wheels motor faults} occurring in \textbf{50\%} of  the swarm.\\ 
 		\hline
-		2.5 & The swarm \emph{shall} experience $<$ \textbf{10\%} increase in \textbf{number of stationary agents} at any given time with \textbf{10\% injection} of \textbf{full communication fault} to the swarm.\\
+		2.5 & The swarm \emph{shall} experience $<$ \textbf{10\%} increase in \textbf{number of stationary agents} at any given time with \textbf{full communication faults} occurring in \textbf{10\%} of the swarm.\\
 		\hline
-		2.6 & The swarm agents \emph{shall} experience $<$ \textbf{10\%} increase in \textbf{stationary time} with \textbf{10\% injection} of \textbf{full communication fault} to the swarm. \\	
+		2.6 & The swarm agents \emph{shall} experience $<$ \textbf{10\%} increase in \textbf{stationary time} with \textbf{full communication faults} occurring in \textbf{10\%} of the swarm. \\	
 		\hline
 		2.7 & The swarm \emph{shall} have \textbf{$<$ 20\%} of its agents \textbf{stationary*} outside of the \textbf{delivery site} at a given time.
 		*Assumption: Agents are considered stationary once they have not moved for $>$ \textbf{10 seconds}. \\
@@ -460,9 +463,9 @@ A key output of Activity 3 is [H], which describes the EB Safety Requirements re
 		4.7 & A \textbf{member of the public} \emph{shall} receive  information from $<$ \textbf{5 agents} of the swarm at a given time.
 		\\ 
 		\hline
-		4.8 & The swarm \emph{shall} experience \textbf{$<$ 10\%} increase in \textbf{human encounters} across \textbf{1000 seconds} of operation with \textbf{10\% injection} of \textbf{full communication fault} to the swarm. \\
+		4.8 & The swarm \emph{shall} experience \textbf{$<$ 10\%} increase in \textbf{human encounters} across \textbf{1000 seconds} of operation with \textbf{full communication faults} occurring in \textbf{10\%} of the swarm. \\
 		\hline
-		4.9 & The swarm \emph{shall} experience \textbf{$<$ 10\%} increase in \textbf{human encounters }across \textbf{1000 seconds} of operation with \textbf{50\% injection} of \textbf{half-of-wheels motor faults} to the swarm.\\
+		4.9 & The swarm \emph{shall} experience \textbf{$<$ 10\%} increase in \textbf{human encounters }across \textbf{1000 seconds} of operation with \textbf{half-of-wheels motor faults} occurring in \textbf{50\%} of the swarm.\\
 		\hline
 		4.10 & The agents in the swarm \emph{shall} only come within \textbf{2m} distance of a \textbf{human $<$ 20} times collectively across \textbf{1000 seconds} of \textbf{faulty} operations.
 		\\		[1ex] 		
@@ -486,7 +489,9 @@ In \textbf{Activity 5}, the artefacts generated in this stage are used to instan
 
 %\vspace{-2ex}
 \subsection{Stage 3: Data Management} \label{framework-stage3}
-When designing EB, data plays a vital role, though one that differs from the machine learning applications AMLAS was initially designed for. In order to address this difference, the following activities and outputs have been adjusted to take into account the swarm behavioural design process and the added complexities that come with multiple agents interacting with one another. Additionally, we specify requirements based on the environments and training parameters which provide the data for training rather than on the datasets themselves.
+When designing EB, input data for training an algorithm comes from local sensing of individual agents, both onboard the agent itself and in its local environment. The activities and outputs in this stage take into account the complexities of interactions between multiple agents.
+
+% When designing EB, data plays a vital role, though one that differs from the machine learning applications AMLAS was initially designed for. In order to address this difference, the following activities and outputs have been adjusted to take into account the swarm behavioural design process and the added complexities that come with multiple agents interacting with one another. Additionally, we specify requirements based on the environments and training parameters which provide the data for training rather than on the datasets themselves.
 
 %\vspace{-2ex}
 \subsubsection*{Activity 6. Define Data Requirements}
@@ -520,7 +525,7 @@ This element focuses on the \emph{relevance}, \emph{completeness}, \emph{accurac
 		\hline
 		& \textbf{Completeness Requirements Examples} \\
 		\hline
-		6.1 & All simulations \emph{shall} be repeated to include fault injections representative of full communication faults.\\
+		6.1 & All simulations \emph{shall} be repeated to include occurrences of faults representative of full communication faults.\\
 		\hline
 		6.2 & All simulations \emph{shall} be repeated a sufficient number of times to ensure results are representative of typical use.\\
 		\hline
@@ -574,7 +579,7 @@ The artefacts generated in this stage are used to instantiate the EB Data Argume
 %\vspace{-2ex}
 \subsection{Stage 4: Model Emergent Behaviour} \label{framework-stage4}
 In the design of an EB algorithm, the challenge is in selecting behaviours at the individual level of the agent which give rise to the desired EB at the swarm level. 
-In the original AMLAS process, Stage 4 focuses on the creation, testing, and instantiation of a machine learning model for a single system with no consideration given to EB for a collective. 
+% In the original AMLAS process, Stage 4 focuses on the creation, testing, and instantiation of a machine learning model for a single system with no consideration given to EB for a collective. 
 In our adaptation of AMLAS for the robot swarm,  we step away from the machine learning paradigm to allow consideration for all possible optimisation algorithms which may attain the target EB.
 
 %\vspace{-2ex}
@@ -615,7 +620,7 @@ The inputs to the verification process are the EB Safety Requirements [H], Verif
 %
 The verification method and assessment process within that method will be largely determined by the specifics of the safety requirements. Some safety specifications lend themselves towards certain assessment methods due to the scenarios they prescribe.
 %
-For example, to assess that the swarm system meets the requirements for performance given a motor fault injection RQ1.3, it may be easier to realise this in physical or simulation-based testing approaches rather than constructing a reliable formal model of robot behaviour given the complex physical dynamics of a faulty wheel.
+For example, to assess that the swarm system meets the requirements for performance given a motor fault occurrence RQ1.3, it may be easier to realise this in physical or simulation-based testing approaches rather than constructing a reliable formal model of robot behaviour given the complex physical dynamics of a faulty wheel.
 
 %
 However, when considering the adaptability requirements, a formal, probabilistic-based verification technique of the EB Algorithm [W] is more suitable. For example, in RQ2.1, analysis using a probabilistic finite state machine of the swarm behaviour could identify the dwell period within states. Monitors could be used to observe when agents enter a stationary state, for example, \texttt{agent\_velocity=0 $\land $  t\_counter  $\ge$ 100}, and identify if time within that state exceeds some fixed value, and ascertain a probabilistic value to this metric.
