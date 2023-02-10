@@ -76,10 +76,10 @@
 % OLD> We explore our proposed guidance using illustrative examples taken from a public cloakroom case study.
 
 
-The behaviours of a swarm are not explicitly engineered. Instead, they are an emergent consequence of the interaction of individual agents with each other within the swarm and their environment.
-This emergent functionality poses a challenge to \emph{assurance}, such as safety assurance.
+The behaviours of a swarm are not explicitly engineered. Instead, they are an emergent consequence of the interaction of individual agents with each other and their environment.
+This emergent functionality poses a challenge to \emph{safety assurance}. %, such as safety assurance.
 The main contribution of this paper is a process for the safety assurance of emergent behaviour for use in autonomous robotic swarms called \emph{AERoS}, following the guidance on the Assurance of Machine Learning for use in Autonomous Systems (AMLAS). 
-We explore our proposed guidance using an illustrative case study centred on a robot swarm operating a public cloakroom.
+We explore our proposed process using an illustrative case study centred on a robot swarm operating a public cloakroom.
 	
 \keywords{Assurance \and Safety \and Emergent behaviour \and Guidance \and Swarms.}
 \end{abstract}
@@ -91,25 +91,26 @@ We explore our proposed guidance using an illustrative case study centred on a r
 %\todo{SW: Please check referencing commands - not clear why first reference is 13}
 %Dhaminda: We are using the bibliographystyle provided by the template without any changes. The template has been double checked and it is correct. \bibliographystyle{splncs04}
 
-Swarm robotics provides an approach to the coordination of large numbers of robots, which is inspired from the observation of social insects \cite{Sahin2005}. 
-The functionality of a swarm is emergent, and evolves based on the capabilities of the robots and the numbers of robots used. 
+Swarm robotics provides an approach to the coordination of large numbers of robots inspired from the observation of social insects \cite{Sahin2005}. 
+%The functionality of a swarm is emergent, and evolves based on the capabilities of the robots and the numbers of robots used. 
 The overall behaviours of a swarm are not explicitly engineered in the system, but they are an emergent consequence of the interaction of individual agents with each other and the environment \cite{Abeywickrama2022}, and this poses a challenge to ensure their \emph{assurance}. 
-
 According to the ISO standard for systems and software engineering vocabulary~\cite{ISO24765:2017}, \emph{assurance} is defined as ``all the planned and systematic activities implemented within the quality system, and demonstrated as needed, to provide adequate confidence that an entity will fulfil requirements for quality''. 
 Assurance tasks comprise conformance to standards, verification and validation (V\&V), and certification. Assurance criteria for autonomous systems (AS) include both functional and non-functional requirements such as safety~\cite{Cheng2014}. 
 
-A key limitation of the existing standards and regulations of AS is that they do not accommodate the adaptive nature of AS with evolving functionality~\cite{Fisher2020}. 
-They are either implicitly or explicitly based on the V\&V model, which moves from requirements through design onto implementation and testing before deployment~\cite{Jia2021}. 
-However, this model is unlikely to be suitable for systems with the ability to adapt their functionality in operation; for example\ through interaction with other agents and the environment, as is the case with swarms. 
+%A key limitation of the existing standards and regulations of AS is that they do not accommodate the adaptive nature of AS with evolving functionality~\cite{Fisher2020}. 
+%They are either implicitly or explicitly based on the V\&V model, which moves from requirements through design onto implementation and testing before deployment~\cite{Jia2021}. 
+Existing standards and regulations of AS are either implicitly or explicitly based on the V\&V model, which moves from requirements through design onto implementation and testing before deployment~\cite{Jia2021,Fisher2020}. 
+%However, this model is unlikely to be suitable for systems with the ability to adapt their functionality in operation; for example\ through interaction with other agents and the environment, as is the case with swarms. 
+However, this model is unlikely to be suitable for systems with emerging behaviour (EB); for example\ through interaction with other agents and the environment, as is the case with swarms. 
 ISO standards have been developed for the service robotics sector (non-industrial) (e.g.\ ISO 13482, ISO 23482-1, ISO 23482-2), and the industrial robotics sector (e.g.\ ISO 10218-1, ISO 10218-2, ISO/TS 15066) \cite{Abeywickrama2022}. 
-However, although these industry standards focus on ensuring the assurance of robots at the individual level, they do not cover safety or any other extra-functional property at the \emph{swarm} level that may arise through emergent behaviour (EB). %, which provides motivation for our study.
+However, although these industry standards focus on ensuring the assurance of robots at the individual level, they do not cover safety or any other extra-functional property at the \emph{swarm} level that may arise through EB. %, which provides motivation for our study.
 
-The main contribution of this paper is a process or guidance for the safety assurance of EB for use in autonomous robotic swarms (AERoS), adapted from the guidance on the Assurance of Machine Learning for use in Autonomous Systems (AMLAS)~\cite{Hawkins2021} proposed for machine learning systems. 
+The main contribution of this paper is a process for the safety assurance of EB in autonomous robotic swarms (AERoS), adapted from the guidance on the Assurance of Machine Learning for use in Autonomous Systems (AMLAS)~\cite{Hawkins2021} proposed for machine learning systems. 
 %The main contribution of this paper is a process for the safety assurance of EB for use in autonomous robotic swarms. which can be grounded or airborne (AERoS).
 %AERoS is adapted from the Assurance of Machine Learning for use in Autonomous Systems (AMLAS) process~\cite{Hawkins2021} proposed for machine learning systems. 
 AERoS covers six EB lifecycle stages: safety assurance scoping, safety requirements elicitation, data management, model EB, model verification, and model deployment. 
 The AERoS process is generic and therefore can be applied to any swarm type (e.g. grounded, airborne). 
-In this paper, we explore it using an illustrative case study centered on a grounded robot swarm operating in a public cloakroom. 
+In this paper, we explore it using an illustrative case study centered on a robot swarm operating a public cloakroom. 
 %Although AERoS is generic and therefore can be applied to any swarm type (e.g. grounded, airborne), in this work, we explore it using an illustrative case study centred on a robot swarm operating in a public cloakroom. 
 %We explore the AERoS process using an illustrative case study centered on a robot swarm operating in a public cloakroom. 
 %We illustrate the AERoS process using examples taken from a public cloakroom case study. 
@@ -123,7 +124,8 @@ In Section~\ref{relatedwork}, we provide key related work to our study. Section~
 %\vspace{-2ex}
 \section{Related Work}\label{relatedwork}%\label{background-relatedwork}
 %\vspace{-2ex}
-AS with evolving functionality are considered to follow a much more iterative life-cycle compared to the conventional V\&V model. 
+%AS with evolving functionality are considered to follow a much more iterative life-cycle compared to the conventional V\&V model. 
+AS are considered to follow a much more iterative life-cycle compared to the conventional V\&V model. 
 Thus, there is a need for new standards and assurance processes that extend beyond design time and allow continuous certification at runtime~\cite{Rushby2008}. 
 In this context, there have been several standards and guidance introduced by several industry committees and research groups. In 2016, the British Standards Institution introduced the BS 8611 standard that provides a guide to the ethical design and application of robots and robotic systems. % \cite{BS8611}. 
 %Then, IEEE initiated the development of a series of standards to address autonomy, ethical issues, transparency, data privacy and trustworthiness (for e.g. IEEE P7001~\cite{IEEE-P7001}, P7007, P7010). 
@@ -135,6 +137,7 @@ In this work we used AMLAS \cite{Hawkins2021} as the foundation for developing a
 AMLAS contains six stages, and the assurance activities are performed in parallel to the development of machine learning component. 
 The process is iterative by design and feedback is used to update previous stages. 
 However, AMLAS specifically targets the safety assurance of a machine learning model for a single system, and not for a collective as considered in our study.  
+In machine learning the behaviour emerges from the learning process, in swarms it emerges from the local interactions of the agents.
 
 %\vspace{-2ex}
 \section{The AERoS Process}\label{framework}
@@ -160,18 +163,20 @@ Stage 1 contains two activities which are performed to define the safety assuran
 %these simple behaviours when performed by a large number of agents build to form EB.  
 %\vspace{-2ex}
 \subsubsection*{Activity 1. Define Assurance Scope for the EB Description and Expected Output}
-The goal of Activity 1, which has four inputs [A--D], is to define the safety assurance scope for the EB description and expected output. 
-The output of this activity is the Safety Requirements Allocated to the Swarm [E]. The requirements defined in this stage are independent of any EB technique or metric, which reflects the need for the swarm system to perform safely regardless of the deployed technology. 
+The goal of Activity 1, which has four inputs [A--D] (Fig.~\ref{amlas-a-stage1}), is to define the safety assurance scope for the EB and expected output. 
+The output of this activity is the Safety Requirements Allocated to the Swarm [E]. The requirements defined in this stage are independent of any EB technology, which reflects the need for the swarm system to perform safely regardless of the deployed technology. 
+%The output of this activity is the Safety Requirements Allocated to the Swarm [E]. The requirements defined in this stage are independent of any EB technique or metric, which reflects the need for the swarm system to perform safely regardless of the deployed technology. 
 
 \emph{[A] System Safety Requirements:}
-The system safety assessment process generates the safety requirements of the swarm, and it covers the identification of hazards (e.g. the blocking of critical paths in the cloakroom) and risk analysis.
-Figure~\ref{failure-events} illustrates how individual robot failure propagates through the neighbourhood to swarm level hazards: we can then derive safety requirements in the form of concrete failure conditions at the level of the whole swarm which capture, implicitly, all levels of the swarm. 
+The system safety assessment process generates the safety requirements of the swarm, and covers the identification of hazards (e.g. the blocking of critical paths in the cloakroom) and risk analysis.
+Figure~\ref{failure-events} illustrates how individual robot failures propagate through the neighbourhood to swarm level hazards: we can then derive safety requirements in the form of concrete failure conditions at the level of the whole swarm which capture, implicitly, all levels of the swarm. 
 Although this has been illustrated as a simplified linear chain of events, in reality this represents a complex sequence which can be difficult to distil into distinct events and causes. 
 
 \emph{[B] Environment Description:}
 It is essential to consider the system environment when allocating safety requirements to the swarm. 
 In the cloakroom, a swarm of robotic agents collects and delivers jackets, which are stored in small box-like containers. 
-The agents are required to navigate a public space between collection and delivery points. They use local communication, perception, and data to form an emergent system of navigation which allows them to easily traverse the public space. 
+The agents are required to navigate a public space between collection and delivery points. 
+%They use local communication, perception, and data to form an emergent system of navigation which allows them to easily traverse the public space. 
 
 %\begin{figure}[!t]
 %	%\vspace{-4ex}
@@ -219,7 +224,7 @@ The agents are required to navigate a public space between collection and delive
 \emph{[C] System Description:}
 In the cloakroom, we can consider three inputs: sensor availability, neighbourhood data, and swarm parameters (see Fig.~\ref{system-description}). The \emph{sensors} available to agents can be: cameras, Bluetooth communication devices, and light detection and ranging systems. 
 The neighbourhood data of the swarm can be specified through the communication systems available to agents, in this case Bluetooth. 
-Through the use of this short-range communication, agents can access neighbourhood data, such as: approximate position of local agents, current behaviour statuses, an approximate history of box movement, and the amount of time deployed. 
+Through the use of this short-range communication, agents can access neighbourhood data, such as approximate position of local agents, current behaviour statuses. %, an approximate history of box movement, and the amount of time deployed. 
 As for the swarm level parameters, we can consider options specified by a user, that is, the number of agents deployed, maximum speed of agents, and the number of agents permitted to be active at a time.
 Once defined, the three inputs are then fed to the individual agents to instruct their behaviour. This behaviour enacted by multiple agents then produces a swarm level EB as the individuals interact with one another and their environment.
 %\vspace{-1ex}
@@ -293,7 +298,7 @@ We define EB safety requirements to control the risk of swarm level hazards by t
 
 In the swarm context, we consider four types of requirements: \emph{performance}, \emph{adaptability}, \emph{human safety}, and \emph{environment}. 
 In particular, the environment requirements capture the need for the system to be robust to variation in the operative space.
-We consider several performance safety metrics under each requirement category: 
+We consider several safety metrics under each requirement category: 
 (i) performance: low-impact and high-impact collisions; 
 (ii) adaptability: percentage of swarm stationary outside of the delivery site, number of stationary agents, time since last agent moved; 
 (iii) human safety: velocity or average velocity of agents, swarm size, rate of humans encountered, proximity to humans;
@@ -498,7 +503,7 @@ In our adaptation of Activity 6, we take the EB Safety Requirements [H] outlined
 
 %\paragraph*{[L.0] Data Type Requirements}
 \emph{[L.0] Data Type Requirements:}
-This element focuses on the \emph{relevance}, \emph{completeness}, \emph{accuracy}, and \emph{balance} of the information that will be used to construct the swarm behaviour and will be subsequently used to test the EB of the system prior to its deployment. The \emph{relevance} of the data used in the development of the EB specifies the extent to which the test environment must match the intended operating domain into which the model is to be deployed. The \emph{completeness} of the data specifies the conditions under which we test the behaviour algorithm, that is, the volume of experiments or tests that will be run, the variety of tests executed, and the diversity of environments expected to be used in the testing process. The aim is to cover a representative sample of conditions for testing. \emph{Accuracy} in this context relates to the parameters defining the performance of the swarm system's primary function. For example, what constitutes a delivery in a logistics scenario, or under what conditions would an area be considered explored in a surveying mission. \emph{Balance} refers to the balance of the trials executed in the testing process of the EB algorithm. By considering balance, we expect the number of tests conducted for failure modes or environments to be justified, ensuring that there is not an unrealistic bias in testing towards a particular scenario. See Table \ref{tab:L0_req} for examples of data requirements relating to relevance, completeness, accuracy, and balance.
+This element focuses on the \emph{relevance}, \emph{completeness}, \emph{accuracy}, and \emph{balance} of the information that will be used to construct the swarm behaviour and will be subsequently used to test the EB of the system prior to its deployment. The \emph{relevance} of the data used in the development of the EB specifies the extent to which the test environment must match the intended operating domain into which the model is to be deployed. The \emph{completeness} of the data specifies the conditions under which we test the behaviour, that is, the volume of experiments or tests that will be run, the variety of tests executed, and the diversity of environments expected to be used in the testing process. The aim is to cover a representative sample of conditions for testing. \emph{Accuracy} in this context relates to the parameters defining the performance of the swarm system's primary function. For example, what constitutes a delivery in a logistics scenario, or under what conditions would an area be considered explored in a surveying mission. \emph{Balance} refers to the balance of the trials executed in the testing process of the EB algorithm. By considering balance, we expect the number of tests conducted for failure modes or environments to be justified, ensuring that there is not an unrealistic bias in testing towards a particular scenario. See Table \ref{tab:L0_req} for examples of data requirements relating to relevance, completeness, accuracy, and balance.
 
 %\tiny
 \begin{table}[!h]%[h]
@@ -577,7 +582,7 @@ In our adaptation of AMLAS for the robot swarm,  we step away from the machine l
 The EB algorithm is engineered at the level of the individual agent behaviours for the Test Environment output [N] from Stage 3. The resultant EB must meet the Safety Requirements [H] defined in Stage 2 (see Fig.~\ref{amlas-a-stage4}). 
 In the cloakroom case study, the target EB for the swarm must ensure that items are stored and retrieved by individuals whilst meeting all requirements specified. For example, performance requirements RQ1.1 and RQ1.2 specify an upper bound on the low/high-impact collisions that a swarm shall experience in a given time frame. 
 %These requirements may be fulfilled by constraining the maximum velocity of individual robots, or to future-proof this by ensuring a robot has one or more sensory devices, such as a camera or infra-red sensors enabling it to detect obstacles. 
-These requirements may be fulfilled by constraining the maximum velocity of individual robots or by ensuring that a robot has one or more sensory devices, such as a camera or infra-red sensors, enabling it to detect obstacles. 
+These requirements may be fulfilled by constraining the maximum velocity of individual robots or by ensuring that a robot has one or more sensory devices, such as a camera, enabling it to detect obstacles. 
 The key output from this activity is the Candidate EB [U] for testing.
 %These requirements may be fulfilled by constraining the maximum velocity of individual robots or by ensuring that a robot has a camera or infra-red sensors enabling it to detect obstacles.\todo{To make this future-proof, use ``is equipped with one or more sensory devices''} The key output from this activity is the candidate EB for testing.
 %\todo{SW: Does the Candidate EB Algorithm box need a letter label? Odd to have every other box labelled and not this one.}
@@ -612,7 +617,7 @@ The verification method and assessment process within that method will be largel
 For example, to assess that the swarm system meets the requirements for performance given a motor fault injection RQ1.3, it may be easier to realise this in physical or simulation-based testing approaches rather than constructing a reliable formal model of robot behaviour given the complex physical dynamics of a faulty wheel.
 
 %
-However, when considering the adaptability requirements, a formal, probabilistic-based verification technique of the EB Algorithm [W] is more suitable. For example, in RQ2.1 analysis using a probabilistic finite state machine of the swarm behaviour could identify the dwell period within states. Monitors could be used to observe when agents enter a stationary state, for example, \texttt{agent\_velocity=0 $\land $  t\_counter  $\ge$ 100}, and identify if time within that state exceeds some fixed value, and ascertain a probabilistic value to this metric.
+However, when considering the adaptability requirements, a formal, probabilistic-based verification technique of the EB Algorithm [W] is more suitable. For example, in RQ2.1, analysis using a probabilistic finite state machine of the swarm behaviour could identify the dwell period within states. Monitors could be used to observe when agents enter a stationary state, for example, \texttt{agent\_velocity=0 $\land $  t\_counter  $\ge$ 100}, and identify if time within that state exceeds some fixed value, and ascertain a probabilistic value to this metric.
 
 \emph{[P] Verification Scenario (Test Generation):} In most cases there will be multiple, valid verification scenarios (test cases) applicable for each of the safety specifications. A `good test case' must be \emph{effective} at finding bugs or defects, \emph{efficient} in minimising the number of tests required, use resources \emph{economically} and be \emph{robust} to system changes~\cite{Fewster1999}. 
 
@@ -691,10 +696,10 @@ The artefacts generated in this stage are used to instantiate the EB Deployment 
 \section{Discussion and Future Work} \label{discussion-conclusions}
 
 %\todo{SW: Just an optional thought, but it feels like the discussion of the AERoS framework itself is missing. Could one of the tables be removed to make more space for discussion? I think a paragraph or two on advantages and limitations would be enough.}
-Using AMLAS \cite{Hawkins2021} as a foundation, we have produced the six-stage development process AERoS. This process acts as guidance for those looking to construct swarm robot systems, particularly those that exhibit EB through environmental and agent-to-agent interaction. The stages of AERoS break down the design of these systems to ensure that fundamental safety requirements are adhered to, even in instances of system degradation and compounded failures that should be expected, and managed, in swarm robot solutions. We achieve this with an approach that allows for iteration of and feedback to the previous stages as issues of safety are encountered and investigated. We combine this iteration with repeated specification at each stage, observing the issue of safety through the lens of: data, modelling/behaviour design, verification, and deployment. 
+Using AMLAS \cite{Hawkins2021} as a foundation, we have produced the six-stage development process AERoS. This process acts as guidance for those looking to construct swarm robot systems, particularly those that exhibit emergent behaviour through environmental and agent-to-agent interaction. The stages of AERoS break down the design of these systems to ensure that fundamental safety requirements are adhered to, even in instances of system degradation and compounded failures that should be expected, and managed, in robot swarms. We achieve this with an approach that allows for iteration of and feedback to the previous stages as issues of safety are encountered and investigated. We combine this iteration with repeated specification at each stage, observing the issue of safety through the lens of: data, modelling/behaviour design, verification, and deployment. 
 % Added by Dhaminda to address Shane's comment
 While the iterative nature of AERoS is a key advantage, a few limitations of this work can be identified. 
-First, the scope of this work has been limited to investigating inherent swarm qualities and the adaptation that arises from these. 
+First, the scope of this work has been limited to investigating inherent swarm qualities and the emergent properties that arises from these. 
 However, one can expand on this, and consider adaptation of individual robots through techniques such as machine learning (e.g. by applying AMLAS).
 Second, we can broaden the evaluation by considering additional swarm use cases (e.g. monitoring fires in a natural environment, and a social swarm), and a worked example of the entire AERoS process.
 %in this work, we explored the AERoS process by using only a single case study, which can be broadened by considering additional swarm use cases (e.g. monitoring fires in a natural environment, and a social swarm), and a worked example of the entire AERoS process.
