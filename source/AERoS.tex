@@ -26,6 +26,8 @@
 
 \usepackage{todonotes}
 
+\hyphenation{pro-ba-bi-lis-tic}
+
 \begin{document}
 	%
 	\title{AERoS: Assurance of Emergent Behaviour in Autonomous Robotic Swarms}%\thanks{....}}
@@ -91,19 +93,20 @@ We explore our proposed process using an illustrative case study centred on a ro
 %\todo{SW: Please check referencing commands - not clear why first reference is 13}
 %Dhaminda: We are using the bibliographystyle provided by the template without any changes. The template has been double checked and it is correct. \bibliographystyle{splncs04}
 
-Swarm robotics provides an approach to the coordination of large numbers of robots inspired from swarm behaviours in nature~\cite{Sahin2005}. 
+Swarm robotics provides an approach to the coordination of large numbers of robots inspired by swarm behaviours in nature~\cite{Sahin2005}. 
 %The functionality of a swarm is emergent, and evolves based on the capabilities of the robots and the numbers of robots used. 
-The overall behaviours of a swarm are not explicitly engineered in the system, but they are an emergent consequence of the interaction of individual agents with each other and the environment \cite{Abeywickrama2022}, and this poses a challenge to ensure their \emph{assurance}. 
+The overall behaviours of a swarm are not explicitly engineered in the system. Instead, they are an emergent consequence of the interactions of individual agents with each other and the environment~\cite{Abeywickrama2022}; this poses a challenge to \emph{assurance}. 
 According to the ISO standard for systems and software engineering vocabulary~\cite{ISO24765:2017}, \emph{assurance} is defined as ``all the planned and systematic activities implemented within the quality system, and demonstrated as needed, to provide adequate confidence that an entity will fulfil requirements for quality''. 
 Assurance tasks comprise conformance to standards, verification and validation (V\&V), and certification. Assurance criteria for autonomous systems (AS) include both functional and non-functional requirements such as safety~\cite{Cheng2014}. 
 
 %A key limitation of the existing standards and regulations of AS is that they do not accommodate the adaptive nature of AS with evolving functionality~\cite{Fisher2020}. 
 %They are either implicitly or explicitly based on the V\&V model, which moves from requirements through design onto implementation and testing before deployment~\cite{Jia2021}. 
-Existing standards and regulations of AS are either implicitly or explicitly based on the V\&V model, which moves from requirements through design onto implementation and testing before deployment~\cite{Jia2021,Fisher2020}. 
+Existing standards and regulations of AS are either implicitly or explicitly based on the V-model~\cite{Forsberg:1992}, which moves from requirements through design onto implementation and testing before deployment~\cite{Jia2021,Fisher2020}. 
 %However, this model is unlikely to be suitable for systems with the ability to adapt their functionality in operation; for example\ through interaction with other agents and the environment, as is the case with swarms. 
 However, this model is unlikely to be suitable for systems with emerging behaviour (EB); for example\ through interaction with other agents and the environment, as is the case with swarms. 
-ISO standards have been developed for the service robotics sector (non-industrial) (e.g.\ ISO 13482, ISO 23482-1, ISO 23482-2), and the industrial robotics sector (e.g.\ ISO 10218-1, ISO 10218-2, ISO/TS 15066) \cite{Abeywickrama2022}. 
-However, although these industry standards focus on ensuring the assurance of robots at the individual level, they do not cover safety or any other extra-functional property at the \emph{swarm} level that may arise through EB. %, which provides motivation for our study.
+ISO standards have been developed for the service robotics sector (non-industrial) (e.g.\ ISO 13482, ISO 23482-1, ISO 23482-2), and the industrial robotics sector (e.g.\ ISO 10218-1, ISO 10218-2, ISO/TS 15066)~\cite{Abeywickrama2022}. 
+However, although these %industry
+standards focus on ensuring the assurance of robots at the individual level, they do not cover safety or any other extra-functional property at the \emph{swarm} level that may arise through EB. %, which provides motivation for our study.
 
 The main contribution of this paper is a process for the safety assurance of EB in autonomous robotic swarms (AERoS), adapted from the guidance on the Assurance of Machine Learning for use in Autonomous Systems (AMLAS)~\cite{Hawkins2021} proposed for machine learning systems. 
 %The main contribution of this paper is a process for the safety assurance of EB for use in autonomous robotic swarms. which can be grounded or airborne (AERoS).
@@ -115,7 +118,7 @@ In this paper, we explore it using an illustrative case study centered on a robo
 %We explore the AERoS process using an illustrative case study centered on a robot swarm operating in a public cloakroom. 
 %We illustrate the AERoS process using examples taken from a public cloakroom case study. 
 Let us consider a company that organises bespoke events with 50 to 10000 attendees~\cite{Jones2020}. 
-The company automates their cloakroom by deploying a swarm of robots to assist attendees (customers) to deposit, store, and deliver their belongings (e.g. jackets) \cite{Jones2020}. 
+The company automates their cloakroom by deploying a swarm of robots to assist attendees (customers) to deposit, store, and retrieve their belongings (e.g. jackets) \cite{Jones2020}. 
 As the swarm operates in a public setting, the system must prioritise public safety. 
 
 The rest of the paper is organised as follows. 
@@ -125,7 +128,7 @@ In Section~\ref{relatedwork}, we provide key related work to our study. Section~
 \section{Related Work}\label{relatedwork}%\label{background-relatedwork}
 %\vspace{-2ex}
 %AS with evolving functionality are considered to follow a much more iterative life-cycle compared to the conventional V\&V model. 
-AS are considered to follow a much more iterative life-cycle compared to the conventional V\&V model. 
+AS are considered to follow a much more iterative life-cycle compared to the conventional V-model. 
 Thus, there is a need for new standards and assurance processes that extend beyond design time and allow continuous certification at runtime~\cite{Rushby2008}. 
 In this context, there have been several standards and guidance introduced by several industry committees and research groups. In 2016, the British Standards Institution introduced the BS 8611 standard that provides a guide to the ethical design and application of robots and robotic systems. % \cite{BS8611}. 
 %Then, IEEE initiated the development of a series of standards to address autonomy, ethical issues, transparency, data privacy and trustworthiness (for e.g. IEEE P7001~\cite{IEEE-P7001}, P7007, P7010). 
@@ -202,7 +205,8 @@ The agents are required to navigate a public space between collection and delive
 		\vspace{-2ex}
 		\caption{Stage 1: The AERoS emergent behaviour assurance scoping process.}
 		\label{amlas-a-stage1}
-	\end{minipage}%
+      \end{minipage}%
+      \hspace*{.04\textwidth}
 	\begin{minipage}{.5\textwidth}
 		%\centering
 		\includegraphics[width=0.90\textwidth,right]{figures/stage1-failureevents-v3.png}
@@ -227,8 +231,9 @@ Once defined, the three inputs are then fed to the individual agents to instruct
 %\vspace{-1ex}
 \emph{[D] EB Description and Expected Output:}
 By expected output, we refer to the gains that can arise from the system by deploying multiple agents. 
-In the cloakroom, the output is a collaborative system capable of collecting, sorting, and redelivering jackets in a public setting. 
-For this the EB of the system needs to be manually engineered with consideration given to the available sub-behaviours within an agent and the constraints outlined in the system description.
+In the cloakroom, the output is a collaborative system capable of collecting, sorting, and retrieving jackets in a public setting. 
+To achieve this, the EB of the system needs to %be manually engineered <KIE: We say in the abstract that we don't explicitly engineer behaviours of the swarm.
+arise from the available behaviours of the individual agents, their interactions and the constraints outlined in the system description.
 
 %\vspace{-7ex}
 \noindent\textbf{Activity 2. Instantiate EB Assurance Scoping Argument Pattern} Each stage of the AERoS process includes an activity to instantiate a safety argument pattern based on the evidence and artefacts generated in that stage. %, following AMLAS~\cite{Hawkins2021}. 
@@ -263,18 +268,19 @@ The instantiated argument [G] along with other instantiated arguments resulting 
 \begin{figure}[!t]
 	%\vspace{-4ex}
 	\centering
-	\begin{minipage}{.5\textwidth}
+	\begin{minipage}[b]{.5\textwidth}
 		\centering
 		\includegraphics[width=0.9\textwidth]{figures/stage1-systema-v2.png}
 		%\vspace{-2ex}
-		\caption{Inputs fed into individual agent behaviour producing overall swarm emergent behaviour. }%{System description.}
+		\caption{Inputs fed into individual agent behaviour producing overall swarm EB. }%{System description.}
 		\label{system-description}
-	\end{minipage}%
-	\begin{minipage}{.45\textwidth}
+      \end{minipage}%
+      \hspace*{0.03\textwidth}
+	\begin{minipage}[b]{.45\textwidth}
 		\centering
 		\includegraphics[width=0.99\textwidth]{figures/stage1-argumentpattern-v3.png}
 		\vspace{-5ex}
-		\caption{Emergent behaviour safety assurance scoping argument pattern.}
+		\caption{EB safety assurance scoping argument pattern.}
 		\label{stage1-ap}
 	\end{minipage}	
 	\vspace{-4ex}
@@ -287,86 +293,24 @@ Stage 2 contains three activities (Fig.~\ref{amlas-a-stage2}), which are perform
 
 %\vspace{-2ex}
 \noindent\textbf{Activity 3. Develop EB Safety Requirements} The required input to Activity 3 in Stage 2 is the Safety Requirements Allocated to the Swarm [E]. 
-We define EB safety requirements to control the risk of swarm-level hazards by taking into account the system architecture defined and operating environment. 
+We define EB safety requirements to control the risk of swarm-level hazards by taking into account the system architecture defined and the operating environment. 
 
 In the swarm context, we consider four types of requirements: \emph{performance}, \emph{adaptability}, \emph{human safety}, and \emph{environment}. 
 In particular, the environment requirements capture the need for the system to be robust to variation in the operative space.
 We consider several safety metrics under each requirement category: 
-(i) performance: low-impact and high-impact collisions (the swarm should have the ability to avoid a \emph{critical number} of such collisions); 
+(i) performance: low-impact and high-impact collisions (the swarm should operate below a \emph{critical number} of such collisions);\todo{KIE removed ``...have the ability to avoid...''}
 (ii) adaptability: percentage of swarm stationary outside of the delivery site, number of stationary agents, time since last agent moved; 
 (iii) human safety: velocity or average velocity of agents, swarm size, rate of humans encountered, proximity to humans;
 (iv) environment: sum of objects in an area (the density of objects in the environment should not block swarm operation).
-As the robot swarm is composed of many agents, there is potential for a large number of faults to occur at any given time \cite{Lee2022}. This motivates three further sub-categories for each of the performance, adaptability and human-safety requirements: \emph{faultless operations}, \emph{failure modes (graceful degradation)}, and \emph{worst case}. 
+As the robot swarm is composed of many agents, there is potential for a large number of faults to occur at any given time~\cite{Lee2022}. This motivates three further sub-categories for each of the performance, adaptability and human-safety requirements: \emph{faultless operations}, \emph{failure modes (graceful degradation)}, and \emph{worst case}. 
 \emph{Graceful degradation} refers to the acceptable level of faults, their impact, and how the system should react when faults occur. \emph{Worst case} accounts for the least acceptable impact the system should experience and the means to avoid it. 
-A key output of Activity 3 is [H], which describes the EB Safety Requirements relating to: performance, adaptability, and environment (see Table \ref{tab:reqs}), as well as human safety (Table \ref{tab:human-s}).
-%A key output of Activity 3 is the EB Safety Requirements [H] which states the safety requirements relating to: performance, adaptability and environment (see Table \ref{tab:reqs}), as well as human safety requirements (see Table \ref{tab:human-s}).
-
-%\begin{figure}[!t]
-%	%\vspace{-4ex}
-%	\centering
-%	\begin{minipage}{.55\textwidth}
-%		\centering
-%		\includegraphics[trim={0mm -6mm 0mm -6mm},clip,width=\textwidth]{figures/amlas-a-stage2-v3.png}
-%		\vspace{-2ex}
-%		\caption{Stage 2: AERoS EB safety requirements assurance.}% process.}
-%	\label{amlas-a-stage2}
-%\end{minipage}%
-%\begin{minipage}{.45\textwidth}
-%	\centering
-%	\includegraphics[trim={30mm 25mm 45mm 30mm},clip,width=0.9\textwidth]{figures/3Dsim.png}
-%	\vspace{-2ex}
-%	\caption{3D simulation created to validate several EB safety requirements.}
-%	\label{3Dsim}
-%\end{minipage}
-%\vspace{-4ex}
-%\end{figure}
-
-\begin{figure}[!t]
-	%\vspace{-4ex}
-	\centering
-	\begin{minipage}{.57\textwidth}
-		\centering
-		\includegraphics[width=0.9\textwidth]{figures/AERoS-Stage2.png}%amlas-a-stage2-v3.png}
-		\vspace{-2ex}
-		\caption{Stage 2: The AERoS emergent behaviour safety requirements assurance.}% process.}
-	\label{amlas-a-stage2}
-\end{minipage}%
-\begin{minipage}{.43\textwidth}
-	\centering
-	\includegraphics[trim={30mm 25mm 45mm 30mm},clip,width=0.8\textwidth]{figures/3Dsim.png}
-	\vspace{-2ex}
-	\caption{3D simulation created to validate several emergent behaviour safety requirements.}
-	\label{3Dsim}
-\end{minipage}
-\vspace{-4ex}
-\end{figure}
-
-%\begin{figure}[!t]
-%	%\vspace{-4ex}
-%	\centering
-%	\begin{minipage}{.5\textwidth}
-%		\centering
-%		\includegraphics[width=0.9\textwidth]{figures/stage1-systema-v2.png}
-%		%\vspace{-2ex}
-%		\caption{System description.}
-%		\label{system-description}
-%	\end{minipage}%
-%	\begin{minipage}{.45\textwidth}
-%		\centering
-%		\includegraphics[width=0.99\textwidth]{figures/stage1-argumentpattern-v3.png}
-%		\vspace{-5ex}
-%		\caption{EB Safety assurance scoping argument pattern.}
-%		\label{stage1-ap}
-%	\end{minipage}	
-%	\vspace{-4ex}
-%\end{figure}
+A key output of Activity 3 is [H], which describes the EB Safety Requirements relating to: performance, adaptability, and environment (see Table~\ref{tab:reqs}), as well as human safety (Table~\ref{tab:human-s}).
 
 
-%\todo{SW: Not sure of 'injection' phrasing used in table. This is something you would do during testing, but is it the right term for a requirement during operation? Maybe "with 10\% full communication faults within the swarm"}
-%\vspace{-4ex}
 %\tiny
-\begin{table}[!t]
+\begin{table}[!b]
 	\centering
+%\vspace{-4ex}
 	\begin{tabular}{p{5mm} p{116mm} }
 		RQ & \textbf{Performance Requirements}\\
 		\hline
@@ -376,12 +320,12 @@ A key output of Activity 3 is [H], which describes the EB Safety Requirements re
 		\hline
 		1.3 & The swarm \emph{shall} experience \textbf{$<$ 0.1\%} increase in \textbf{high-impact} collisions across \textbf{a day's} operation with \textbf{half-of-wheels motor faults} occurring in \textbf{50\%} of the swarm.	\\	
 		\hline
-		1.4 & The swarm \emph{shall} experience \textbf{$<$ 2 high-impact (V $>$ 0.5m/s)} collisions across \textbf{a day} of \textbf{faulty} operation.  \\		[1ex] 		
+		1.4 & The swarm \emph{shall} experience \textbf{$<$ 2 high-impact (V $>$ 0.5m/s)} collisions across \textbf{a day} of \textbf{faulty} operation.  \\		 		
 		\hline
-        1.5 & The swarm agents \emph{shall} \textbf{weigh $<$ 3kg} and shall have \textbf{acceleration} \textbf{$<$ 4m/s} in order that the \textbf{maximum collision force} in the swarm is within acceptable bounds. \\
+        1.5 & The swarm agents \emph{shall} \textbf{weigh $<$ 3kg} and shall have \textbf{acceleration} \textbf{$<$ 4m/s} so that the \textbf{maximum collision force} in the swarm is within acceptable bounds. \\
         \hline
-        1.6 & The swarm agents \emph{shall} only carry objects of \textbf{weight $<$ 2kg}. \\
-        \hline
+        1.6 & The swarm agents \emph{shall} only carry objects of \textbf{weight $<$ 2kg}. \\ 
+        \hline \\[-1.25\medskipamount]
 		& \textbf{Adaptability Requirements}\\
 		\hline
 		2.1 & The swarm \emph{shall} have \textbf{$<$ 10\%} of its agents \textbf{stationary*} outside of the \textbf{delivery site} at a given time.
@@ -390,7 +334,7 @@ A key output of Activity 3 is [H], which describes the EB Safety Requirements re
 		\hline
 		2.2 & All agents of the swarm \emph{shall} move at least every \textbf{100 seconds} if outside of the \textbf{delivery site}.\\ 
 		\hline
-		2.3 & The swarm \emph{shall} experience $<$ \textbf{10\%} increase in \textbf{number of stationary agents} at any given time with \textbf{half-of-wheels motor faults} occurring in \textbf{50\%} of the swarm. \\
+		2.3 & The swarm \emph{shall} experience $<$ \textbf{10\%} increase in the \textbf{number of stationary agents} at any time with \textbf{half-of-wheels motor faults} occurring in \textbf{50\%} of the swarm. \\
 		\hline
 		2.4 & The swarm agents \emph{shall} experience $<$ \textbf{10\%} increase in \textbf{stationary time} with \textbf{half-of-wheels motor faults} occurring in \textbf{50\%} of  the swarm.\\ 
 		\hline
@@ -399,9 +343,9 @@ A key output of Activity 3 is [H], which describes the EB Safety Requirements re
 		2.6 & The swarm agents \emph{shall} experience $<$ \textbf{10\%} increase in \textbf{stationary time} with \textbf{full communication faults} occurring in \textbf{10\%} of the swarm. \\	
 		\hline
 		2.7 & The swarm \emph{shall} have \textbf{$<$ 20\%} of its agents \textbf{stationary*} outside of the \textbf{delivery site} at a given time.
-		*Assumption: Agents are considered stationary once they have not moved for $>$ \textbf{10 seconds}. \\
-		\hline
-		& \textbf{Environmental Requirements}\\
+		*Assumption: Agents are considered stationary once they have not moved for $>$ \textbf{10 seconds}. \\ 
+        \hline \\[-1.25\medskipamount]
+	    & \textbf{Environmental Requirements} \\ 
 		\hline
 		3.1 & The swarm \emph{shall} perform as required in environmental density levels \textbf{0-4 p$_o$ of objects} (sum of boxes and agents per m$^2$) in the environment. %* p$_o$ = sum of objects / m$^2$.
 		\\ 
@@ -415,11 +359,11 @@ A key output of Activity 3 is [H], which describes the EB Safety Requirements re
 		3.4 & The swarm \emph{shall} perform as required in \textbf{smooth-floored environments} with step increases no greater than \textbf{0.5cm}.
 		\\ 
 		\hline
-		3.5 & The swarm \emph{shall} only operate in \textbf{environments where humans have devices that identify the human’s whereabouts} to the swarm agents.
-		\\		[1ex] 		
-		\hline
+		3.5 & The swarm \emph{shall} only operate in \textbf{environments where humans have devices that identify the human’s location} to the swarm agents. 
+		\\ 		
+		\hline \\[-1\medskipamount]
 	\end{tabular}
-	\caption{\label{tab:reqs}Examples of safety requirements for the cloakroom scenario.}
+	\caption{\label{tab:reqs}Examples of performance, adaptability, and environmental safety requirements for the cloakroom scenario.}
 	\vspace{-4ex}
 \end{table}
 %\normalsize
@@ -461,21 +405,92 @@ A key output of Activity 3 is [H], which describes the EB Safety Requirements re
 		4.9 & The swarm \emph{shall} experience \textbf{$<$ 10\%} increase in \textbf{human encounters }across \textbf{1000 seconds} of operation with \textbf{half-of-wheels motor faults} occurring in \textbf{50\%} of the swarm.\\
 		\hline
 		4.10 & The swarm agents \emph{shall} only come within \textbf{2m} distance of a \textbf{human $<$ 20} times collectively across \textbf{1000 seconds} of \textbf{faulty} operations.
-		\\		[1ex] 		
-		\hline
+		\\				
+		\hline \\[-1\medskipamount]
 	\end{tabular}
 	\caption{\label{tab:human-s}Examples of human-safety requirements for the cloakroom scenario.}
 	\vspace{-4ex}
 \end{table}   
 %\normalsize
 
+
+
+
+%A key output of Activity 3 is the EB Safety Requirements [H] which states the safety requirements relating to: performance, adaptability and environment (see Table \ref{tab:reqs}), as well as human safety requirements (see Table \ref{tab:human-s}).
+
+%\begin{figure}[!t]
+%	%\vspace{-4ex}
+%	\centering
+%	\begin{minipage}{.55\textwidth}
+%		\centering
+%		\includegraphics[trim={0mm -6mm 0mm -6mm},clip,width=\textwidth]{figures/amlas-a-stage2-v3.png}
+%		\vspace{-2ex}
+%		\caption{Stage 2: AERoS EB safety requirements assurance.}% process.}
+%	\label{amlas-a-stage2}
+%\end{minipage}%
+%\begin{minipage}{.45\textwidth}
+%	\centering
+%	\includegraphics[trim={30mm 25mm 45mm 30mm},clip,width=0.9\textwidth]{figures/3Dsim.png}
+%	\vspace{-2ex}
+%	\caption{3D simulation created to validate several EB safety requirements.}
+%	\label{3Dsim}
+%\end{minipage}
+%\vspace{-4ex}
+%\end{figure}
+
+\begin{figure}[t]
+	%\vspace{-4ex}
+	\centering
+	\begin{minipage}[b]{.5\textwidth}
+		\centering
+		\includegraphics[width=0.99\textwidth]{figures/AERoS-Stage2.png}%amlas-a-stage2-v3.png}
+		\vspace{-2ex}
+		\caption{Stage 2: The AERoS EB safety requirements assurance.}% process.}
+	\label{amlas-a-stage2}
+  \end{minipage}%
+  \hspace*{0.03\textwidth}
+\begin{minipage}[b]{.43\textwidth}
+	\centering
+	\includegraphics[trim={30mm 25mm 45mm 30mm},clip,width=0.99\textwidth]{figures/3Dsim.png}
+	\vspace{-2ex}
+	\caption{3D simulation created to validate several EB safety requirements.}
+	\label{3Dsim}
+\end{minipage}
+\vspace{-4ex}
+\end{figure}
+
+%\begin{figure}[!t]
+%	%\vspace{-4ex}
+%	\centering
+%	\begin{minipage}{.5\textwidth}
+%		\centering
+%		\includegraphics[width=0.9\textwidth]{figures/stage1-systema-v2.png}
+%		%\vspace{-2ex}
+%		\caption{System description.}
+%		\label{system-description}
+%	\end{minipage}%
+%	\begin{minipage}{.45\textwidth}
+%		\centering
+%		\includegraphics[width=0.99\textwidth]{figures/stage1-argumentpattern-v3.png}
+%		\vspace{-5ex}
+%		\caption{EB Safety assurance scoping argument pattern.}
+%		\label{stage1-ap}
+%	\end{minipage}	
+%	\vspace{-4ex}
+%\end{figure}
+
+
+%\todo{SW: Not sure of 'injection' phrasing used in table. This is something you would do during testing, but is it the right term for a requirement during operation? Maybe "with 10\% full communication faults within the swarm"}
+
+
 %\vspace{-2ex}
 \noindent\textbf{Activity 4: Validate EB Safety Requirements} The required input to Activity 4 is the EB Safety Requirements [H].  
-The EB safety requirements are validated by both review and simulation.
-Firstly, the requirements derived for the cloakroom have been reviewed by a safety-critical systems engineering expert to ensure that the specified EB safety requirements for the swarm will deliver its intended safe operation. Secondly, in simulation we validated all safety requirements specified (excepting RQ3.5) for the cloakroom system using the Gazebo 3D simulator. 
-The simulation used is an exact replication of the 4m x 4m lab environment used for hardware implementation (see Fig.~\ref{3Dsim}). 
+These
+% The EB safety requirements
+are validated by both review and simulation.
+Firstly, the requirements derived for the cloakroom have been reviewed by a safety-critical systems engineering expert to ensure that the specified EB safety requirements for the swarm will deliver its intended safe operation. Secondly, we validated all safety requirements (excepting RQ3.5 from Table~\ref{tab:reqs}) for the cloakroom system using the Gazebo 3D simulator. 
+This simulation is an exact replica of the 4m x 4m lab environment used for hardware implementation (see Fig.~\ref{3Dsim}). 
 In \textbf{Activity 5}, the artefacts generated in this stage are used to instantiate the EB Safety Requirements Argument Pattern [I].
-
 
 
 %\vspace{-2ex}
@@ -485,20 +500,13 @@ When designing EB, input data for training an algorithm comes from local sensing
 % When designing EB, data plays a vital role, though one that differs from the machine learning applications AMLAS was initially designed for. In order to address this difference, the following activities and outputs have been adjusted to take into account the swarm behavioural design process and the added complexities that come with multiple agents interacting with one another. Additionally, we specify requirements based on the environments and training parameters which provide the data for training rather than on the datasets themselves.
 
 %\vspace{-2ex}
-\noindent\textbf{Activity 6. Define Data Requirements} In our adaptation of Activity 6, we take the EB Safety Requirements [H] outlined in Stage 2 as an input (see Fig.~\ref{amlas-a-stage3}). These safety requirements guide the data requirements in this activity, feeding into the data specification that we outline here. We split the data requirement outputs into two multi-agent focused requirements: [L.0] Data Type Requirements and [L.1] Data Availability Constraints.
+\noindent\textbf{Activity 6. Define Data Requirements} In our adaptation of Activity 6, we take the EB Safety Requirements [H] outlined in Stage 2 as an input (see Fig.~\ref{amlas-a-stage3}). These safety requirements guide the data requirements in this activity, feeding into the data specification outlined here. We split the data requirement outputs into two multi-agent focused requirements: [L.0] Data Type Requirements and [L.1] Data Availability Constraints.
+
 
 %\paragraph*{[L.0] Data Type Requirements}
 \emph{[L.0] Data Type Requirements:}
-This element focuses on the \emph{relevance}, \emph{completeness}, \emph{accuracy}, and \emph{balance} of the information that will be used to construct the swarm behaviour and will be subsequently used to test the EB of the system prior to its deployment. The \emph{relevance} of the data used in the development of the EB specifies the extent to which the test environment must match the intended operating domain of the robot swarm. The \emph{completeness} of the data specifies the conditions under which we test the behaviour, that is, the volume of experiments or tests that will be run, the variety of tests executed, and the diversity of environments expected to be used in the testing process. The aim is to cover a representative sample of conditions for testing. \emph{Accuracy} in this context relates to the parameters defining the performance of the robot swarm's primary function. For example, what constitutes a delivery in a logistics scenario~\cite{milner2022stochastic}, or under what conditions would an area be considered explored in a surveying mission. \emph{Balance} refers to the balance of the trials executed in the testing process of the EB algorithm. By considering balance, we expect the number of tests conducted for failure modes or environments to be justified, ensuring that there is not an unrealistic bias in testing towards a particular scenario. See Table \ref{tab:L0_req} for examples of data requirements relating to relevance, completeness, accuracy, and balance.
+This element focuses on the \emph{relevance}, \emph{completeness}, \emph{accuracy}, and \emph{balance} of the information that will be used to construct the swarm behaviour and, subsequently, to test the EB of the system before deployment. The \emph{relevance} of the data used in the development of the EB specifies the extent to which the test environment must match the intended operating domain of the robot swarm. The \emph{completeness} of the data specifies the conditions under which we test the behaviour, that is, the volume of experiments or tests that will be run, the variety of tests executed, and the diversity of environments expected to be used in the testing process. The aim is to cover a representative sample of conditions for testing. \emph{Accuracy} in this context relates to the parameters defining the performance of the robot swarm's primary function. For example, what constitutes a delivery in a logistics scenario~\cite{milner2022stochastic}, or under what conditions would an area be considered explored in a surveying mission. \emph{Balance} refers to the balance of the trials executed in the testing process of the EB algorithm. By considering balance, we expect the number of tests conducted for failure modes or environments to be justified, ensuring that there is not an unrealistic bias in testing towards a particular scenario. See Table~\ref{tab:L0_req} for examples of data requirements relating to relevance, completeness, accuracy, and balance.
 %\vspace{-2ex}
-\begin{figure*}[!t]
-	\centering
-	\includegraphics[width=0.75\textwidth]{figures/AERoS-Stage3.png}%AMLAS-STAGE-3-V4.png
-	\vspace{-2ex}
-	\caption{Stage 3: The AERoS data management process.}
-	\label{amlas-a-stage3}
-	\vspace{-4ex}
-\end{figure*}
 
 %\tiny
 \begin{table}[!h]%[h]
@@ -511,7 +519,7 @@ This element focuses on the \emph{relevance}, \emph{completeness}, \emph{accurac
 		5.2 & All simulations \emph{shall} be conducted in a dry environment.\\
 		% \hline
 		% 5.3 & All simulations shall include floors with step increases that are $\leq$ 0.5 cm.\\
-		\hline
+		\hline \\[-1.25\medskipamount]
 		& \textbf{Completeness Requirements Examples} \\
 		\hline
 		6.1 & All simulations \emph{shall} be repeated to include occurrences of faults representative of full communication faults.\\
@@ -521,51 +529,60 @@ This element focuses on the \emph{relevance}, \emph{completeness}, \emph{accurac
 		6.3 & All simulations \emph{shall} be repeated in multiple environments representative of those expected in real-world use of the system.\\
 		% \hline
 		% 6.4 & All simulations shall include sufficient range of robot density levels within the scope of the operational domain.\\ 
-		\hline
+		\hline \\[-1.25\medskipamount]
 		& \textbf{Accuracy Requirements Examples} \\
 		\hline
 		7.1 & All boxes \emph{shall} only be considered `delivered’, if all four of the boxes’ feet are positioned within the delivery zone.\\
 		\hline
 		7.2 & All boxes \emph{shall} only be considered `delivered’, once they are no longer in direct contact with a swarm agent.\\
-		\hline
+		\hline \\[-1.25\medskipamount]
 		& \textbf{Balance Requirements Examples} \\
 		\hline
 		8.1 & All simulations \emph{shall} be repeated so as to obtain representative evaluations for each possible mode of failure (defined under performance, adaptability, and human-safety requirements in Stage 2).\\
 		\hline
 		8.2 & All simulations \emph{shall} be repeated equally across all test environments.\\
-		\hline
+		\hline \\[-1\medskipamount] %\hline
 	\end{tabular}
 	\caption{Examples of requirements for output [L.0].}
 	\label{tab:L0_req}
 	\vspace{-4ex}
 \end{table}
-%\normalsize
+% \normalsize
+
+\begin{figure*}[!ht]
+	\centering
+	\includegraphics[width=0.75\textwidth]{figures/AERoS-Stage3.png}%AMLAS-STAGE-3-V4.png
+	\vspace{-2ex}
+	\caption{Stage 3: The AERoS data management process.}
+	\label{amlas-a-stage3}
+	\vspace{-4ex}
+\end{figure*}
 
 \emph{[L.1] Data Availability Constraints:}
-With the introduction of multiple agents comes the issue of data availability. Distributed communication is a key feature found in emergent systems. As such, it is crucial to define how much information each agent is expected to hold, how easily data may transfer between agents, and across what range agents should be able to transfer information between one another. Feasible constraints include: (i) \emph{storage capacity: }the swarm agents \emph{shall} have a maximum of 2 GB of information stored on board at any point in time; (ii) \emph{available sensors:} the swarm agents \emph{shall} only have access to environmental data deemed feasibly collectable by radially positioned cameras and laser time-of-flight sensors; (iii) \emph{communication range:} the swarm agents \emph{shall} only have access to other agent data when within communications range of 5 metres; and (iv) \emph{operator feedback:} the swarm agents \emph{shall} only share information with non-agents (e.g. operator terminal) when within communications range of 5 metres.
+With the introduction of multiple agents comes the issue of data availability. Distributed communication is a key feature found in emergent systems. As such, it is crucial to define how much information each agent is expected to hold, how easily data may transfer between agents, and across what range agents should be able to transfer information between one another. Feasible constraints include: (i) \emph{storage capacity: }the swarm agents \emph{shall} have a maximum of 2 GB of information stored on board at any point in time; (ii) \emph{available sensors:} the swarm agents \emph{shall} only have access to environmental data deemed feasibly collectable by radially positioned cameras and laser time-of-flight sensors; (iii) \emph{communication range:} the swarm agents \emph{shall} only have access to other agent data when within communications range of 5 metres; and (iv) \emph{operator feedback:} the swarm agents \emph{shall} only share information with non-agents (e.g.\ operator terminal) when within communications range of 5 metres.
 
 \emph{[M] Data Requirements Justification Report:}
 This report is an assessment of the data requirements, providing analysis and explanation for how the requirements and constraints ([L.0] and [L.1]) address the EB Safety Requirements [H].
-%This report acts as an assessment of the data requirements, providing analysis and explanation for how the requirements and constraints (outlined in [L.0] and [L.1]) address the EB Safety Requirements specified in [H].
+% This report acts as an assessment of the data requirements, providing analysis and explanation for how the requirements and constraints (outlined in [L.0] and [L.1]) address the EB Safety Requirements specified in [H].
 
 %\vspace{-2ex}
-\noindent\textbf{Activity 7. Define Swarm Evaluation Requirements} Taking the outputs [L.0] and [L.1] from Activity 6, the evaluation requirements consider how the EB of the swarm will be assessed, specifying the testing environment and the metrics comprising the test results.  
+\noindent\textbf{Activity 7. Define Swarm Evaluation Requirements} Taking the outputs [L.0] and [L.1] from Activity 6, the evaluation requirements consider how the EB of the swarm will be assessed, specifying the testing environment and the metrics to be used to assess the test results.\todo{KIE removed ``comprising''}
 
 \emph{[N] Test Environment:} This takes into consideration the requirements specified in Activity 6, and defines the environment in which the EB will be tested. In most cases this will be multiple simulation environments featuring diverse sets of the terrain, environmental conditions, and obstacle configurations. There may also be instances in which this test environment is specified as a physical environment operating under laboratory conditions, with a hardware system acting as a test bed to observe designed behaviours.
 
 \emph{[O] Swarm Performance Metrics:} This output is used to quantify how well the system is performing. While there may be multiple performance metrics, these metrics should be defined with respect to the primary function of the robot swarm. Metrics that might feature in this output could include: the delivery rate in a logistics scenario, the rate of area coverage in an exploration task, or the response time in disaster scenarios.
 
-\emph{[P] Verification Metrics:} These metrics should be derived from the EB Safety Requirements [H] specified in Stage 2. They are intended to be used as the criteria for success within the verification process. Examples of these metrics and their related safety requirements: swarm density which is used in verifying environmental safety specifications such as RQ3.1, maximum collision force experienced by agents, which could be used to verify that the swarm meets performance requirements such as RQ1.1 and RQ1.2, or the current speed of all agents, a metric relating directly to the human-safety requirements RQ4.1 and RQ4.2. %  safety performance requirements -> performance  requirements
+\emph{[P] Verification Metrics:} These metrics should be derived from the EB Safety Requirements [H] specified in Stage 2. They are intended to be used as the criteria for success within the verification process. Examples of these metrics and their related safety requirements are: swarm density, which is used in verifying environmental safety specifications such as RQ3.1, maximum collision force experienced by agents, which could be used to verify that the swarm meets performance requirements such as RQ1.1 and RQ1.2, or the current speed of all agents, a metric relating directly to the human-safety requirements RQ4.1 and RQ4.2. %  safety performance requirements -> performance  requirements
 
 \emph{[Q] Sensing and Metric Assumptions Log:} This log serves as a record of the details and decisions made in Activities 6 and 7. It should contain details of the choices made when producing the Test Environment [N], Swarm Performance Metrics [M], and the Verification Metric [P].
 %\vspace{-2ex}
 
-\noindent\textbf{Activity 8. Validate Evaluation Requirements} Taking into account outputs [N], [O], and [P] from Activity 7, this activity aims to validate these components with respect to the requirements specified in Activity 6. Should any discrepancies exist between the data requirements and the evaluation requirements, they should be justified appropriately and recorded in the output Swarm Evaluation Validation Results [S]. 
+\noindent\textbf{Activity 8. Validate Evaluation Requirements} Taking into account outputs [N], [O], and [P] from Activity 7, this activity aims to validate these components with respect to the requirements specified in Activity 6. Should any discrepancies exist between the data requirements and the evaluation requirements, they should be fully justified and recorded in the output Swarm Evaluation Validation Results [S]. 
 The artefacts generated in this stage are used to instantiate the EB Data Argument Pattern [R] in \textbf{Activity 9}.
 
 %\vspace{-2ex}
 \subsection{Stage 4: Model Emergent Behaviour} \label{framework-stage4}
-In the design of an EB algorithm, the challenge is in selecting behaviours at the individual level of the agent which give rise to the desired EB at the swarm level. 
+In the design of an EB algorithm, the challenge is in selecting behaviours at the individual level of the agents which give rise to the desired EB at the swarm level. 
 % In the original AMLAS process, Stage 4 focuses on the creation, testing, and instantiation of a machine learning model for a single system with no consideration given to EB for a collective. 
 In our adaptation of AMLAS for the robot swarm,  we step away from the machine learning paradigm to allow consideration for all possible optimisation algorithms which may attain the target EB.
 
@@ -603,10 +620,10 @@ In \textbf{Activity 12}, the artefacts generated in this stage are used to insta
 %
 The verification method and assessment process within that method will be largely determined by the specifics of the safety requirements. Some safety specifications lend themselves towards certain assessment methods due to the scenarios they prescribe.
 %
-For example, to assess that the robot swarm meets the requirements for performance given a motor-fault occurrence RQ1.3, it may be easier to realise this in physical or simulation-based testing approaches rather than constructing a reliable formal model of robot behaviour given the complex physical dynamics of a faulty wheel.
+For example, to assess that the robot swarm meets the requirements for performance given a motor-fault occurrence (see RQ1.3), it may be easier to realise this in physical or simulation-based testing approaches rather than attempting to construct a formal model of robot behaviour given the complex physical dynamics of a faulty wheel.
 
 %
-However, when considering the adaptability requirements, a formal, probabilistic-based verification technique of the EB Algorithm [W] is more suitable. For example, in RQ2.1, analysis using a probabilistic finite state machine of the swarm behaviour could identify the dwell period within states. Monitors could be used to observe when agents enter a stationary state, for example, \texttt{agent\_velocity=0 $\land $  t\_counter  $\ge$ 100}, and identify if time within that state exceeds some fixed value, and ascertain a probabilistic value to this metric.
+However, when considering the adaptability requirements, a formal, probabilistic verification technique of the EB Algorithm [W] is more suitable. For example, in RQ2.1, analysis using a probabilistic finite state machine of the swarm behaviour could identify the dwell period within states. Monitors could be used to observe when agents enter a stationary state, for example, \texttt{agent\_velocity=0 $\land $  t\_counter  $\ge$ 100}, and identify if time within that state exceeds some fixed value, and ascertain a probabilistic value to this metric.
 
 \emph{[P] Verification Scenario (Test Generation):} In most cases there will be multiple, valid verification scenarios (test cases) applicable for each of the safety specifications. A `good test case' must be \emph{effective} at finding bugs or defects, \emph{efficient} in minimising the number of tests required, use resources \emph{economically} and be \emph{robust} to system changes~\cite{Fewster1999}. 
 
@@ -620,14 +637,15 @@ The artefacts generated in this stage are used to instantiate the EB Verificatio
 \begin{figure}[!t]
 	%\vspace{-4ex}
 	\centering
-	\begin{minipage}{.5\textwidth}
+	\begin{minipage}[b]{.48\textwidth}
 		\centering
 		\includegraphics[width=0.9\textwidth]{figures/AERoS-Stage5.png}%AMLAS-STAGE-5-V4.png
 		\vspace{-2ex}
 		\caption{Stage 5: The AERoS verification process.}
 		\label{amlas-a-stage5}
-	\end{minipage}%
-	\begin{minipage}{.5\textwidth}
+      \end{minipage}%
+      \hspace*{0.02\textwidth}
+	\begin{minipage}[b]{.48\textwidth}
 		\centering
 		\includegraphics[width=0.99\textwidth]{figures/AERoS-Stage6.png}%AMLAS-STAGE-6-V5.png
 		\vspace{-2ex}
@@ -638,7 +656,7 @@ The artefacts generated in this stage are used to instantiate the EB Verificatio
 \end{figure}
 \noindent\textbf{Activity 15. Integrate EB} With the EB verified, the next step is to take the EB Algorithm [W], System Safety Requirements [A], Environment Description [B], and System Description [C] and integrate the EB with the system to be deployed (see Fig.~\ref{amlas-a-stage6}). 
 
-In this activity, we use the inputs to this stage to educate the implementation of the EB and anticipate errors we might expect in the interactions between agents and the overall EB. Despite the rigorous validation and testing conducted in previous stages, there will still be a gap between the test environment and the intended, everyday-use, deployed scenario. The output, [EE] Erroneous Behaviour Log, captures these anticipated gaps between testing and reality and the differences in behaviour that may surface. 
+In this activity, we use the inputs to this stage to inform the implementation of the EB and anticipate errors we might expect in the interactions between agents and the overall EB. Despite the rigorous validation and testing conducted in previous stages, there will still be a gap between the test environment and the intended, everyday-use, deployed scenario. The output, [EE] Erroneous Behaviour Log, captures these anticipated gaps between testing and reality and the differences in behaviour that may surface. 
 
 %\vspace{-2ex}
 \noindent\textbf{Activity 16. Test the Integration} Once the initial integration is complete, the physical implementation should undergo additional testing in which the system will be observed in multiple operational scenarios, as specified in [FF].
@@ -678,10 +696,11 @@ The artefacts generated in this stage are used to instantiate the EB Deployment 
 %\todo{SW: Just an optional thought, but it feels like the discussion of the AERoS framework itself is missing. Could one of the tables be removed to make more space for discussion? I think a paragraph or two on advantages and limitations would be enough.}
 Using AMLAS \cite{Hawkins2021} as a foundation, we have produced the six-stage development process AERoS. This process acts as guidance for those looking to construct swarm robot systems, particularly those that exhibit emergent behaviour through environmental and agent-to-agent interaction. The stages of AERoS break down the design of these systems to ensure that fundamental safety requirements are adhered to, even in instances of system degradation and compounded failures that should be expected, and managed, in robot swarms. We achieve this with an approach that allows for iteration of and feedback to the previous stages as issues of safety are encountered and investigated. We combine this iteration with repeated specification at each stage, observing the issue of safety through the lens of: data, modelling/behaviour design, verification, and deployment. 
 % Added by Dhaminda to address Shane's comment
-While the iterative nature of AERoS is a key advantage, a few limitations of this work can be identified. 
-First, the scope of this work has been limited to investigating inherent swarm qualities and the emergent properties that arises from these. 
-However, one can expand on this, and consider adaptation of individual robots through techniques such as machine learning (e.g. by applying AMLAS).
-Second, we can broaden the evaluation by considering additional swarm use cases (e.g. monitoring fires in a natural environment, and a social swarm), and a worked example of the entire AERoS process.
+
+While the iterative nature of AERoS is a key advantage, some limitations have been identified. 
+First, the scope of this work has been limited to investigating inherent swarm qualities and the emergent properties that arise from these. 
+However, one can expand on this, and consider adaptation of individual robots through techniques such as machine learning (e.g.\ by applying AMLAS).
+Second, we can broaden the evaluation by considering additional swarm use cases (e.g.\ monitoring fires in a natural environment, and also a social swarm), and by providing a worked example of the entire AERoS process.
 %in this work, we explored the AERoS process by using only a single case study, which can be broadened by considering additional swarm use cases (e.g. monitoring fires in a natural environment, and a social swarm), and a worked example of the entire AERoS process.
 
 While the focus of the AERoS process is to ensure the safety assurance of EB in swarms, the trustworthiness of an AS can be dependent on many factors other than safety. These include consideration of ethics, and governance and regulation of AS design and operation. 
@@ -757,10 +776,10 @@ In addition to ethics requirements, we intend to introduce regulatory requiremen
 % END OF PETE'S ADDITIONS
 
 %\vspace{-2ex}
-\section*{Acknowledgments}
-%\vspace{-2.5ex}
-The authors would like to thank John Downer, Jonathan Ives, Alvin Wilby, and the AMLAS team for their fruitful comments. The work presented in this paper has been supported by the UK Engineering and Physical Sciences Research Council (EPSRC) under the grant [EP/V026518/1]. 
-% I.H. is supported by the Assuring Autonomy International Programme at the University of York.
+\subsubsection*{Acknowledgments}
+% \vspace{-2.5ex}
+The authors would like to thank John Downer, Jonathan Ives, Alvin Wilby, and the AMLAS team for their fruitful comments. The work presented has been supported by the UK Engineering and Physical Sciences Research Council (EPSRC) under the grant [EP/V026518/1]. 
+I.H.\ is supported by the Assuring Autonomy International Programme at the University of York.
 
 %\vspace{-1ex}
 %
