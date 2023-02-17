@@ -108,18 +108,16 @@ ISO standards have been developed for the service robotics sector (non-industria
 However, although these %industry
 standards focus on ensuring the assurance of robots at the individual level, they do not cover safety or any other extra-functional property at the \emph{swarm} level that may arise through EB. %, which provides motivation for our study.
 
-The main contribution of this paper is a process for the safety assurance of EB in autonomous robotic swarms (AERoS), adapted from the guidance on the Assurance of Machine Learning for use in Autonomous Systems (AMLAS)~\cite{Hawkins2021} proposed for machine learning systems. 
-%The main contribution of this paper is a process for the safety assurance of EB for use in autonomous robotic swarms. which can be grounded or airborne (AERoS).
-%AERoS is adapted from the Assurance of Machine Learning for use in Autonomous Systems (AMLAS) process~\cite{Hawkins2021} proposed for machine learning systems. 
+The main contribution of this paper is a process for the safety assurance of EB in autonomous robotic swarms (AERoS), adapted from the guidance on the Assurance of Machine Learning for use in Autonomous Systems (AMLAS)~\cite{Hawkins2021}. % proposed for machine learning systems. 
 AERoS covers six EB lifecycle stages: safety assurance scoping, safety requirements elicitation, data management, model EB, model verification, and model deployment. 
-The AERoS process is generic and therefore can be applied to any swarm type (e.g. grounded, airborne). 
-In this paper, we explore it using an illustrative case study centered on a robot swarm operating a public cloakroom. 
-%Although AERoS is generic and therefore can be applied to any swarm type (e.g. grounded, airborne), in this work, we explore it using an illustrative case study centred on a robot swarm operating in a public cloakroom. 
-%We explore the AERoS process using an illustrative case study centered on a robot swarm operating in a public cloakroom. 
-%We illustrate the AERoS process using examples taken from a public cloakroom case study. 
-Let us consider a company that organises bespoke events with 50 to 10000 attendees~\cite{Jones2020}. 
-The company automates their cloakroom by deploying a swarm of robots to assist attendees (customers) to deposit, store, and deliver their belongings (e.g. jackets) \cite{Jones2020}. 
-As the swarm operates in a public setting, the system must prioritise public safety. 
+The AERoS process is domain independent and therefore can be applied to any swarm type (e.g. grounded, airborne). 
+%In this paper, we explore it using an illustrative case study centered on a robot swarm operating a public cloakroom. 
+In this paper, we explore it using an case study centered on a robot swarm operating a public cloakroom. 
+The robot swarm uses distributed situational awareness to assist attendees (customers) to deposit, store, and deliver their belongings (e.g. jackets) \cite{Jones2020}. As the swarm operates in a public setting, the system must prioritise public safety. 
+%Pop-up cloakroom powered by a swarm of robots using distributed situational awareness
+%Let us consider a company that organises bespoke events with 50 to 10000 attendees~\cite{Jones2020}. 
+%The company automates their cloakroom by deploying a swarm of robots to assist attendees (customers) to deposit, store, and deliver their belongings (e.g. jackets) \cite{Jones2020}. 
+%As the swarm operates in a public setting, the system must prioritise public safety. 
 
 The rest of the paper is organised as follows. 
 In Section~\ref{relatedwork}, we provide key related work to our study. Section~\ref{framework} discusses the six stages of the AERoS process. Finally, Section~\ref{discussion-conclusions} provides a brief discussion and concludes the paper. 
@@ -130,36 +128,35 @@ In Section~\ref{relatedwork}, we provide key related work to our study. Section~
 %AS with evolving functionality are considered to follow a much more iterative life-cycle compared to the conventional V\&V model. 
 AS are considered to follow a much more iterative life-cycle compared to the conventional V-model. 
 Thus, there is a need for new standards and assurance processes that extend beyond design time and allow continuous certification at runtime~\cite{Rushby2008}. 
-In this context, there have been several standards and guidance introduced by several industry committees and research groups. In 2016, the British Standards Institution introduced the BS 8611 standard that provides a guide to the ethical design and application of robots and robotic systems. % \cite{BS8611}. 
+In this context, there have been several standards and guidance introduced by various industry committees and research groups. In 2016, the British Standards Institution introduced the BS 8611 standard that provides a guide to the ethical design and application of robots and robotic systems. % \cite{BS8611}. 
 %Then, IEEE initiated the development of a series of standards to address autonomy, ethical issues, transparency, data privacy and trustworthiness (for e.g. IEEE P7001~\cite{IEEE-P7001}, P7007, P7010). 
-Then, IEEE through its Global Initiative on Ethics of Autonomous and Intelligent Systems initiated the development of a series of standards to address autonomy, ethical issues, transparency, data privacy and trustworthiness (e.g. IEEE P7001~\cite{IEEE-P7001}, P7007, P7010). 
+Then, IEEE through its Global Initiative on Ethics of Autonomous and Intelligent Systems initiated the development of a series of standards to address autonomy, ethical issues, transparency, data privacy and trustworthiness (e.g. IEEE P7001, P7007, P7010).  %~\cite{IEEE-P7001}
 There are several standards and guidance related to machine learning in aeronautics, automotive, railway and industrial domains \cite{Kaakai2022}, for example the AMLAS process~\cite{Hawkins2021}, the European Union Aviation Safety Agency (EASA) concept paper, the DEpendable and Explainable Learning (DEEL) white paper, the Aerospace Vehicle System Institute (AVSI) report, the Laboratoire National de Métrologie et d'Essais (LNE) certification, and the UL 4600 standard. However, none of these approaches targets robot swarms. %None of the aforementioned standards and guidance targets swarm systems.
 
 In this work we used AMLAS \cite{Hawkins2021} as the foundation for developing an assurance process for autonomous robotic swarms. 
 AMLAS provides guidance on how to systematically integrate safety assurance into the development of the machine learning components based on offline supervised learning. 
 AMLAS is iterative by design, and contains six stages where assurance activities are performed in parallel to the development activities. 
-AMLAS has the advantage of ensuring safety assurance for complex AS where the behaviour of the system changes over time as a result of learning. 
+AMLAS has the potential for ensuring safety assurance for complex AS where the behaviour of the system changes over time as a result of learning. 
 In this work, we take inspiration from AMLAS, but adapt it to focus on emergence as the driver for complexity, rather than learning. 
-
-% Sabine's Comment on 12 /02/2023:
-%Is it true that AMLAS is only got a single machine learning component? Not clear what a component is here as used in different ways in paragraph. It's also still not clear why AMLAS is used as an inspiration.  
-%Maybe keep simple. AMLAS does ..(using their own definition). This framework has the advantage of providing specification for complex systems where the behaviour of the system changes over time, here as a result of learning. We take inspiration from AMLAS, but adapt it to focus on emergence as the driver for complexity, rather than learning. AEROS....
-
-% Suet Lee's Edit on 10/02/2023:
-%In this work we used AMLAS \cite{Hawkins2021} as the foundation for developing an assurance process for autonomous robotic swarms. AMLAS provides guidance for the systematic integration of safety assurance in the development of a single machine learning component. In our case, the component under consideration is the EB of the swarm system which differs from AMLAS. However the development process for the EB algorithm is analogous to that of a machine learning model which provides a strong basis for adapting the AMLAS approach to safety assurance integration.
-%AMLAS contains six stages where assurance activities are performed in parallel to the development of the machine learning components. The process is iterative by design and feedback is used to update previous stages. We follow a similar approach in the development of an algorithm for EB which arises as a result of local interactions of agents in the system, as opposed to the single model system that AMLAS targets.
-
-% In this work we used AMLAS \cite{Hawkins2021} as the foundation for developing an assurance process for autonomous robotic swarms. AMLAS provides guidance on how to systematically integrate safety assurance into the development of the machine learning components based on offline supervised learning. 
-% %AMLAS provides an explicit and structured safety case that the system is safe to operate in its intended context of use. 
-% AMLAS contains six stages, and the assurance activities are performed in parallel to the development of machine learning component. 
-% The process is iterative by design and feedback is used to update previous stages. 
-% However, AMLAS specifically targets the safety assurance of a machine learning model for a single system, and not for a collective as considered in our study.  
-% In machine learning the behaviour emerges from the learning process, in swarms it emerges from the local interactions of the agents.
+%AMLAS has the advantage of ensuring safety assurance for complex AS where the behaviour of the system changes over time as a result of learning. 
+%In this work, we take inspiration from AMLAS, but adapt it to focus on emergence as the driver for complexity, rather than learning. 
 
 %\vspace{-2ex}
 \section{The AERoS Process}\label{framework}
 %\vspace{-2ex}
-In this section, we discuss the six main stages of the AERoS process targeting autonomous robot swarms. For each stage, we describe its inputs and outputs, main assurance activities and their associated artefacts.
+This section discusses the six main stages of AERoS targeting autonomous robot swarms. AERoS is iterative by design, and the assurance activities are performed in parallel to the development activities (see Fig.~\ref{aeros-process}). For each stage, we describe its inputs and outputs, main assurance activities and their associated artefacts. 
+%In this section, we discuss the six main stages of the AERoS process targeting autonomous robot swarms. For each stage, we describe its inputs and outputs, main assurance activities and their associated artefacts. AERoS is iterative by design, and the assurance activities are performed in parallel to the development activities (see Fig.~\ref{aeros-process}).
+%AERoS is iterative by design, and contains six stages where assurance activities are performed in parallel to the development activities. 
+\begin{figure*}[!b]
+	\centering
+		\vspace{-5ex}
+	\includegraphics[width=0.8\textwidth]{figures/AERoS-Process.png}%AMLAS-STAGE-3-V4.png
+	\vspace{-2ex}
+	\caption{The AERoS process}%: iterative-by-design and the six stages where assurance activities are performed in parallel to development. 
+	\label{aeros-process}
+	\vspace{-4ex}
+\end{figure*}
+	%\vspace{-4ex}
 %In this study, we look at inherent swarm qualities and the adaptation that arises from these qualities. 
 %In a swarm, individual robots execute simple behaviours or algorithms, and these simple behaviours when performed by a large number of agents build to form \emph{emergent behaviours} (EB).  
 %
@@ -345,7 +342,8 @@ Stage 2 contains three activities (Fig.~\ref{amlas-a-stage2}), which are perform
 
 %\vspace{-2ex}
 \noindent\textbf{Activity 3. Develop EB Safety Requirements} The required input to Activity 3 in Stage 2 is the Safety Requirements Allocated to the Swarm [E]. 
-We define EB safety requirements to control the risk of swarm-level hazards by taking into account the system architecture defined and the operating environment. 
+We define EB safety requirements to specify risk controls for the swarm-level hazards by taking into account the system architecture defined and the operating environment. 
+%We define EB safety requirements to control the risk of swarm-level hazards by taking into account the system architecture defined and the operating environment. %to specificy risk controls for the
 
 In the swarm context, we consider four types of requirements: \emph{performance}, \emph{adaptability}, \emph{human safety}, and \emph{environment}. 
 In particular, the environment requirements capture the need for the system to be robust to variation in the operative space.
@@ -836,8 +834,8 @@ In addition to ethics requirements, we intend to introduce regulatory requiremen
 
 \subsubsection*{Acknowledgments}
 % \vspace{-2.5ex}
-The authors would like to thank Alvin Wilby, John Downer, Jonathan Ives, and the AMLAS team for their fruitful comments. The work presented has been supported by the UK Engineering and Physical Sciences Research Council (EPSRC) under the grant [EP/V026518/1]. 
-I.H.\ is supported by the Assuring Autonomy International Programme at the University of York.
+The authors would like to thank Alvin Wilby, John Downer, Jonathan Ives, and the AMLAS team for their fruitful comments. The work presented has been supported by the UKRI Trustworthy Autonomous Systems Node in Functionality under Grant EP/V026518/1. I.H.\ is supported by the Assuring Autonomy International Programme at the University of York.
+%The work presented has been supported by the UK Engineering and Physical Sciences Research Council (EPSRC) under the grant [EP/V026518/1]. 
 %
 % ---- Bibliography ----
 %
