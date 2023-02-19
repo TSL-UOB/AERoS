@@ -153,7 +153,7 @@ In this work, we take inspiration from AMLAS, but adapt it to focus on emergence
 %In this work, we take inspiration from AMLAS, but adapt it to focus on emergence as the driver for complexity, rather than learning. 
 
 \section{The AERoS Process}\label{framework}
-This section discusses the six main stages of AERoS targeting autonomous robot swarms. AERoS is iterative by design, and the assurance activities are performed in parallel to the development activities (see Fig.~\ref{aeros-process}). For each stage, we describe its inputs and outputs, main assurance activities and their associated artefacts. 
+This section discusses the six main stages of AERoS targeting autonomous robot swarms. AERoS is iterative by design, and the assurance activities are performed in parallel to EB development (see Fig.~\ref{aeros-process}). For each stage, we describe its inputs and outputs, main assurance activities and their associated artefacts. 
 %In this section, we discuss the six main stages of the AERoS process targeting autonomous robot swarms. For each stage, we describe its inputs and outputs, main assurance activities and their associated artefacts. AERoS is iterative by design, and the assurance activities are performed in parallel to the development activities (see Fig.~\ref{aeros-process}).
 %AERoS is iterative by design, and contains six stages where assurance activities are performed in parallel to the development activities. 
 \begin{figure*}[!b]
@@ -307,6 +307,8 @@ These example requirements have been generated following three main consideratio
 \end{figure}
 \begin{table}[!t]
 	\centering
+	\caption{\label{tab:reqs}Examples of performance, adaptability, and environmental safety requirements for the cloakroom scenario.}
+	%\vspace{-4ex}%-4ex
 	\begin{tabular}{p{5mm} p{120mm} }
 		\textbf{RQ} & \textbf{Performance Requirements}\\
 		\hline
@@ -359,8 +361,7 @@ These example requirements have been generated following three main consideratio
 		\\ 		
 		\hline \\[-1\medskipamount]
 	\end{tabular}
-	\caption{\label{tab:reqs}Examples of performance, adaptability, and environmental safety requirements for the cloakroom scenario.}
-	\vspace{-4ex}%-4ex
+\vspace{-4ex}
 \end{table}
 %\normalsize
 %\todo{For 2.2, specify max.\ speed of swarm robots?}
@@ -369,6 +370,8 @@ These example requirements have been generated following three main consideratio
 %\tiny
 \begin{table}[!h]
 	\centering
+	\caption{\label{tab:human-s}Examples of human-safety requirements for the cloakroom scenario.}
+	\vspace{-2ex}
 	\begin{tabular}{p{6mm} p{118mm}}%p{116mm}}
 		\textbf{RQ} & \textbf{Human-Safety Requirements} \\
 		\hline
@@ -401,8 +404,7 @@ These example requirements have been generated following three main consideratio
 		\\				
 		\hline \\[-1\medskipamount]
 	\end{tabular}
-	\caption{\label{tab:human-s}Examples of human-safety requirements for the cloakroom scenario.}
-	\vspace{-7ex}%	\vspace{-4ex}
+	\vspace{-6ex}%	\vspace{-4ex}
 \end{table}   
 %\normalsize
 %A key output of Activity 3 is the EB Safety Requirements [H] which states the safety requirements relating to: performance, adaptability and environment (see Table \ref{tab:reqs}), as well as human safety requirements (see Table \ref{tab:human-s}).
@@ -442,6 +444,8 @@ This element focuses on the \emph{relevance}, \emph{completeness}, \emph{accurac
 
 \begin{table}[!h]%[h]
 	\centering
+	\caption{Examples of requirements for output [L.0].}
+	\label{tab:L0_req}
 	\begin{tabular}{p{0.6cm} p{11.6cm}}
 		\textbf{RQ} & \textbf{Relevance Requirements Examples} \\
 		\hline
@@ -474,9 +478,7 @@ This element focuses on the \emph{relevance}, \emph{completeness}, \emph{accurac
 		8.2 & All simulations \emph{shall} be repeated equally across all test environments.\\
 		\hline \\[-1\medskipamount] %\hline
 	\end{tabular}
-	\caption{Examples of requirements for output [L.0].}
-	\label{tab:L0_req}
-	\vspace{-4ex}
+	\vspace{-3ex}
 \end{table}
 
 \emph{[L.1] Data Availability Constraints:}
@@ -627,6 +629,7 @@ The artefacts generated in this stage are used to instantiate the EB Deployment 
 \section{Discussion and Future Work} \label{discussion-conclusions}
 %\todo{SW: Just an optional thought, but it feels like the discussion of the AERoS framework itself is missing. Could one of the tables be removed to make more space for discussion? I think a paragraph or two on advantages and limitations would be enough.}
 Using AMLAS \cite{Hawkins2021} as a foundation, we have produced the six-stage development process AERoS. This process acts as guidance for those looking to construct swarm robot systems, particularly those that exhibit emergent behaviour through environmental and agent-to-agent interaction. The stages of AERoS break down the design of these systems to ensure that fundamental safety requirements are adhered to, even in instances of system degradation and compounded failures that should be expected, and managed, in robot swarms. We achieve this with an approach that allows for iteration of and feedback to the previous stages as issues of safety are encountered and investigated. We combine this iteration with repeated specification at each stage, observing the issue of safety through the lens of: data, modelling/behaviour design, verification, and deployment. 
+
 % Added by Dhaminda to address Shane's comment
 While the iterative nature of AERoS is a key advantage, some limitations have been identified. 
 First, the scope of this work has been limited to investigating inherent swarm qualities and the emergent properties that arise from these. 
@@ -638,8 +641,12 @@ While the focus of the AERoS process is to ensure the safety assurance of EB in 
 In future work, we intend to build on Porter et al.’s \cite{Porter2022} Principle-based Ethical Assurance Argument for AI and Autonomous Systems and develop ethics requirements for swarm robots around the ethical principles of beneficence, non-maleficence, respect for autonomy, and justice. 
 In addition to ethics requirements, we intend to introduce regulatory requirements into the consideration of AS specification. In particular, we observe the work of Macrae’s~\cite{macrae2021learning} Structural, Organisational, Technological, Epistemic, and Cultural (SOTEC) framework to help us identify sources of socio-technical risk in Autonomous and Intelligent systems. Viewing regulatory requirement analysis from a socio-technical perspective allows us to move away from a purely technical conception of requirements, and helps us design AS that better fit the organisation and operators’ work in which safety considerations are meaningful within the wider system and operational context. The relevance of SOTEC for crafting regulatory requirements for the swarms in the cloakroom as a safety assurance mechanism will be described in a future paper. 
 
-\subsubsection*{Acknowledgments}
-The authors would like to thank Alvin Wilby, John Downer, Jonathan Ives, and the AMLAS team for their fruitful comments. The work presented has been supported by the UKRI Trustworthy Autonomous Systems Node in Functionality under Grant EP/V026518/1. I.H.\ is supported by the Assuring Autonomy International Programme at the University of York.
+%\subsubsection{Acknowledgements} Please place your acknowledgments at
+%the end of the paper, preceded by an unnumbered run-in heading (i.e.
+%3rd-level heading).
+
+%\subsubsection*{Acknowledgments}
+\subsubsection{Acknowledgements} The authors would like to thank Alvin Wilby, John Downer, Jonathan Ives, and the AMLAS team for their fruitful comments. The work presented has been supported by the UKRI Trustworthy Autonomous Systems Node in Functionality under Grant EP/V026518/1. I.H.\ is supported by the Assuring Autonomy International Programme at the University of York.
 %The work presented has been supported by the UK Engineering and Physical Sciences Research Council (EPSRC) under the grant [EP/V026518/1]. 
 %
 % ---- Bibliography ----
@@ -650,8 +657,6 @@ The authors would like to thank Alvin Wilby, John Downer, Jonathan Ives, and the
 \bibliographystyle{splncs04}
 %\bibliography{AERoS-Bib}
 \bibliography{AERoS-Bib-Shortened}
-\vspace{-1ex}
-%\end{spacing}
 %
 \end{document}
 %%% Local Variables:
