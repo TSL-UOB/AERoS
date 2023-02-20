@@ -1,0 +1,121 @@
+\begin{thebibliography}{10}
+
+\bibitem{Sahin2005}
+Erol {\c{S}}ahin.
+\newblock Swarm robotics: From sources of inspiration to domains of
+  application.
+\newblock In {\em Swarm Robotics}, volume 3342 of {\em LNCS}, pages 10--20.
+  Springer, 2005.
+
+\bibitem{Abeywickrama2022}
+Dhaminda~B. Abeywickrama, Amel Bennaceur, Greg Chance, Yiannis Demiris,
+  Anastasia Kordoni, Mark Levine, Luke Moffat, Luc Moreau, Mohammad~Reza
+  Mousavi, Bashar Nuseibeh, Subramanian Ramamoorthy, Jan~Oliver Ringert, James
+  Wilson, Shane Windsor, and Kerstin Eder.
+\newblock {On specifying for trustworthiness}.
+\newblock 2022.
+
+\bibitem{ISO24765:2017}
+\relax{International Organization for Standardization}.
+\newblock \relax{ISO/IEC/IEEE 24765:2017 Systems and software engineering —
+  Vocabulary}.
+\newblock Online, 2017.
+
+\bibitem{Cheng2014}
+Betty H.~C. Cheng, Kerstin~I. Eder, Martin Gogolla, Lars Grunske, Marin Litoiu,
+  Hausi~A. M{\"u}ller, Patrizio Pelliccione, Anna Perini, Nauman~A. Qureshi,
+  Bernhard Rumpe, Daniel Schneider, Frank Trollmann, and Norha~M. Villegas.
+\newblock {\em Using models at runtime to address assurance for self-adaptive
+  systems}, pages 101--136.
+\newblock Springer International Publishing, Cham, 2014.
+
+\bibitem{Forsberg:1992}
+Kevin Forsberg and Harold Mooz.
+\newblock The relationship of systems engineering to the project cycle.
+\newblock {\em Engineering Management Journal}, 4(3):36--43, September 1992.
+
+\bibitem{Jia2021}
+Yan Jia, John McDermid, Tom Lawton, and Ibrahim Habli.
+\newblock The role of explainability in assuring safety of machine learning in
+  healthcare.
+\newblock {\em IEEE Transactions on Emerging Topics in Computing},
+  10(4):1746--1760, 2022.
+
+\bibitem{Fisher2020}
+Michael Fisher, Viviana Mascardi, Kristin~Yvonne Rozier, Bernd-Holger
+  Schlingloff, Michael Winikoff, and Neil Yorke-Smith.
+\newblock Towards a framework for certification of reliable autonomous systems.
+\newblock {\em Autonomous Agents and Multi-Agent Systems}, 35(8):65, 2021.
+
+\bibitem{Hawkins2021}
+Richard Hawkins, Colin Paterson, Chiara Picardi, Yan Jia, Radu Calinescu, and
+  Ibrahim Habli.
+\newblock \relax{Guidance on the assurance of machine learning in autonomous
+  systems (AMLAS)}.
+\newblock Guidance Version 1.1, University of York, March 2021.
+
+\bibitem{Jones2020}
+Simon Jones, Emma Milner, Mahesh Sooriyabandara, and Sabine Hauert.
+\newblock Distributed situational awareness in robot swarms.
+\newblock {\em Advanced Intelligent Systems}, 2(11):2000110, 2020.
+
+\bibitem{Rushby2008}
+John Rushby.
+\newblock Runtime certification.
+\newblock In Martin Leucker, editor, {\em Runtime verification}, pages 21--35,
+  Berlin, Heidelberg, 2008. Springer Berlin Heidelberg.
+
+\bibitem{IEEE-P7001}
+A.~Winfield, S.~Booth, L.~A. Dennis, T.~Egawa, H.~Hastie, N.~Jacobs, R.~I.
+  Muttram, J.~I. Olszewska, F.~Rajabiyazdi, A.~Theodorou, M.~A. Underwood,
+  R.~H. Wortham, and E.~Watson.
+\newblock \relax{IEEE P7001: A proposed standard on transparency}.
+\newblock {\em Frontiers in robotics and AI}, 8:225, 2021.
+
+\bibitem{Kaakai2022}
+Fateh Kaakai, Konstantin Dmitriev, Sridhar Adibhatla, Elgiz Baskaya, Emanuele
+  Bezzecchi, Ramesh Bharadwaj, Barclay Brown, Giacomo Gentile, Corinne Gingins,
+  Stephane Grihon, and Christophe Travers.
+\newblock Toward a machine learning development lifecycle for product
+  certification and approval in aviation.
+\newblock {\em SAE Int. J. Aerosp.}, 15(2), May 2022.
+
+\bibitem{Lee2022}
+Suet Lee, Emma Milner, and Sabine Hauert.
+\newblock A data-driven method for metric extraction to detect faults in robot
+  swarms.
+\newblock {\em IEEE Robotics and Automation Letters}, 7(4):10746--10753, 2022.
+
+\bibitem{Jones2022}
+Simon Jones, Emma Milner, Mahesh Sooriyabandara, and Sabine Hauert.
+\newblock \relax{DOTS: An open testbed for industrial swarm robotic solutions},
+  2022.
+
+\bibitem{milner2022stochastic}
+Emma Milner, Mahesh Sooriyabandara, and Sabine Hauert.
+\newblock Stochastic behaviours for retrieval of storage items using simulated
+  robot swarms.
+\newblock {\em Artificial Life and Robotics}, 27(2):264--271, 2022.
+
+\bibitem{Jones2018}
+Simon Jones, Matthew Studley, Sabine Hauert, and Alan Winfield.
+\newblock {\em Evolving behaviour trees for swarm robotics}, pages 487--501.
+\newblock Springer International Publishing, Cham, 2018.
+
+\bibitem{Fewster1999}
+Mark Fewster and Dorothy Graham.
+\newblock {\em Software test automation effective use of test execution tools}.
+\newblock 1999.
+
+\bibitem{Porter2022}
+Zoe Porter, Ibrahim Habli, and John~Alexander McDermid.
+\newblock \relax{A principle-based ethical assurance argument for AI and
+  autonomous systems}, March 2022.
+
+\bibitem{macrae2021learning}
+Carl Macrae.
+\newblock Learning from the failure of autonomous and intelligent systems:
+  Accidents, safety, and sociotechnical sources of risk.
+\newblock {\em Risk analysis}, 2021.
+
+\end{thebibliography}
