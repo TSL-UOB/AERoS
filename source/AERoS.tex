@@ -159,7 +159,7 @@ This section discusses the six main stages of AERoS targeting autonomous robot s
 \begin{figure*}[!b]
 	\centering
 	\vspace{-3ex}
-	\includegraphics[width=1.0\textwidth]{figures/AERoS-Process-v2.png}%AMLAS-STAGE-3-V4.png
+	\includegraphics[width=0.87\textwidth]{figures/AERoS-Process-v2.png}%AMLAS-STAGE-3-V4.png
 	\vspace{-3ex}
 	\caption{The AERoS process with the six stages adapted from AMLAS.}%: iterative-by-design and the six stages where assurance activities are performed in parallel to development. 
 	\label{aeros-process}
@@ -222,12 +222,13 @@ The agents are required to navigate a public space between collection and delive
 % Dhaminda - this has been addressed. Please check. 
 
 \emph{[C] System Description:}
-In the cloakroom, we can consider three inputs: sensor availability, neighbourhood data, and swarm parameters (see Fig.~\ref{system-description}). The \emph{sensors} available to agents can be cameras and laser time-of-flight sensors. 
+In the cloakroom, we can consider three inputs: sensor availability, neighbourhood data (used because there is no access to global data in real-world deployments), and swarm parameters (see Fig.~\ref{system-description}). The \emph{sensors} available to agents can be cameras and laser time-of-flight sensors. 
 The neighbourhood data of the swarm can be specified through the communication systems available to agents, in this case Bluetooth. 
+%Neighbourhood data is used because there is no access to global data in real-world deployments. %due to the communication limitations 
 Through the use of this short-range communication, agents can access neighbourhood data, such as approximate position or current state of local agents.  
-%, an approximate history of box movement, and the amount of time deployed. 
-As for the swarm-level parameters, we can consider options specified by a user, that is, the number of agents deployed, and the maximum speed of agents. %, and the number of agents permitted to be active at a time.
+As for the swarm-level parameters, we can consider options specified by a user, that is, the number of agents deployed, and the maximum speed of agents. 
 Once defined, the three inputs are then fed to the individual agents to instruct their behaviour. This behaviour enacted by multiple agents then produces a swarm-level EB as the individuals interact with one another and their environment. 
+%Page 4 - "why single out neighbourhood data?" - emphasize that this is due to communications limitations i.e. we are not assuming access to global data as that would not be available in real-world deployment.
 
 \emph{[D] EB Description and Expected Output:}
 By expected output, we refer to the gains that can arise from the system by deploying multiple agents. 
@@ -308,7 +309,6 @@ These example requirements have been generated following three main consideratio
 \begin{table}[!t]
 	\centering
 	\caption{\label{tab:reqs}Examples of performance, adaptability, and environmental safety requirements for the cloakroom scenario.}
-	%\vspace{-4ex}%-4ex
 	\begin{tabular}{p{5mm} p{120mm} }
 		\textbf{RQ} & \textbf{Performance Requirements}\\
 		\hline
@@ -435,7 +435,7 @@ This element focuses on the \emph{relevance}, \emph{completeness}, \emph{accurac
 \begin{figure*}[!b]%[!ht]
 	\centering
 	\vspace{-5ex} % -
-	\includegraphics[width=0.71\textwidth]{figures/AERoS-Stage3.png}%width=0.75
+	\includegraphics[width=0.72\textwidth]{figures/AERoS-Stage3.png}%width=0.75
 	\vspace{-2ex} % 2
 	\caption{Stage 3: The AERoS data management process.}
 	\label{amlas-a-stage3}
@@ -482,7 +482,7 @@ This element focuses on the \emph{relevance}, \emph{completeness}, \emph{accurac
 \end{table}
 
 \emph{[L.1] Data Availability Constraints:}
-With the introduction of multiple agents comes the issue of data availability. Distributed communication is a key feature found in emergent systems. As such, it is crucial to define how much information each agent is expected to hold, how easily data may transfer between agents, and across what range agents should be able to transfer information between one another. Feasible constraints are~\cite{Jones2022}: (i) \emph{storage capacity: }the swarm agents \emph{shall} have a maximum of 2 GB of information stored on board at any point in time; (ii) \emph{available sensors:} the swarm agents \emph{shall} only have access to environmental data deemed feasibly collectable by radially positioned cameras and laser time-of-flight sensors; (iii) \emph{communication range:} the swarm agents \emph{shall} only have access to other agent data when within communications range of 5 metres; and (iv) \emph{operator feedback:} the swarm agents \emph{shall} only share information with non-agents (e.g.\ operator terminal) when within communications range of 5 metres.
+With the introduction of multiple agents comes the issue of data availability. Distributed communication is a key feature found in emergent systems. As such, it is crucial to define how much information each agent is expected to hold, how easily data may transfer between agents, and across what range agents should be able to transfer information between one another. Feasible constraints include~\cite{Jones2022}: (i) \emph{storage capacity: }the swarm agents \emph{shall} have a maximum of 2 GB of information stored on board at any time; (ii) \emph{available sensors:} the swarm agents \emph{shall} only have access to environmental data deemed feasibly collectable by radially positioned cameras and laser time-of-flight sensors; (iii) \emph{communication range:} the swarm agents \emph{shall} only have access to other agent data when within communications range of 5 metres; and (iv) \emph{operator feedback:} the swarm agents \emph{shall} only share information with non-agents (e.g.\ operator terminal) when within communications range of 5 metres.
 
 \emph{[M] Data Requirements Justification Report:}
 This report is an assessment of the data requirements, providing analysis and explanation for how the requirements and constraints ([L.0] and [L.1]) address the EB Safety Requirements [H].
@@ -524,7 +524,7 @@ In our adaptation of AMLAS for the robot swarm,  we step away from the machine l
 
 \noindent\textbf{Activity 10. Create EB Algorithm} 
 This can be nature inspired, hand designed, or evolved from a relatively simple set of instructions for individual behaviour, which takes into account agent-to-agent and environmental interactions. %~\cite{Jones2018}. 
-These instructions when given to a large number of agents, create a synergistic behaviour for the swarm that is more powerful than the sum of individual agent performance.
+These instructions when given to a large number of agents, create a synergistic behaviour for the swarm that is more powerful than the sum of the individual agent's performance.
 %EB algorithms can be hand designed, evolved or bio-inspired from a relatively simple set of instructions for individual behaviour which take into account agent-to-agent and environmental interaction. 
 %These instructions, when given to a large number of agents, creates a synergistic behaviour for the swarm, which is more powerful than the sum of individual agent performance.
 %In a swarm, individual robots execute simple behaviours, and when performed by a large number of agents, these simple behaviours build to form EB.
@@ -554,7 +554,6 @@ The key output from this activity is the Candidate EB [U] for testing.
 	\vspace{-4ex}
 \end{figure}
 
-%\vspace{-2ex}
 \noindent\textbf{Activity 11. Test EB Algorithm} In this activity, the candidate EB will be tested against the Swarm Performance Metrics [O] produced in Stage 3. Testing ensures that the EB performs as desired with respect to the defined metrics and in the case where performance passes accepted thresholds, the EB Algorithm [W] will be produced as the output of the activity. 
 
 \emph{[Y] Internal Test Results:} This output provides a degree of transparency in the testing procedure as the results may be further examined to ensure tests have run correctly. 
