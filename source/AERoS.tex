@@ -102,23 +102,25 @@ We explore our proposed process using a case study centred on a robot swarm oper
 %Dhaminda: We are using the bibliographystyle provided by the template without any changes. The template has been double checked and it is correct. \bibliographystyle{splncs04}
 Swarm robotics provides an approach to the coordination of large numbers of robots inspired by swarm behaviours in nature. %~\cite{Sahin2005}. 
 %The functionality of a swarm is emergent, and evolves based on the capabilities of the robots and the numbers of robots used. 
-The overall behaviours of a swarm are not explicitly engineered in the system. Instead, they are an emergent consequence of the interactions of individual agents with each other and the environment~\cite{Abeywickrama2022}; this poses a challenge to \emph{assurance}. 
+The overall behaviours of a swarm are not explicitly engineered in the system. Instead, they are an emergent consequence of the interactions of individual agents with each other and the environment, we call this emergent behaviour (EB)~\cite{Abeywickrama2022}. EB can be difficult to model and characterize and this property of swarms poses a critical challenge to \emph{assurance}. 
 %According to~\cite{ISO24765:2017}, \emph{assurance} is defined as ``all the planned and systematic activities implemented within the quality system, and demonstrated as needed, to provide adequate confidence that an entity will fulfil requirements for quality''. 
 According to the ISO standard for systems and software engineering vocabulary~\cite{ISO24765:2017}, \emph{assurance} is defined as ``all the planned and systematic activities implemented within the quality system, and demonstrated as needed, to provide adequate confidence that an entity will fulfil requirements for quality''. 
 Assurance tasks comprise conformance to standards, verification and validation (V\&V), and certification. Assurance criteria for autonomous systems (AS) include both functional and non-functional requirements such as safety~\cite{Cheng2014}. 
 
 Existing standards and regulations of AS are either implicitly or explicitly based on the V lifecycle model, which moves from requirements through design onto implementation and testing before deployment~\cite{Jia2021}. 
 %Existing standards and regulations of AS are either implicitly or explicitly based on the V-model~\cite{Forsberg:1992}, which moves from requirements through design onto implementation and testing before deployment~\cite{Jia2021,Fisher2020}. 
-However, this model is unlikely to be suitable for systems with emergent behaviour (EB); for example\ through interaction with other agents and the environment, as is the case with swarms. 
+However, this model is unlikely to be suitable for systems with EB; for example\ through interaction with other agents and the environment, as is the case with swarms. 
 ISO standards have been developed for the service robotics sector (non-industrial) (e.g.\ ISO 13482, ISO 23482-1, ISO 23482-2), and the industrial robotics sector (e.g.\ ISO 10218-1, ISO 10218-2, ISO/TS 15066)~\cite{Abeywickrama2022}. 
 However, although these %industry
 standards focus on ensuring the assurance of robots at the individual level, they do not cover safety or any other extra-functional property at the \emph{swarm} level that may arise through EB. %, which provides motivation for our study.
 
 The main contribution of this paper is a process for the safety assurance of EB in autonomous robotic swarms (AERoS), adapted from the guidance on the Assurance of Machine Learning for use in Autonomous Systems (AMLAS)~\cite{Hawkins2021}. % proposed for machine learning systems. 
 AERoS covers six EB lifecycle stages: safety assurance scoping, safety requirements elicitation, data management, model EB, model verification, and  model deployment. 
-The AERoS process is domain independent and therefore can be applied to any swarm type (e.g. grounded, airborne). 
-In this paper, we explore it using a case study centered on a robot swarm operating a public cloakroom at events with 50 to 10000 attendees~\cite{Jones2020}. 
-In the cloakroom, a swarm of robots assist attendees to deposit, store, and deliver their belongings (e.g. jackets) \cite{Jones2020}. 
+The AERoS process is domain independent and therefore can be applied to any swarm type (e.g. grounded, airborne). In particular, a system of components can be considered as analogous to a swarm if the system is decentralized with local interactions between components - in this case the AERoS process may also be applicable.
+
+
+In this paper, we explore the process using a case study centered on a robot swarm operating a public cloakroom at events with 50 to 10000 attendees~\cite{Jones2020}. 
+In the cloakroom, a swarm of robots assist attendees to deposit, store, and deliver their belongings (e.g. jackets) \cite{Jones2020}.
 As the swarm operates in a public setting, the system must prioritise public safety. 
 % 16/02/2023 version before I.H. comments:
 %In this paper, we explore it using an illustrative case study centered on a robot swarm operating a public cloakroom. 
@@ -554,10 +556,12 @@ This can be nature inspired, hand designed, or evolved from a relatively simple 
 %JW:
 %I imagine something along the lines of: whether hand designed, evolved, or bio-inspired, EB algorithms are configured from a relatively simple set of instructions for individual behaviour which take into account agent-to-agent and environmental interaction. The instructions, when given to a large number of agents, creates a synergistic behaviour for the swarm, more powerful than the sum of individual agent performance.
 %
-The EB algorithm is engineered at the level of the individual agent behaviours for the Test Environment output [N] from Stage 3. The resultant EB must meet the Safety Requirements [H] defined in Stage 2 (see Fig.~\ref{amlas-a-stage4}). 
-In the cloakroom case study, the target EB for the swarm must ensure that items are stored and retrieved by individuals whilst meeting all requirements specified. For example, performance requirements RQ1.1 and RQ1.2 specify an upper bound on the low/high-impact collisions that a swarm shall experience in a given time frame. 
+The EB algorithm is engineered at the level of the individual agent behaviours for the Test Environment output [N] from Stage 3. The resultant EB must meet the Safety Requirements [H] defined in Stage 2 (see Fig.~\ref{amlas-a-stage4}) and this will be tested in the following activity.
+In the cloakroom case study, the target EB for the swarm must ensure that items are stored and retrieved by individuals as quickly as possible. An example control algorithm for the individual which produces the desired collective navigation and transport behaviours, is a simple random walk \cite{milner2022stochastic}. The swarm engineer may adjust parameters such as robot velocity to optimize for rate of task completion, however, the Safety Requirements [H] necessarily constrain the possibilities.
+For example, performance requirements RQ1.1 and RQ1.2 specify an upper bound on the low/high-impact collisions that a swarm shall experience in a given time frame. 
 These requirements may be fulfilled by constraining the maximum velocity of individual robots or by ensuring that a robot has one or more sensory devices, such as a camera, enabling it to detect obstacles. 
 The key output from this activity is the Candidate EB [U] for testing.
+
 %\todo{SW: Does the Candidate EB Algorithm box need a letter label? Odd to have every other box labelled and not this one.}
 
 %\emph{[V] Model Development Log:} This should log the rationale in the design process of the EB algorithm, in particular how all specified Safety [H] and Data Type Requirements [L.0] have been met given the Data Availability Constraints [L.1].
@@ -572,7 +576,7 @@ The key output from this activity is the Candidate EB [U] for testing.
 	\vspace{-4ex}
 \end{figure}
 
-\noindent\textbf{Activity 11. Test EB Algorithm} In this activity, the candidate EB will be tested against the Swarm Performance Metrics [O] produced in Stage 3. Testing ensures that the EB performs as desired with respect to the defined metrics and in the case where performance passes accepted thresholds, the EB Algorithm [W] will be produced as the output of the activity. 
+\noindent\textbf{Activity 11. Test EB Algorithm} In this activity, the candidate EB will be tested against the Swarm Performance Metrics [O] produced in Stage 3. Testing ensures that the candidate EB [U] performs as desired with respect to the defined metrics and in the case where performance passes accepted thresholds, the EB Algorithm [W] will be produced as the output of the activity. If testing fails, the candidate EB [U] can be iteratively modified and tested until it passes successfully.
 
 \emph{[Y] Internal Test Results:} This output provides a degree of transparency in the testing procedure as the results may be further examined to ensure tests have run correctly. 
 In \textbf{Activity 12}, the artefacts generated in this stage are used to instantiate the EB Argument Pattern [X].
