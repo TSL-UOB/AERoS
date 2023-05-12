@@ -165,8 +165,8 @@ This section discusses the six main stages of AERoS targeting autonomous robot s
 %AERoS is iterative by design, and contains six stages where assurance activities are performed in parallel to the development activities. 
 \begin{figure*}[!t]
 	\centering
-	\vspace{-2ex}
-	\includegraphics[width=0.95\textwidth]{figures/AERoS-Process.pdf}%AMLAS-STAGE-3-V4.png
+	\vspace{-1.5ex}
+	\includegraphics[width=0.96\textwidth]{figures/AERoS-Process.pdf}%AMLAS-STAGE-3-V4.png
 	\vspace{-3ex}
 	\caption{The AERoS process with the six stages adapted from AMLAS.}%: iterative-by-design and the six stages where assurance activities are performed in parallel to development. 
 	\label{aeros-process}
@@ -279,7 +279,7 @@ arise from the available behaviours of the individual agents, their interactions
 In Activity 2, we use the artefacts generated from Stage 1 (i.e. [A–E]) to instantiate the EB Assurance Scoping Argument Pattern ([F] – see Fig.~\ref{stage1-ap}). 
 The instantiated argument [G] along with other instantiated arguments resulting from the other five stages of AERoS constitute the safety case for the swarm. The activities to instantiate argument patterns of the other stages follow a very similar pattern so are not shown due to space limitations.
 \begin{figure}[!t]
-	\vspace{-1ex}
+	%\vspace{-1ex}
 	\centering
 	\begin{minipage}[b]{.45\textwidth}
 		\centering
@@ -485,8 +485,8 @@ These example requirements have been generated following three main consideratio
 These
 % The EB safety requirements
 are validated by both review and simulation.
-Firstly, the requirements derived for the cloakroom have been reviewed by a safety-critical systems engineering expert to ensure that the specified EB safety requirements for the swarm will deliver its intended safe operation. Secondly, we validated all safety requirements (excepting RQ3.5 in Table~\ref{tab:reqs}) for the cloakroom system using the Gazebo 3D simulator. 
-This simulation is an exact replica of the 4m x 4m lab environment used for hardware implementation (Fig.~\ref{3Dsim}). 
+Firstly, the requirements derived for the cloakroom have been reviewed by a safety-critical systems engineering expert to ensure that the specified EB safety requirements for the swarm will deliver its intended safe operation. Secondly, we validated all safety requirements for the cloakroom system using the Gazebo 3D simulator. 
+This simulation is an exact replica of the 4m x 4m lab environment~\cite{Jones2022} used for hardware implementation (see Fig.~\ref{3Dsim}). 
 In \textbf{Activity 5}, the artefacts generated in this stage are used to instantiate the EB Safety Requirements Argument Pattern [I].  
 \subsection{Stage 3: Data Management} \label{framework-stage3}
 When designing EB, input data for training an algorithm comes from local sensing of individual agents, both onboard the agent itself and in its local environment. The activities and outputs in this stage take into account the complexities of interactions between multiple agents.
@@ -647,7 +647,7 @@ The artefacts generated in this stage are used to instantiate the EB Data Argume
 In the design of an EB algorithm, the challenge is in selecting behaviours at the individual level of the agents which give rise to the desired EB at the swarm level. 
 % In the original AMLAS process, Stage 4 focuses on the creation, testing, and instantiation of a machine learning model for a single system with no consideration given to EB for a collective. 
 %In our adaptation of AMLAS for the robot swarm,  
-We step away from the machine learning paradigm to allow consideration for all possible optimisation algorithms which may attain the target EB.
+We step away from the ML paradigm to allow consideration for all possible optimisation algorithms which may attain the target EB.
 
 \noindent\textbf{Activity 10. Create EB Algorithm} 
 This can be nature inspired, hand designed, or evolved from a relatively simple set of instructions for individual behaviour, which takes into account agent-to-agent and environmental interactions~\cite{Jones2018}. These instructions when given to a large number of agents, create a synergistic behaviour for the swarm that is more powerful than the sum of the individual agent's performance. 
@@ -667,7 +667,7 @@ The key output from this activity is the Candidate EB [U] for testing.
 
 \begin{figure}[!t]
 	\centering
-	\includegraphics[width=0.55\textwidth]{figures/AERoS-Stage4-V2.pdf}%AERoS-Stage4.pdf %[width=0.55\textwidth]{figures/AERoS-Stage4.pdf}
+	\includegraphics[width=0.55\textwidth]{figures/AERoS-Stage4-V3.pdf}%AERoS-Stage4.pdf %[width=0.55\textwidth]{figures/AERoS-Stage4.pdf}
 	\vspace{-2ex}
 	\caption{Stage 4: The AERoS model learning process.}
 	\label{amlas-a-stage4}
@@ -682,13 +682,13 @@ The key output from this activity is the Candidate EB [U] for testing.
 %	\vspace{-4ex}
 %\end{figure}
 
-\noindent\textbf{Activity 11. Test EB Algorithm} In this activity, the candidate EB algorithm will be tested against the Swarm Performance Metrics [O] produced in Stage 3. Testing ensures that the Candidate EB Algorithm [U] performs as desired with respect to the defined metrics and in the case where performance passes accepted thresholds, the EB Algorithm [W] will be produced as the output of the activity. If testing fails, [U] can be iteratively modified and tested until it passes successfully.
+\noindent\textbf{Activity 11. Test EB Algorithm} In this activity, the candidate EB algorithm will be tested against the Swarm Performance Metrics [O] produced in Stage 3. Testing ensures that the Candidate EB Algorithm [U] performs as desired with respect to the defined metrics and in the case where performance passes accepted thresholds, the EB Algorithm [W] will be produced as the output of the activity. If testing fails Candidate EB Algorithm [U] can be iteratively modified and tested until it passes successfully.
 
 \emph{[Y] Internal Test Results:} This output provides a degree of transparency in the testing procedure as the results may be further examined to ensure tests have run correctly. 
 In \textbf{Activity 12}, the artefacts generated in this stage are used to instantiate the EB Argument Pattern [X].
 
 \subsection{Stage 5: Model Verification} \label{framework-stage5}
-\vspace{-0.6ex}
+%\vspace{-0.6ex}
 \noindent\textbf{Activity 13. Verify EB} The inputs to the verification process are the EB Safety Requirements [H], Verification Scenarios (Test Generation) [P], and the EB Algorithm [W] (see Fig.~\ref{amlas-a-stage5}). 
 %
 The verification method and assessment process within that method will be largely determined by the specifics of the safety requirements. Some safety specifications lend themselves towards certain assessment methods due to the scenarios they prescribe.
@@ -779,7 +779,7 @@ Using AMLAS \cite{Hawkins2021} as a foundation, we proposed the six-stage develo
 %While the iterative nature of AERoS is a key advantage, some limitations have been identified. 
 %First, the scope of this work has been limited to investigating inherent swarm qualities and the emergent properties that arise from these. 
 While the iterative nature of AERoS is a key advantage, the scope of this work has been limited to investigating inherent swarm qualities and the emergent properties that arise from these. 
-However, one can expand on this, and consider adaptation of individual robots through techniques such as machine learning. % (e.g.\ by applying AMLAS).
+However, one can expand on this, and consider adaptation of individual robots through techniques such as ML (e.g.\ by applying AMLAS).
 %Second, we can broaden the evaluation by considering additional swarm use cases (e.g.\ monitoring fires in a natural environment, and also a social swarm), and by providing a worked example of the entire AERoS process.
 Also, we can broaden the evaluation by considering additional swarm use cases (e.g.\ monitoring fires in a natural environment, and also a social swarm), and by providing a worked example of the entire AERoS process. 
 While the focus of AERoS is to ensure the safety assurance of EB in swarms, the trustworthiness of an AS can be dependent on many factors other than safety, such as ethics and regulation, which we will investigate as part of future work.%the trustworthiness of an AS can be dependent on many other factors, such as ethics, and governance and regulation, which we will investigate as part of future work.
